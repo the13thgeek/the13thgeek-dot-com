@@ -3,6 +3,13 @@
 
 ## Changelog
 
+August 10, 2024
+- Added assets folder
+- Added navbar
+- Added hero area
+- Added About Me component
+- Added Services component
+
 August 9, 2024
 - setup/creation
 - initial commits
