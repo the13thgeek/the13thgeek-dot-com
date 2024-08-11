@@ -1,4 +1,4 @@
-.footer {
+footer.global {
     margin: 50px 170px;
     display: flex;
     flex-direction: column;
@@ -70,7 +70,7 @@
 
 @media(max-width: 768px) {
 
-    .footer {
+    footer.global {
         margin: 50px 70px;
     }
 

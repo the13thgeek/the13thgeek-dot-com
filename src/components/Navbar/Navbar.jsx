@@ -20,7 +20,7 @@ const Navbar = () => {
   }
 
   return (
-    <nav className='navbar'>
+    <nav className='global'>
         <img src={logo} alt="" />
         <img src={menu_open} onClick={openMenu} className='nav-mob-open' alt="" />
         <ul ref={menuRef} className="nav-menu">
