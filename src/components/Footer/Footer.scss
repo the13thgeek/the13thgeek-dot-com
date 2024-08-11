@@ -1,5 +1,8 @@
+@use '../../global' as *;
+
 footer.global {
-    margin: 50px 170px;
+    background-color: $footer-bg-color;
+    padding: 50px 170px;
     display: flex;
     flex-direction: column;
     gap: 30px;
@@ -10,9 +13,18 @@ footer.global {
     justify-content: space-between;
 }
 
-.footer-top-left p {
-    font-size: 20px;
-    max-width: 400px;
+.footer-top-left {
+
+    img.footer-logo {
+        width: 150px;
+        margin-bottom: 20px;
+    }
+
+    p {
+        font-size: 20px;
+        max-width: 400px;
+    }
+
 }
 
 .footer-top-right {
@@ -28,19 +40,27 @@ footer.global {
     border-radius: 50px;
     background: #32323b;
     padding-right: 80px;
+    border: 2px solid transparent;
+    transition: 0.2s;
+
+    &:hover {
+        border: 2px solid #fff;
+    }
 }
 
-.footer-email-input:hover {
-    border: 2px solid #fff;
-}
 
-.footer-email-input input {
-    outline: none;
-    border: none;
-    background: transparent;
-    color: #a0a0a0;
-    font-family: 'Outfit';
-    font-size: 18px;
+
+.footer-email-input {
+
+    input {
+        outline: none;
+        border: none;
+        background: transparent;
+        color: #a0a0a0;
+        font-family: 'Outfit';
+        font-size: 18px;
+    }
+
 }
 
 .footer-subscribe {

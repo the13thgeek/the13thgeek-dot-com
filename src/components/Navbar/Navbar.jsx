@@ -1,8 +1,8 @@
 import React, { useRef, useState } from 'react';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import { Link } from "react-router-dom";
-import './Navbar.css';
-import logo from '../../assets/logo.svg';
+import './Navbar.scss';
+import logo from '../../assets/global/header-logo-default.png';
 import menu_open from '../../assets/menu_open.svg';
 import menu_close from '../../assets/menu_close.svg';
 import underline from '../../assets/nav_underline.svg';
@@ -21,22 +21,25 @@ const Navbar = () => {
   }
 
   return (
-    <nav className='global'>
-        <img src={logo} alt="" />
-        <img src={menu_open} onClick={openMenu} className='nav-mob-open' alt="" />
-        <ul ref={menuRef} className="nav-menu">
-            <img src={menu_close} onClick={closeMenu} alt="" className="nav-mob-close" />
-            {/* Keep old link just in case */}
-            {/* <li><AnchorLink className='anchor-link' href='#home'><p onClick={()=>setMenu("home")}>Home</p></AnchorLink>{menu==="home" ? <img src={underline} alt='' />:<></>}</li> */ }
-            <li><Link className='anchor-link' to="/">Home</Link></li>
-            <li><Link className='anchor-link' to="/twitch">Twitch</Link></li>
-            {/* <li><AnchorLink className='anchor-link' offset={50} href='#about'><p onClick={()=>setMenu("about")}>About Me</p></AnchorLink>{menu==="about" ? <img src={underline} alt='' />:<></>}</li>
-            <li><AnchorLink className='anchor-link' offset={50} href='#services'><p onClick={()=>setMenu("services")}>Services</p></AnchorLink>{menu==="services" ? <img src={underline} alt='' />:<></>}</li>
-            <li><AnchorLink className='anchor-link' offset={50} href='#mywork'><p onClick={()=>setMenu("mywork")}>Portfolio</p></AnchorLink>{menu==="mywork" ? <img src={underline} alt='' />:<></>}</li>
-            <li><AnchorLink className='anchor-link' offset={50} href='#contact'><p onClick={()=>setMenu("contact")}>Contact</p></AnchorLink>{menu==="contact" ? <img src={underline} alt='' />:<></>}</li> */}
-        </ul>
-        <div className="nav-connect"><AnchorLink className='anchor-link' offset={50} href='#contact'>Connect With Me</AnchorLink></div>
-    </nav>
+    <header className='main'>
+      <nav className='global'>
+          <img className='header-logo' src={logo} alt="the13thgeek logo" />
+          <img src={menu_open} onClick={openMenu} className='nav-mob-open' alt="" />
+          <ul ref={menuRef} className="nav-menu">
+              <img src={menu_close} onClick={closeMenu} alt="" className="nav-mob-close" />
+              {/* Keep old link just in case */}
+              {/* <li><AnchorLink className='anchor-link' href='#home'><p onClick={()=>setMenu("home")}>Home</p></AnchorLink>{menu==="home" ? <img src={underline} alt='' />:<></>}</li> */ }
+              <li><Link className='anchor-link' to="/">Home</Link></li>
+              <li><Link className='anchor-link' to="/about">About</Link></li>
+              <li><Link className='anchor-link' to="/twitch">Twitch</Link></li>
+              {/* <li><AnchorLink className='anchor-link' offset={50} href='#about'><p onClick={()=>setMenu("about")}>About Me</p></AnchorLink>{menu==="about" ? <img src={underline} alt='' />:<></>}</li>
+              <li><AnchorLink className='anchor-link' offset={50} href='#services'><p onClick={()=>setMenu("services")}>Services</p></AnchorLink>{menu==="services" ? <img src={underline} alt='' />:<></>}</li>
+              <li><AnchorLink className='anchor-link' offset={50} href='#mywork'><p onClick={()=>setMenu("mywork")}>Portfolio</p></AnchorLink>{menu==="mywork" ? <img src={underline} alt='' />:<></>}</li>
+              <li><AnchorLink className='anchor-link' offset={50} href='#contact'><p onClick={()=>setMenu("contact")}>Contact</p></AnchorLink>{menu==="contact" ? <img src={underline} alt='' />:<></>}</li> */}
+          </ul>
+          <div className="nav-connect"><AnchorLink className='anchor-link' offset={50} href='#contact'>Connect With Me</AnchorLink></div>
+      </nav>
+    </header>
 
   )
 }

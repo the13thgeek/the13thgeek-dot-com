@@ -1,6 +1,7 @@
 import React from 'react';
-import './Footer.css';
-import footer_logo from '../../assets/footer_logo.svg';
+import './Footer.scss';
+//import footer_logo from '../../assets/footer_logo.svg';
+import footer_logo from '../../assets/global/header-logo-default.png';
 import user_icon from '../../assets/user_icon.svg';
 
 const Footer = () => {
@@ -8,7 +9,7 @@ const Footer = () => {
     <footer className='global'>
         <div className="footer-top">
             <div className="footer-top-left">
-                <img src={footer_logo} alt="" />
+                <img className='footer-logo' src={footer_logo} alt="" />
                 <p>Integer eget ipsum ultricies, volutpat sem sed, pharetra nunc. Donec ut odio arcu. Quisque volutpat porttitor aliquet.</p>
             </div>
             <div className="footer-top-right">
