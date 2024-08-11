@@ -3,6 +3,10 @@
 
 ## Changelog
 August 11, 2024
+- Converted to SASS
+- Added global stylesheet for variables/global elements
+- Added the13thgeek branding to header/footer
+- Moved About component into its own Page
 - Added Routing
 - Added new pages
 - Added 404 page
