@@ -5,7 +5,7 @@ import user_icon from '../../assets/user_icon.svg';
 
 const Footer = () => {
   return (
-    <div className='footer'>
+    <footer className='global'>
         <div className="footer-top">
             <div className="footer-top-left">
                 <img src={footer_logo} alt="" />
@@ -32,7 +32,7 @@ const Footer = () => {
                 <p>Connect with me</p>
             </div>
         </div>
-    </div>
+    </footer>
   )
 }
 
