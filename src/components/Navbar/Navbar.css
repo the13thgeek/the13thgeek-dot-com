@@ -9,7 +9,7 @@ nav.global {
     display: flex;
     align-items: center;
     list-style: none;
-    gap: 60px;
+    gap: 50px;
     font-size: 20px;
 }
 
