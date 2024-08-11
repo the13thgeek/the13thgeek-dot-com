@@ -2,6 +2,10 @@
 ---
 
 ## Changelog
+August 11, 2024
+- Added Routing
+- Added new pages
+- Added 404 page
 
 August 10, 2024
 - Added assets folder
@@ -9,6 +13,9 @@ August 10, 2024
 - Added hero area
 - Added About Me component
 - Added Services component
+- Added Contact component
+- Added footer
+- Added responsive CSS
 
 August 9, 2024
 - setup/creation
