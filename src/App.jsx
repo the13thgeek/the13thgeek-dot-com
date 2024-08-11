@@ -1,27 +1,21 @@
 import React from 'react';
-import Navbar from './components/NavBar/NavBar';
-import Hero from './components/Hero/Hero';
-import About from './components/About/About';
-import Services from './components/Services/Services';
-import MyWork from './components/MyWork/MyWork';
-import Contact from './components/Contact/Contact';
-import Footer from './components/Footer/Footer';
+import { BrowserRouter as Router, Routes, Route, } from "react-router-dom";
+import Home from './pages/Home';
+import Twitch from './pages/Twitch';
+import FourOhFour from './pages/FourOhFour';
 
 const App = () => {
   return (
-    <div>
-      <header>
-        <Navbar />
-      </header>
-      <main>
-        <Hero />
-        <About />
-        <Services />
-        <MyWork />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
+    <>
+      <Router>
+        <Routes>
+          <Route index element={<Home />} />
+          <Route exact path="/" element={<Home />} />
+          <Route path="/twitch" element={<Twitch />} />
+          <Route path="*" element={<FourOhFour />} />
+        </Routes>
+      </Router>
+    </>
   )
 }
 
