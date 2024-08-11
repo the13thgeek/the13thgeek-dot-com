@@ -10,12 +10,16 @@ import Footer from './components/Footer/Footer';
 const App = () => {
   return (
     <div>
-      <Navbar />
-      <Hero />
-      <About />
-      <Services />
-      <MyWork />
-      <Contact />
+      <header>
+        <Navbar />
+      </header>
+      <main>
+        <Hero />
+        <About />
+        <Services />
+        <MyWork />
+        <Contact />
+      </main>
       <Footer />
     </div>
   )
