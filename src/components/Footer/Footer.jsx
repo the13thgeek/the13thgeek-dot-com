@@ -1,10 +1,13 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import './Footer.scss';
 //import footer_logo from '../../assets/footer_logo.svg';
 import footer_logo from '../../assets/global/header-logo-default.png';
 import user_icon from '../../assets/user_icon.svg';
 
 const Footer = () => {
+    let currentYear = new Date().getFullYear();
+
   return (
     <footer className='global'>
         <div className="footer-top">
@@ -25,11 +28,11 @@ const Footer = () => {
         <hr />
         <div className="footer-bottom">
             <p className="footer-bottom-left">
-                &copy; 2024 the13thgeek&trade;. All rights reserved.
+                &copy; {currentYear} the13thgeek&trade;. All rights reserved.
             </p>
             <div className="footer-bottom-right">
-                <p>Terms of Service</p>
-                <p>Privacy Policy</p>
+                <p><Link className='' to="/terms-of-service">Terms of Service</Link></p>
+                <p><Link className='' to="/privacy-policy">Privacy Policy</Link></p>
                 <p>Connect with me</p>
             </div>
         </div>
