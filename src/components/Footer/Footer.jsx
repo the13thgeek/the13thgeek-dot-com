@@ -28,7 +28,7 @@ const Footer = () => {
         <hr />
         <div className="footer-bottom">
             <p className="footer-bottom-left">
-                &copy; {currentYear} the13thgeek&trade;. All rights reserved.
+                &copy; {currentYear} {import.meta.env.VITE_GLOBAL_SITE_TITLE}. All rights reserved.
             </p>
             <div className="footer-bottom-right">
                 <p><Link className='' to="/terms-of-service">Terms of Service</Link></p>
