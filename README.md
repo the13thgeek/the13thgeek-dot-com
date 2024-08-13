@@ -2,6 +2,9 @@
 ---
 
 ## Changelog
+August 13, 2024
+- Added boilerplate Terms of Use and Privacy Policy pages
+
 August 11, 2024
 - Converted to SASS
 - Added global stylesheet for variables/global elements
