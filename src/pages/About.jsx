@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
 import "./About.scss";
@@ -6,6 +6,11 @@ import theme_pattern from "../assets/theme_pattern.svg";
 import profile_img from "../assets/about_profile.svg";
 
 const About = () => {
+
+  useEffect(() => {
+    document.title = "About | " + import.meta.env.VITE_GLOBAL_SITE_TITLE;
+  });
+
   return (
     <>
       <Navbar />

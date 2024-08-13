@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Navbar from '../components/Navbar/Navbar';
 import Hero from '../components/Hero/Hero';
 // import About from '../components/About/About';
@@ -8,6 +8,11 @@ import Contact from '../components/Contact/Contact';
 import Footer from '../components/Footer/Footer';
 
 const Home = () => {
+
+  useEffect(() => {
+    document.title = import.meta.env.VITE_GLOBAL_SITE_TITLE;
+  });
+
   return (
     <div>
       <header>

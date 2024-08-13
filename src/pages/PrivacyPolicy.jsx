@@ -6,7 +6,7 @@ import './Pages.scss';
 const PrivacyPolicy = () => {
 
     useEffect(() => {
-        document.title = "Privacy Policy";
+        document.title = "Privacy Policy | " + import.meta.env.VITE_GLOBAL_SITE_TITLE;
     });
 
   return (
@@ -17,7 +17,7 @@ const PrivacyPolicy = () => {
       <main>
         <div className="container">
             <h1>Privacy Policy</h1>
-            <p>At <b>the13thgeek&trade;</b>, we respect your privacy and are committed to protecting it through our compliance with this policy.</p>
+            <p>At <b>{import.meta.env.VITE_GLOBAL_SITE_TITLE}</b>, we respect your privacy and are committed to protecting it through our compliance with this policy.</p>
             <h2>Information We Collect</h2>
             <ul>
                 <li><b>Personal Information:</b> We may collect personal information such as your name, email address, and other contact details when you register on our site or subscribe to our services.</li>
