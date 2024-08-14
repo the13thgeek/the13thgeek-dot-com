@@ -6,7 +6,7 @@ const Twitch = () => {
 
   useEffect(() => {
     document.title = "Twitch | " + import.meta.env.VITE_GLOBAL_SITE_TITLE;
-  });
+  }, []);
 
   return (
     <div>

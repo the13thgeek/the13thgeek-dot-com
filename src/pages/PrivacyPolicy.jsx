@@ -7,7 +7,7 @@ const PrivacyPolicy = () => {
 
     useEffect(() => {
         document.title = "Privacy Policy | " + import.meta.env.VITE_GLOBAL_SITE_TITLE;
-    });
+    }, []);
 
   return (
     <div>
