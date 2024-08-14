@@ -28,6 +28,10 @@ nav.global {
         gap: 5px;
         cursor: pointer;
 
+        a.current {
+            text-decoration: underline;
+        }
+
         img {
             display: flex;
             margin: auto;

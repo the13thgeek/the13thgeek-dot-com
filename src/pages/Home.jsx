@@ -11,7 +11,7 @@ const Home = () => {
 
   useEffect(() => {
     document.title = import.meta.env.VITE_GLOBAL_SITE_TITLE;
-  });
+  }, []);
 
   return (
     <div>

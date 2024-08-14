@@ -1,34 +1,11 @@
 # the13thgeek dot com
 ---
 
-## Changelog
-August 13, 2024
-- Added boilerplate Terms of Use and Privacy Policy pages
-- Added .env file
+This is a WIP for a personal website/portfolio.
+Based on React & Vite.
 
-August 11, 2024
-- Converted to SASS
-- Added global stylesheet for variables/global elements
-- Added the13thgeek branding to header/footer
-- Moved About component into its own Page
-- Added Routing
-- Added new pages
-- Added 404 page
-
-August 10, 2024
-- Added assets folder
-- Added navbar
-- Added hero area
-- Added About Me component
-- Added Services component
-- Added Contact component
-- Added footer
-- Added responsive CSS
-
-August 9, 2024
-- setup/creation
-- initial commits
-- Created homepage/barebones navbar
+The changelog has been moved.
+For more details on changes and updates, please see the [CHANGELOG](./CHANGELOG.md).
 
 ### React + Vite
 

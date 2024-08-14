@@ -7,7 +7,7 @@ const Terms = () => {
 
     useEffect(() => {
         document.title = "Terms of Service | " + import.meta.env.VITE_GLOBAL_SITE_TITLE;
-    });
+    }, []);
 
 
   return (
