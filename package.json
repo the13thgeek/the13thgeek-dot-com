@@ -2,7 +2,7 @@
   "name": "the13thgeek-dot-com",
   "private": true,
   "version": "0.1.0",
-  "homepage": "https://the13thgeek.github.io/the13thgeek-dot-com/",
+  "homepage": "https://the13thgeek.com/",
   "type": "module",
   "scripts": {
     "dev": "vite",
