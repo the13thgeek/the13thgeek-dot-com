@@ -6,10 +6,17 @@ import Twitch from './pages/Twitch';
 import Terms from './pages/Terms';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import FourOhFour from './pages/FourOhFour';
+import ComingSoon from './components/ComingSoon/ComingSoon';
 
 const App = () => {
+  const isMaintenance = true;
+
   return (
     <>
+
+    { isMaintenance ? <ComingSoon /> : (
+      
+      
       <Router>
         <Routes>
           <Route index element={<Home />} />
@@ -21,7 +28,10 @@ const App = () => {
           <Route path="*" element={<FourOhFour />} />
         </Routes>
       </Router>
-    </>
+
+    ) }
+
+    </>    
   )
 }
 

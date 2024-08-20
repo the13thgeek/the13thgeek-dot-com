@@ -1,0 +1,96 @@
+@use '../../global' as *;
+
+#coming-soon {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    #video-wall {
+        overflow: hidden;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: -100;
+        
+        video {
+            -webkit-transform: translateX(-50%) translateY(-50%);
+            -moz-transform: translateX(-50%) translateY(-50%);
+            -ms-transform: translateX(-50%) translateY(-50%);
+            -o-transform: translateX(-50%) translateY(-50%);
+            transform: translateX(-50%) translateY(-50%);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100vh;
+            width: auto;
+            height: auto;
+        }
+    }
+
+    #filter {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-image: url('filter.png');
+        z-index: -1;
+    }
+
+    .content-box {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .message {
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        font-size: 12px;
+        font-weight: 600;
+        margin-bottom: 40px;
+        transition: 1s;
+        cursor: default;
+        padding: 10px 20px;
+        border-radius: 10px;
+        background: rgba(0,0,0,0.7);
+
+        &:hover {
+            letter-spacing: 2px;
+        }        
+    }
+
+    .main-logo {
+        width: 600px;
+    }
+
+    .socials {
+        margin-top: 50px;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    a.social-link {
+        background: rgba(0,0,0,0.7);
+        border-radius: 100%;
+        padding: 10px;
+        border: #666 1px solid;
+        transition: 0.3s;
+
+        &:hover {
+            background: rgba(180,180,180,0.7);
+            border-color: #fff;
+        }
+
+        img {
+            width: 40px;
+            transform: translateY(2px);
+        }
+    }
+
+}
