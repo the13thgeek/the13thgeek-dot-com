@@ -1,26 +1,45 @@
+@use '../../global' as *;
+
 .hero {
     display: flex;
     align-items: center;
     flex-direction: column;
     gap: 35px;
+    padding: 80px 0;
+
+    .intro {
+        width: 70%;
+
+        h1 {
+            width: 100%;
+            font-size: 60px;
+            line-height: 60px;
+            font-weight: 600;
+
+            span {
+                // background: linear-gradient(270deg, #df8908 10%, #b415ff 100%);
+                color: $shade-d;  
+            }
+        }
+
+        h2 {
+            font-weight: 300;
+            font-size: 30px;
+            width: 50%;
+
+            span.gid {
+                color: $shade-d;
+                font-weight: 600;
+            }
+        }
+    }
+
+    
+
 }
 
 .hero img {
     margin-top: 150px;
-}
-
-.hero h1 {
-    text-align: center;
-    width: 70%;
-    font-size: 90px;
-    font-weight: 600;
-}
-
-.hero h1 span {
-    background: linear-gradient(270deg, #df8908 10%, #b415ff 100%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
 }
 
 .hero p {

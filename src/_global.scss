@@ -1,12 +1,25 @@
 /* Fonts */
-$global-font-family: 'Outfit';
+$global-font-family: 'Raleway';
 
 /* Global colours */
-$default-bg-color: #222;
-$navbar-bg-color: #161513;
-$footer-bg-color: #161513;
+$shade-a: #031e22;
+$shade-b: #1a3541;
+$shade-c: #204676;
+$shade-d: #4affbb;
+$shade-e: #010303;
+
+$default-bg-color: $shade-a;
+$navbar-bg-color: $shade-e;
+$footer-bg-color: $shade-e;
 
 img {
     max-width: 100%;
     height: auto;
+}
+
+.g-content-container {
+    display: flex;
+    min-width: 960px;
+    flex-direction: column;
+    justify-content: start;
 }
