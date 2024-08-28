@@ -9,7 +9,7 @@ import FourOhFour from './pages/FourOhFour';
 import ComingSoon from './components/ComingSoon/ComingSoon';
 
 const App = () => {
-  const isMaintenance = true;
+  const isMaintenance = false;
 
   return (
     <>
