@@ -14,17 +14,27 @@ const About = () => {
   return (
     <>
       <Navbar />
-      <div id="about" className="about">
-        <div className="about-title">
-          <h1>About me</h1>
-          <img src={theme_pattern} alt="" />
+      <section id="about" className="about">
+        <div className="g-content-container intro">
+          <div className="descriptor">01 <span className="title">Profile</span></div>
+          <h1>About Me</h1>
         </div>
-        <div className="about-sections">
-          <div className="about-left">
-            <img src={profile_img} alt="" />
-          </div>
-          <div className="about-right">
-            <div className="about-para">
+        <div className="g-content-container overview">
+          <div className="sections">
+            <div className="left">
+              {/* <img src={profile_img} alt="" /> */}
+              <div className="photo-geek"></div>
+              <ul className="tags">
+                <li>web dev</li>
+                <li>cosplayer</li>
+                <li>storyteller</li>
+                <li>traveller</li>
+                <li>gamer</li>
+                <li>cosplayer</li>
+              </ul>
+            </div>
+            <div className="right">
+              <h3 className="name-dictiopnary">Aldreich <small>/ˈɔːldrɪtʃ/</small></h3>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
                 venenatis bibendum vestibulum. Cras molestie est quis lorem
@@ -33,6 +43,26 @@ const About = () => {
                 erat. Integer lacus purus, consequat nec sem ac, eleifend
                 pharetra nunc.
               </p>
+            </div>
+          </div>
+
+          
+        </div>
+
+        
+
+
+        {/* <div className="about-title">
+          <h1>About me</h1>
+          <img src={theme_pattern} alt="" />
+        </div> */}
+        <div className="about-sections">
+          <div className="about-left">
+            
+          </div>
+          <div className="about-right">
+            <div className="about-para">
+              
               <p>
                 Vestibulum nunc ex, lacinia eget felis eget, sodales tempus sem.
                 Nam id elit eget sapien sodales accumsan in id enim. Nam tellus
@@ -78,7 +108,7 @@ const About = () => {
             <p>HAPPY CLIENTS</p>
           </div>
         </div>
-      </div>
+      </section>
       <Footer />
     </>
   );
