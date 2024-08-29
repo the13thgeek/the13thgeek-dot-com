@@ -1,16 +1,18 @@
 import React from 'react';
-import './Services.css';
+import './Services.scss';
 import theme_pattern from '../../assets/theme_pattern.svg';
 import Services_Data from '../../assets/services_data';
 import arrow_icon from '../../assets/arrow_icon.svg';
 
 const Services = () => {
   return (
-    <div id='services' className='services'>
-        <div className="services-title">
-            <h1>My Services</h1>
-            <img src={theme_pattern} alt="" />
+    <section id='services' className='services'>
+        <div className="g-content-container">
+            <div className="descriptor">02 <span className="title">Services</span></div>
+            <h2>What I Do</h2>
         </div>
+        
+
         <div className="services-container">
             {Services_Data.map((service,index) => {
                 return (
@@ -26,7 +28,7 @@ const Services = () => {
                 )
             })}
         </div>
-    </div>
+    </section>
   )
 }
 

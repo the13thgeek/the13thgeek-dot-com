@@ -1,5 +1,6 @@
 /* Fonts */
 $global-font-family: 'Raleway';
+$global-font-pixel: 'Tiny5', sans-serif;
 
 /* Global colours */
 $shade-a: #031e22;
@@ -12,9 +13,48 @@ $default-bg-color: $shade-a;
 $navbar-bg-color: $shade-e;
 $footer-bg-color: $shade-e;
 
+.descriptor {
+    font-family: $global-font-pixel;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 22px;
+    margin-bottom: 30px;
+
+    .title {
+        color: $shade-d;
+    }
+}
+
 img {
     max-width: 100%;
     height: auto;
+}
+
+.g-action {
+    text-transform: uppercase;
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: 600;
+    color: #fff;
+    border: #fff 1px solid;
+    padding: 15px 50px;
+    border-radius: 30px;
+    transition: all 0.3s;
+
+    i {
+        transform: translateX(5px);
+        transition: all 0.3s;
+    }
+
+    &:hover {
+        border-color: transparent;
+        background-color: $shade-d;
+        color: #000;
+
+        i {
+            transform: translateX(15px);
+        }
+    }
 }
 
 .g-content-container {

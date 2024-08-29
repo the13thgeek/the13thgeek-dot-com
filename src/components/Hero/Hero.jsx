@@ -1,29 +1,23 @@
 import React from 'react';
 import AnchorLink from 'react-anchor-link-smooth-scroll'
+import { NavLink } from "react-router-dom";
 import './Hero.scss';
-import profile_img from '../../assets/profile_img.svg';
 
 const Hero = () => {
   return (
-    <div id='home' className='hero'>
+    <section id='home' className='hero'>
       <div className="g-content-container">
         <div className="intro">
-          <h1>Hello<br /><span>I'm Aldreich</span>,</h1>
-          <h2>or more commonly known in these parts as <span className="gid">@the13thgeek</span>.</h2>
+          <div className="descriptor">01 <span className="title">Intro</span></div>
+          <h1>Hello,<br />I'm <span>Aldreich</span>.</h1>
+          <h2>I'm more commonly known in these parts as <span className="gid">@the13thgeek</span>.</h2>
+          <div className="actions">
+            <NavLink to="/about" className="g-action">About Me <i class="fa-solid fa-chevron-right"></i></NavLink>
+            <AnchorLink offset={50} className="g-action" href='#contact'>Connect with me <i class="fa-solid fa-chevron-right"></i></AnchorLink>
+          </div>
         </div>
-        
       </div>
-        {/* <img src={profile_img} alt ="" /> */}
-        <p>The quick brown fox jumps over the lazy dog.</p>
-        <div className="hero-action">
-            <div className="hero-connect">
-              <AnchorLink className='anchor-link' offset={50} href='#contact'>Connect with me</AnchorLink>
-            </div>
-            <div className="hero-resume">
-                My resume
-            </div>
-        </div>
-    </div>
+    </section>
   )
 }
 
