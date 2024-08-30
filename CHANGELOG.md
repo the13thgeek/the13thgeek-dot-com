@@ -15,6 +15,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - [Global] Implemented global styles for site-wide objects
 - [Global] Font-Awesome integration
 - [Global] Colour palette/styles
+- [Global] Japanese font support
+- [About] Image assets
 ### Changed
 - [Navbar] New colour scheme
 - [Navbar] New floating style

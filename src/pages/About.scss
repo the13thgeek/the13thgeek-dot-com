@@ -4,18 +4,212 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 80px;
-    margin: 80px 170px;
+    gap: 40px;
+    padding: 80px 0;
+    background-image: url('../assets/about/header-bg.jpg');
+    background-position: 50% 0;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 1;
+
+    .filter {
+        position: absolute;
+        top: 0;
+        height: 50%;
+        width: 100%;
+        z-index: 1;
+        background-image: url('../assets/global/pixel-filter.png');
+    }
+
+    // display: flex;
+    // flex-direction: column;
+    // align-items: start;
+    // gap: 80px;
+    // margin: 60px 170px;
 
     h1 {
         font-size: 60px;
         line-height: 60px;
     }
+
+    .g-content-container {
+        position: relative;
+        margin-top: 50px;
+        z-index: 2;
+    }
 }
 
-.g-content-container:first-child {
-    margin-top: 50px;
+.off-the-grid {
+    display: flex;
+    flex-direction: column; 
+    position: relative;
+    align-items: center;
+    gap: 40px;
+    padding: 80px 0;
+    background: #000 url('../assets/about/offgrid-1.jpg') 100% 50% / contain no-repeat;
+
+    .filter {
+        background-image: url('../assets/global/pixel-filter.png');
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+
+    .g-content-container {
+        position: relative;
+        z-index: 2;
+    }
+
+    h2 {
+        font-size: 60px;
+        line-height: 60px;
+    }
+
+    .language-selector {
+        font-family: $global-font-jp;
+        background-color: $shade-b;
+        margin: 10px 0;
+        justify-content: center;
+        border-radius: 30px;
+        width: 300px;
+        padding: 10px 25px;
+        display: flex;
+        gap: 20px;
+        text-transform: uppercase;
+        font-size: 14px;
+        letter-spacing: 2px;
+        font-weight: 300;
+
+        p {
+            padding: 3px 0;
+        }
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+            li {
+                float: left;
+
+                a {
+                    display: inline-block;
+                    text-decoration: none;
+                    padding: 3px 10px;
+                    margin: 0 10px;
+                    color: #fff;
+
+                    &.active {
+                        color: #000;
+                        background-color: $shade-d;
+                        font-weight: 800;
+                    }
+                }
+            }
+        }
+    }
+
+    small {
+        display: inline-block;
+        background-color: #600;
+        padding: 5px 10px;
+        border-radius: 5px;
+        margin-bottom: 15px;
+    }
+
+    .col-a {
+        width: 60%;
+
+        p {
+            font-size: 16px;
+            line-height: 25px;
+            margin-bottom: 30px;
+            background-color: rgba(0,0,0,0.8);
+
+            &.jp {
+                font-family: $global-font-jp;
+            }
+        }
+    }
+}
+
+.socials {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    padding: 60px 0 0;
+
+    h2 {
+        font-size: 60px;
+        line-height: 60px;
+    }
+
+    .showcase {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 15px;
+        margin-bottom: 60px;
+
+        a.social-item {
+            background-color: #fff;
+            height: 150px;
+            border-radius: 20px;
+            background-position: 50% 50%;
+            background-size: cover;
+            background-repeat: no-repeat;
+            text-decoration: none;
+            color: #fff;
+            overflow: hidden;
+
+            &:hover {
+
+                .detail {
+                    top: 0;
+                }   
+                
+            }
+
+            &.linkedin {
+                background-image: url('../assets/about/social-linkedin.jpg');
+            }
+
+            &.twitter {
+                background-image: url('../assets/about/social-twitter.jpg');
+            }
+
+            &.instagram {
+                background-image: url('../assets/about/social-instagram.jpg');
+            }
+
+            &.twitch {
+                background-image: url('../assets/about/social-twitch.jpg');
+            }
+
+            .detail {
+                position: relative;
+                flex: 1;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                background-color: rgba(0,0,0,0.9);
+                top: 100%;
+                transition: all .3s;
+
+                i {
+                    font-size: 60px;
+                }
+            }
+        }
+    }
 }
 
 .sections {
@@ -37,7 +231,6 @@
         z-index: -1;
     }
     
-
     .profile-main {
         flex: 3;
         margin-top: 50px;
