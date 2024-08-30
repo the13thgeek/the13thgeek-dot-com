@@ -1,14 +1,22 @@
 @use '../../global' as *;
 
 header.main {
-    background-color: $navbar-bg-color;
+    position: fixed;
+    top: 13px;
+    left: 0;
+    right: 0;
+    z-index: 99;
 }
 
 nav.global {
+    background: rgba(0,0,0,0.9);
+    mix-blend-mode: color;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    margin: 0 170px;
+    justify-content: space-around;
+    margin: 0 100px;
+    border-left: #333 2px solid;
+    border-right: #333 2px solid;
 
     img.header-logo {
         height: 50px;
@@ -28,9 +36,21 @@ nav.global {
         gap: 5px;
         cursor: pointer;
 
-        a.current {
-            text-decoration: underline;
+        a {
+            font-weight: 200;
+            color: #fff;
+            font-size: 13px;
+            letter-spacing: 2px;
+            padding: 15px 0;
+            border-bottom: transparent 3px solid;
+
+            &.current {
+                font-weight: 800;
+                border-bottom: $shade-d 3px solid;
+            }
         }
+
+        
 
         img {
             display: flex;
@@ -42,16 +62,25 @@ nav.global {
 
 .anchor-link {
     text-decoration: none;
+    text-transform: uppercase;
     color: #fff;
+    font-size: 14px;
 }
 
 .nav-connect {
-    padding: 20px 40px;
+    padding: 5px 30px;
     border-radius: 50px;
-    background: linear-gradient(267deg,#da7c25 0.36%, #b923e1 102.06%);
-    font-size: 22px;
+    // background: linear-gradient(267deg,#da7c25 0.36%, #b923e1 102.06%);
+    background-color: $shade-d;
+    font-size: 18px;
+    line-height: 18px;    
     cursor: pointer;
     transition: 0.5s;
+
+    a {
+        color: #000;
+        font-weight: 900;
+    }
 }
 
 .nav-connect:hover {

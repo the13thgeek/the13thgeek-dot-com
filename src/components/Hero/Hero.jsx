@@ -1,23 +1,23 @@
 import React from 'react';
 import AnchorLink from 'react-anchor-link-smooth-scroll'
-import './Hero.css';
-import profile_img from '../../assets/profile_img.svg';
+import { NavLink } from "react-router-dom";
+import './Hero.scss';
 
 const Hero = () => {
   return (
-    <div id='home' className='hero'>
-        <img src={profile_img} alt ="" />
-        <h1><span>I'm @the13thgeek,</span> frontend developer based in Toronto.</h1>
-        <p>The quick brown fox jumps over the lazy dog.</p>
-        <div className="hero-action">
-            <div className="hero-connect">
-              <AnchorLink className='anchor-link' offset={50} href='#contact'>Connect with me</AnchorLink>
-            </div>
-            <div className="hero-resume">
-                My resume
-            </div>
+    <section id='home' className='hero'>
+      <div className="g-content-container">
+        <div className="intro">
+          <div className="descriptor">01 <span className="title">Intro</span></div>
+          <h1>Hello,<br />I'm <span>Aldreich</span>.</h1>
+          <h2>I'm more commonly known in these parts as <span className="gid">@the13thgeek</span>.</h2>
+          <div className="actions">
+            <NavLink to="/about" className="g-action">About Me <i class="fa-solid fa-chevron-right"></i></NavLink>
+            <AnchorLink offset={50} className="g-action" href='#contact'>Connect with me <i class="fa-solid fa-chevron-right"></i></AnchorLink>
+          </div>
         </div>
-    </div>
+      </div>
+    </section>
   )
 }
 

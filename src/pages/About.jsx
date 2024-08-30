@@ -1,4 +1,5 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
 import "./About.scss";
@@ -7,32 +8,65 @@ import profile_img from "../assets/about_profile.svg";
 
 const About = () => {
 
-  useEffect(() => {
+  const [lang, setLang] = useState("EN");
+
+  const handleChangeLang = (val) => {
+    setLang(val);
+  };
+  
+    useEffect(() => {
     document.title = "About | " + import.meta.env.VITE_GLOBAL_SITE_TITLE;
   }, []);
 
   return (
     <>
       <Navbar />
-      <div id="about" className="about">
-        <div className="about-title">
-          <h1>About me</h1>
-          <img src={theme_pattern} alt="" />
+      <section id="about" className="about">
+        <div className="g-content-container intro">
+          <div className="descriptor">01 <span className="title">Profile</span></div>
+          <h1>About Me</h1>
         </div>
-        <div className="about-sections">
+        <div className="g-content-container overview">
+          <div className="sections">
+              {/* <img src={profile_img} alt="" /> */}
+            <div className="photo-geek"></div>
+            <div className="profile-main">
+              <h3 className="name-dictionary">Aldreich <small>/ˈɔːldrɪtʃ/</small></h3>
+              <h3 className="highlighter">
+                <div>Frontend developer currently based in Toronto, Canada. Mostly focused on working on the front-end side of things including UI/UX and graphic design.</div>
+              </h3>
+              <p>I began my front-end journey in the early 2000s as a high school student. My initial thought was that I wanted to put together a website for my class as we just got our first Internet connection. I used the gool ol' <b>Microsoft FrontPage Express</b> that came with Windows and signed up for a free <b>GeoCities</b> (!) account. This project started off as a hobby and it eventually ignited my interest in web development, and the rest was history. I've been a front-end developer for the last ten years. I've specialized in UI/UX and client interaction while working with frameworks and languages including React, HTML5, CSS, SASS, PHP, Laravel and WordPress.</p>
+              <p>I've worked closely with numerous design and consulting organizations over the past decade, overseeing and contributing to projects in a variety of roles. These included application management, digital transformations, and redesigns of company websites. I'm particularly passionate about modernizing legacy systems and streamlining business processes.</p>
+              <p>My work on the visual side of things has fueled my interest in multimedia and engaging user experiences. I'm currently expanding my skillset in UI/UX to blend creativity with logic and turning the subjective into objective.</p>
+              <div className="actions">
+                <Link className="g-action" target="_blank" to="#"><i className="fa-solid fa-file-pdf"></i> My Resume <i className="fa-solid fa-chevron-right"></i></Link>
+              </div>
+            </div>
+            <div className="profile-misc">
+              <ul className="tags">
+                <li>web dev</li>
+                <li>cosplayer</li>
+                <li>storyteller</li>
+                <li>traveller</li>
+                <li>gamer</li>
+                <li>cosplayer</li>
+              </ul>
+              <div className="geek-origin">
+                <h4>the13thgeek?</h4>
+                <p>During my university days when BBCode forums were popular, I frequently posted and shared C-language tips and hacks for the IT freshmen. I initially wanted to use the handle "13thgeek"&mdash; with thirteen being my lucky number and "geek" being an IT undergrad at the time. However, the forum system didn't allow usernames to start with a digit, so I added <i>"the"</i> to bypass the restriction. This workaround not only solved the issue but also gave the handle a more distinct and definitive tone!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="filter"></div>
+
+        {/* <div className="about-sections">
           <div className="about-left">
-            <img src={profile_img} alt="" />
+            
           </div>
           <div className="about-right">
             <div className="about-para">
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
-                venenatis bibendum vestibulum. Cras molestie est quis lorem
-                scelerisque, ut molestie massa vulputate. Nunc eget ultricies
-                turpis. Phasellus at eros faucibus, pharetra diam sed, aliquet
-                erat. Integer lacus purus, consequat nec sem ac, eleifend
-                pharetra nunc.
-              </p>
+              
               <p>
                 Vestibulum nunc ex, lacinia eget felis eget, sodales tempus sem.
                 Nam id elit eget sapien sodales accumsan in id enim. Nam tellus
@@ -77,8 +111,101 @@ const About = () => {
             <h1>15+</h1>
             <p>HAPPY CLIENTS</p>
           </div>
+        </div> */}
+
+      </section>
+      <section id="off-the-grid" className="off-the-grid">        
+          <div className="g-content-container">
+            <div className="descriptor">02 <span className="title">Profile Extended</span></div>
+          </div>
+          <div className="g-content-container">
+            { (lang === "EN") ? (<h2>Off the Grid</h2>) : `` }
+            { (lang === "JP") ? (<h2 className="jp">オフラインの生活</h2>) : `` }
+            <div className="language-selector">
+              <p>
+                { (lang === "EN") ? `Language` : `` }
+                { (lang === "JP") ? `言語設定` : `` }
+              </p>
+              <ul className="language-list">
+                <li>
+                  <Link to="#" onClick={() => handleChangeLang('EN')} className={ (lang === "EN") ? `active` : `` }>
+                  { (lang === "EN") ? `EN` : `` }
+                  { (lang === "JP") ? `英語` : `` }
+                  </Link>
+                </li>
+                <li>
+                  <Link to="#" onClick={() => handleChangeLang('JP')} className={ (lang === "JP") ? `active` : `` }>
+                  { (lang === "EN") ? `JP` : `` }
+                  { (lang === "JP") ? `日本語` : `` }
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="g-content-container">
+            <div className="col-a">
+              { (lang === "EN") ? (
+                <>
+                  <p>When I'm not busy crafting digital experiences, you'll often find me enjoying movies and video games on Twitch with friends, doing casual cosplays at comic conventions, or just walking around exploring Toronto while listening to J-Pop and EDM. I also make time for running, (casual) photography, and exploring new places! My travels have taken me to the United States, Japan, Hong Kong, and Macau so far&mdash; and this is just the beginning!</p>
+                  <p>I'm currently learning Japanese, so you might spot the occasional Japanese post (with translations, of course!).</p>
+                  <p>While I'm not [yet] an avid reader, I enjoy a good read. Some of my favourite authors include Kyle Higgins, Dan Brown and Suzanne Collins. I recently finished reading <i>Mary and the Secret Garden</i> and I'm currently hooked on Boom! series' <i>Power Rangers Comics</i> universe.</p>
+                </>
+              ) : (<></>) }
+              { (lang === "JP") ? (
+                <>
+                  <small className="jp"><b>警告:</b> 文法が間違っている可能性があります。</small>
+                  <p className="jp">パソコンの前に忙しくないときは、友達と一緒に映画を見たり、Twitchでビデオゲームを楽しんだり、コミコンでコスプレをしたり、J-POPやEDMなどを聞きながらトロントを散歩してる事が多いです。また、時々ランニングや写真撮影、いろいろな新しい所を観光にも時間を割いています。今までアメリカ、日本、香港、マカオにいたことがあるんだけど、これはまだ冒険の始まりに過ぎません!</p>
+                  <p className="jp">現在日本語を勉強しているので、このサイトで時々日本語で練習すると日本語の投稿が見られるかもしれません（訳するつもり、大丈夫なんです!）。</p>
+                  <p className="jp">まだ本の虫にならないんですが、いい本を読むのが好きです。お気に入りの作家にはカイル・ヒギンズ、ダン・ブラウン、スザンヌ・コリンズなどがいます。最近「秘密の花園」を読み終え、現在はブーンシリーズの「パワーレンジャー」の漫画を読み込んでいます。</p>
+                </>
+              ) : (<></>) }
+            </div>
+          </div>
+          <div className="filter"></div>
+      </section>
+
+      <section className="socials" id="socials">
+        <div className="g-content-container">
+          <div className="descriptor">03 <span className="title">Socials</span></div>
+          <h2>Follow Me</h2>
         </div>
-      </div>
+        <div className="g-content-container">
+          <div className="showcase">
+            <a href="//www.linkedin.com/in/aldreich-aguilar/" target="_blank" rel="noopener" className="social-item linkedin">
+              <div className="detail">
+                <i className="fa-brands fa-linkedin-in"></i>
+                <p>LinkedIn</p>
+              </div>
+            </a>
+            <a href="//x.com/the13thgeek" target="_blank" rel="noopener" className="social-item twitter">
+              <div className="detail">
+                  <i className="fa-brands fa-x-twitter"></i>
+                  <p>X (formerly Twitter)</p>
+              </div>
+            </a>
+            <a href="//instagram.com/the13thgeek" target="_blank" rel="noopener" className="social-item instagram">
+              <div className="detail">
+                  <i className="fa-brands fa-square-instagram"></i>
+                  <p>Instagram</p>
+              </div>
+            </a>
+            <a href="//twitch.tv/the13thgeek" target="_blank" rel="noopener" className="social-item twitch">
+              <div className="detail">
+                  <i className="fa-brands fa-twitch"></i>
+                  <p>Twitch</p>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        {/* <div className="actions social">
+          
+          <Link className="g-action" target="_blank" to="//x.com/the13thgeek"><i className="fa-brands fa-x-twitter"></i> X (Twitter) <i className="fa-solid fa-chevron-right"></i></Link>
+          <Link className="g-action" target="_blank" to="//twitch.com/the13thgeek"><i className="fa-brands fa-twitch"></i> Twitch <i className="fa-solid fa-chevron-right"></i></Link>
+          <Link className="g-action" target="_blank" to="//instagram.com/the13thgeek"><i className="fa-brands fa-square-instagram"></i> Instagram <i className="fa-solid fa-chevron-right"></i></Link>
+        </div> */}
+      </section>
+
       <Footer />
     </>
   );
