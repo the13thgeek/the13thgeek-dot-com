@@ -41,7 +41,11 @@ img {
     border-radius: 30px;
     transition: all 0.3s;
 
-    i {
+    i:first-child {
+        margin-right: 10px;
+    }
+
+    i:last-child {
         transform: translateX(5px);
         transition: all 0.3s;
     }
@@ -51,7 +55,7 @@ img {
         background-color: $shade-d;
         color: #000;
 
-        i {
+        i:last-child {
             transform: translateX(15px);
         }
     }

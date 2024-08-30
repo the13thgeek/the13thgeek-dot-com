@@ -20,229 +20,311 @@
 
 .sections {
     display: flex;
-    gap: 30px;
-
-    .left {
-        position: relative;
-        min-width: 20%;
-        max-width: 25%;
-    }
-
-    .right {
-    }
-}
-
-.photo-geek {
-    position: absolute;
-    left: 0;
-    top: -5%;
-    width: 250px;
-    height: 250px;
-    background: url('../assets/profile-photo-geek.jpg') 50% 50% / cover no-repeat;
-    border-radius: 50%;
-    z-index: -1;
-}
-
-.tags {
-    list-style: none;
-    margin: 220px 0 0 0;
-    float: left;
-
-    li {
-        width: 100%;
-        text-align: right;
-        font-size: 30px;
-        font-weight: 100;
-        transition: all 0.3s;
-        cursor: default;
-        font-weight: 200;
-
-        &:nth-child(even) {
-            font-weight: 500;
-        }
-
-        &:hover {
-            color: $shade-d;
-
-        }
-    }
-}
-
-h3 {
-    font-size: 30px;
-    margin-bottom: 30px;
-    background-color: $shade-d;
-    color: #000;
-    display: inline-block;
-    padding: 10px 25px 10px 20px;
-    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%);
-}
-
-
-
-.about-title {
     position: relative;
+    flex-direction: row;
+    align-items: start;
+    justify-content: end;
+    gap: 40px;
+
+    .photo-geek {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 250px;
+        height: 250px;
+        background: url('../assets/profile-photo-geek.jpg') 50% 50% / cover no-repeat;
+        border-radius: 50%;
+        z-index: -1;
+    }
+    
+
+    .profile-main {
+        flex: 3;
+        margin-top: 50px;
+        margin-left: 22%;
+
+        h3 {
+
+            &.name-dictionary {
+                font-size: 30px;
+                margin-bottom: 30px;
+                background-color: $shade-d;
+                color: #000;
+                display: inline-block;
+                padding: 10px 25px 10px 20px;
+                clip-path: polygon(0 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%);
+                border-bottom: #fff 3px solid;
+            }
+        
+            &.highlighter {
+                font-weight: 400;
+                margin-bottom: 30px;
+        
+                div {
+                    color: #000;
+                    display: inline;
+                    font-size: 25px;
+                    line-height: 35px;
+                    background: rgba(255, 255, 255, 0.8);
+                }
+            }
+            
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 25px;
+            margin-bottom: 30px;
+
+            a {
+                color: $shade-d;
+                text-decoration: underline;
+                font-weight: 600;
+            }
+
+            b {
+                color: $shade-d;
+                font-weight: 600;
+            }
+        }
+    }
+
+    .profile-misc {
+        display: flex;
+        flex-direction: column;
+        flex: 2;
+
+        .tags {
+            list-style: none;
+            margin: 30px 0;
+            float: right;
+        
+            li {
+                width: 100%;
+                text-align: right;
+                font-size: 30px;
+                font-weight: 100;
+                transition: all 0.3s;
+                cursor: default;
+                font-weight: 200;
+                margin-right: 0;
+        
+                &:nth-child(even) {
+                    font-weight: 500;
+                }
+        
+                &:hover {
+                    color: $shade-d;
+                    letter-spacing: 1px;
+                    font-size: 35px;
+                }
+            }
+        }
+
+        .geek-origin {
+            font-size: 14px;
+            line-height: 23px;
+            margin-bottom: 30px;
+            background-color: $shade-e;
+            color: #ccc;
+            display: inline-block;
+            padding: 10px 25px 10px 20px;
+            clip-path: polygon(0 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%);
+            border-bottom: #fff 3px solid;
+
+            h4 {
+                color: #eee;
+                font-size: 30px;
+                font-weight: 600;
+                margin: 10px 0 30px;
+            }
+        }
+
+    }
+
+    .actions {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+        font-size: 24px;
+        font-weight: 500;
+        margin: 30px 0;
+
+        &.social {
+            flex-direction: column;
+            align-items: start;
+        }
+
+        a {
+            text-decoration: none;
+        }
+    }
+    
 }
 
-.about-title h1 {
-    padding: 0px 30px;
-    font-size: 80px;
-    font-weight: 600;
-}
+// .about-title {
+//     position: relative;
+// }
 
-.about-title img {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    z-index: -1;
-}
+// .about-title h1 {
+//     padding: 0px 30px;
+//     font-size: 80px;
+//     font-weight: 600;
+// }
 
-.about-sections {
-    display: flex;
-    gap: 80px;
-}
+// .about-title img {
+//     position: absolute;
+//     bottom: 0;
+//     right: 0;
+//     z-index: -1;
+// }
 
-.about-right {
-    display: flex;
-    flex-direction: column;
-    gap: 80px;
-}
+// .about-sections {
+//     display: flex;
+//     gap: 80px;
+// }
 
-.about-para {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    font-size: 24px;
-    font-weight: 500;
-}
+// .about-right {
+//     display: flex;
+//     flex-direction: column;
+//     gap: 80px;
+// }
 
-.about-skills {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
+// .about-para {
+//     display: flex;
+//     flex-direction: column;
+//     gap: 20px;
+//     font-size: 24px;
+//     font-weight: 500;
+// }
 
-.about-skill {
-    display: flex;
-    gap: 50px;
-    align-items: center;
-    transition: 0.3s;
-}
+// .about-skills {
+//     display: flex;
+//     flex-direction: column;
+//     gap: 20px;
+// }
 
-.about-skill:hover {
-    transform: scale(1.05);
-    transition: 0.3s;
-}
+// .about-skill {
+//     display: flex;
+//     gap: 50px;
+//     align-items: center;
+//     transition: 0.3s;
+// }
 
-.about-skill p {
-    min-width: 150px;
-    font-size: 24px;
-    font-weight: 500;
-}
+// .about-skill:hover {
+//     transform: scale(1.05);
+//     transition: 0.3s;
+// }
 
-.about-skill hr {
-    outline: none;
-    border: none;
-    width: 50%;
-    height: 8px;
-    border-radius: 50px;
-    background: linear-gradient(264deg, #df8908 -5.09%, #bf15ff 106.28%);
-}
+// .about-skill p {
+//     min-width: 150px;
+//     font-size: 24px;
+//     font-weight: 500;
+// }
 
-.about-achievements {
-    display: flex;
-    width: 100%;
-    justify-content: space-around;
-    margin-bottom: 80px;
-}
+// .about-skill hr {
+//     outline: none;
+//     border: none;
+//     width: 50%;
+//     height: 8px;
+//     border-radius: 50px;
+//     background: linear-gradient(264deg, #df8908 -5.09%, #bf15ff 106.28%);
+// }
 
-.about-achievement {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    transition: 0.5s;
-}
+// .about-achievements {
+//     display: flex;
+//     width: 100%;
+//     justify-content: space-around;
+//     margin-bottom: 80px;
+// }
 
-.about-achievement:hover {
-    transform: scale(1.12);
-    transition: 0.5s;
-}
+// .about-achievement {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     gap: 10px;
+//     transition: 0.5s;
+// }
 
-.about-achievement h1 {
-    font-size: 60px;
-    font-weight: 700;
-    background: linear-gradient(270deg, #df8908 50.41%, #b415ff 90.25%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
+// .about-achievement:hover {
+//     transform: scale(1.12);
+//     transition: 0.5s;
+// }
 
-.about-achievement p {
-    font-size: 22px;
-    font-weight: 500;
-}
+// .about-achievement h1 {
+//     font-size: 60px;
+//     font-weight: 700;
+//     background: linear-gradient(270deg, #df8908 50.41%, #b415ff 90.25%);
+//     background-clip: text;
+//     -webkit-background-clip: text;
+//     -webkit-text-fill-color: transparent;
+// }
+
+// .about-achievement p {
+//     font-size: 22px;
+//     font-weight: 500;
+// }
 
 @media(max-width: 768px) {
 
-    .about {
-        gap: 80px;
-        margin: 50px 70px;
-        align-items: start;
-    }
+    // .about {
+    //     gap: 80px;
+    //     margin: 50px 70px;
+    //     align-items: start;
+    // }
 
-    .about-title h1 {
-        font-size: 50px;
-        padding: 0;
-    }
+    // .about-title h1 {
+    //     font-size: 50px;
+    //     padding: 0;
+    // }
 
-    .about-title img {
-        width: 130px;
-        right: -20px;
-    }
+    // .about-title img {
+    //     width: 130px;
+    //     right: -20px;
+    // }
     
-    .about-sections {
-        flex-direction: column;
-    }
+    // .about-sections {
+    //     flex-direction: column;
+    // }
 
-    .about-left {
-        display: none;
-    }
+    // .about-left {
+    //     display: none;
+    // }
 
-    .about-para {
-        font-size: 18px;
-        line-height: 32px;
-    }
+    // .about-para {
+    //     font-size: 18px;
+    //     line-height: 32px;
+    // }
 
-    .about-skill {
-        gap: 20px;
-        align-items: center;
-    }
+    // .about-skill {
+    //     gap: 20px;
+    //     align-items: center;
+    // }
 
-    .about-skill p {
-        font-size: 20px;
-    }
+    // .about-skill p {
+    //     font-size: 20px;
+    // }
 
-    .about-skill hr {
-        height: 6px;
-    }
+    // .about-skill hr {
+    //     height: 6px;
+    // }
 
-    .about-achievements {
-        justify-content: space-between;
-    }
+    // .about-achievements {
+    //     justify-content: space-between;
+    // }
 
-    .about-achievement {
-        gap: 10px;
-    }
+    // .about-achievement {
+    //     gap: 10px;
+    // }
 
-    .about-achievement h1 {
-        font-size: 34px;
-        font-weight: 700;
-    }
+    // .about-achievement h1 {
+    //     font-size: 34px;
+    //     font-weight: 700;
+    // }
 
-    .about-achievement p {
-        text-align: center;
-        font-size: 15px;
-    }
+    // .about-achievement p {
+    //     text-align: center;
+    //     font-size: 15px;
+    // }
 
 }
