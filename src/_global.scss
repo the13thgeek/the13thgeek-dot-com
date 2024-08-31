@@ -70,10 +70,44 @@ img {
     justify-content: start;
 }
 
+// .g-video-wall {
+//     position: relative;
+//     width: 100%;
+//     height: 100%;
+//     overflow: hidden;
+
+//     .video-filter {        
+//         position: absolute;
+//         top: 0;
+//         width: 100%;
+//         height: 100%;
+//         z-index: 1;
+//         background-image: url('./assets/global/pixel-filter.png');
+//     }
+
+//     video {
+//         position: absolute;
+//         top: 50%;
+//         left: 50%;
+//         width: 100%;
+//         height: 100%;
+//         object-fit: cover;
+//         transform: translate(-50%, -50%);
+//         z-index: 0;
+//     }
+// }
+
 @media (max-width: 992px) {
 
     .g-content-container {
         width: 90%;
+    }
+
+    .g-video-wall {
+        video {
+            width: auto;
+            height: 100%;
+        }
     }
 
 }
