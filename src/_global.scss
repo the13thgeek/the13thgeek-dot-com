@@ -73,8 +73,15 @@ img {
 @media (max-width: 992px) {
 
     .g-content-container {
-        width: 95%;
+        width: 90%;
     }
 
+}
+
+@media (max-width: 768px) {
+
+    .g-content-container {
+        width: 95%;
+    }
 
 }
