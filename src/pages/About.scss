@@ -40,7 +40,6 @@ section.about {
         justify-content: end;
         gap: 40px;
 
-
         .photo-geek {
             position: absolute;
             left: 0;
@@ -86,9 +85,6 @@ section.about {
             }
         
             p {
-                font-size: 16px;
-                line-height: 25px;
-                margin-bottom: 30px;
         
                 a {
                     color: $shade-d;
@@ -262,9 +258,6 @@ section.about {
         width: 60%;
 
         p {
-            font-size: 16px;
-            line-height: 25px;
-            margin-bottom: 30px;
             background-color: rgba(0,0,0,0.8);
 
             &.jp {

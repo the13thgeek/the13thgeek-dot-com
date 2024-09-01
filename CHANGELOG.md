@@ -15,6 +15,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - [About] PH language support
 - [Twitch] Embedded player
 - [Twitch] History
+- [Twitch] Now Streaming + Community
+### Changed
+- [Global] Cleaned up global styles
 
 ## [0.2.4] - 2024-08-28
 ### Added
