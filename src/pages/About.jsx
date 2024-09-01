@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
 import "./About.scss";
+import profilePhoto from '../assets/about/profile-photo-geek.jpg';
 import theme_pattern from "../assets/theme_pattern.svg";
 import profile_img from "../assets/about_profile.svg";
 
@@ -29,11 +30,50 @@ const About = () => {
           <div className="g-content-container intro">
             <div className="descriptor">01 <span className="title">Profile</span></div>
             <h1>About Me</h1>
+
+            <div className="overview">
+              <div className="profile-photo">
+                <img src={profilePhoto} alt="Profile Photo" />
+              </div>
+                <div className="profile-main">
+                  <div className="heading">
+                    <h3 className="name-dictionary">Aldreich <small>/ˈɔːldrɪtʃ/</small></h3>
+                    <h3 className="highlighter">
+                      <div>Frontend developer currently based in Toronto, Canada. Mostly focused on working on the front-end side of things including UI/UX and graphic design.</div>
+                    </h3>
+                  </div>
+                  <div className="body-content">
+                    <p className='generic'>I began my front-end journey in the early 2000s as a high school student. My initial thought was that I wanted to put together a website for my class as we just got our first Internet connection. I used the gool ol' <b>Microsoft FrontPage Express</b> that came with Windows and signed up for a free <b>GeoCities</b> (!) account.</p>
+                    <p className='generic'>It was that project that started off as a hobby and it eventually ignited my interest in web development, and the rest was history. I've been a front-end developer for the last ten years. I've specialized in UI/UX and client interaction while working with frameworks and languages including React, HTML5, CSS, SASS, PHP, Laravel and WordPress.</p>
+                    <p className='generic'>I've worked closely with numerous design and consulting organizations over the past decade, overseeing and contributing to projects in a variety of roles. These included application management, digital transformations, and redesigns of company websites. I'm particularly passionate about modernizing legacy systems and streamlining business processes.</p>
+                    <p className='generic'>My work on the visual side of things has fueled my interest in multimedia and engaging user experiences. I'm currently expanding my skillset in UI/UX to blend creativity with logic and turning the subjective into objective.</p>
+                    <div className="actions">
+                      <Link className="g-action" target="_blank" to="#"><i className="fa-solid fa-file-pdf"></i> My Resume <i className="fa-solid fa-chevron-right"></i></Link>
+                    </div>
+                  </div>
+                </div>
+                <div className="profile-misc">
+                  <ul className="tags">
+                    <li>web dev</li>
+                    <li>cosplayer</li>
+                    <li>storyteller</li>
+                    <li>traveller</li>
+                    <li>gamer</li>
+                    <li>cosplayer</li>
+                  </ul>
+                  <div className="geek-origin">
+                    <h4>the13thgeek?</h4>
+                    <p>During my university days when BBCode forums were popular, I frequently posted and shared C-language tips and hacks for the IT freshmen. I initially wanted to use the handle "13thgeek"&mdash; with thirteen being my lucky number and "geek" being an IT undergrad at the time. However, the forum system didn't allow usernames to start with a digit, so I added <i>"the"</i> to bypass the restriction. This workaround not only solved the issue but also gave the handle a more distinct and definitive tone!</p>
+                  </div>
+                </div>
+
+            </div>
+
+
           </div>
-          <div className="g-content-container overview">
+
+          {/* <div className="g-content-container overview">
             
-                {/* <img src={profile_img} alt="" /> */}
-            <div className="photo-geek"></div>
             <div className="profile-main">
               <h3 className="name-dictionary">Aldreich <small>/ˈɔːldrɪtʃ/</small></h3>
               <h3 className="highlighter">
@@ -61,7 +101,7 @@ const About = () => {
                 <p>During my university days when BBCode forums were popular, I frequently posted and shared C-language tips and hacks for the IT freshmen. I initially wanted to use the handle "13thgeek"&mdash; with thirteen being my lucky number and "geek" being an IT undergrad at the time. However, the forum system didn't allow usernames to start with a digit, so I added <i>"the"</i> to bypass the restriction. This workaround not only solved the issue but also gave the handle a more distinct and definitive tone!</p>
               </div>
             </div>
-          </div>
+          </div> */}
 
           <div className="filter"></div>
 
