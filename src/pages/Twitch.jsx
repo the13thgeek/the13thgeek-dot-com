@@ -22,6 +22,7 @@ const Twitch = () => {
 
   useEffect(() => {
     document.title = "Twitch | " + import.meta.env.VITE_GLOBAL_SITE_TITLE;
+    window.scrollTo(0, 0);
   }, []);
 
   return (
@@ -123,7 +124,7 @@ const Twitch = () => {
               ) : (<></>)}
               {(nowStreaming === 'ddr') ? (
                 <>
-                <span className="category" style={{backgroundColor:'#0f9'}}>
+                <span className="category" style={{backgroundColor:'#ffd700', color:'#000'}}>
                   GEEK × CARDIO
                 </span>
                 <h2 style={{color:'#fff'}}>Dance Dance Cardiolution</h2>

@@ -11,6 +11,7 @@ const Home = () => {
 
   useEffect(() => {
     document.title = import.meta.env.VITE_GLOBAL_SITE_TITLE;
+    window.scrollTo(0, 0);
   }, []);
 
   return (
