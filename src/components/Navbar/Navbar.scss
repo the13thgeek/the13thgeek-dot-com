@@ -1,22 +1,22 @@
 @use '../../global' as *;
 
 header.main {
-    position: fixed;
-    top: 13px;
+    position: absolute;
+    top: 0;
     left: 0;
     right: 0;
     z-index: 99;
+    display: flex;
+    justify-content: center;
 }
 
 nav.global {
-    background: rgba(0,0,0,0.9);
+    background: transparent;
     mix-blend-mode: color;
     display: flex;
     align-items: center;
     justify-content: space-around;
-    margin: 0 100px;
-    border-left: #333 2px solid;
-    border-right: #333 2px solid;
+    padding: 10px 0;
 
     img.header-logo {
         height: 50px;

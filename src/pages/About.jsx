@@ -57,7 +57,10 @@ const About = () => {
                     <li>web dev</li>
                     <li>cosplayer</li>
                     <li>storyteller</li>
+                    <li>moviegoer</li>
+                    <li>low-key avgeek</li>
                     <li>traveller</li>
+                    <li>sitcom junkie</li>
                     <li>gamer</li>
                     <li>cosplayer</li>
                   </ul>
