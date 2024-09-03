@@ -228,7 +228,7 @@ const About = () => {
             <div className="filter"></div>
         </section>
 
-        <section className="socials" id="socials">
+        <section className="about-socials" id="about-socials">
           <div className="g-content-container">
             <div className="descriptor">03 <span className="title">Socials</span></div>
             <h2>Follow Me</h2>

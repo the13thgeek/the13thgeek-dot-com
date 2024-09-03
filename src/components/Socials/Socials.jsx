@@ -32,7 +32,7 @@ const Socials = () => {
                 </div>
                 <h2>Twitch</h2>
                 <p className="generic">
-                    Do you like co-op, horror, building and rhythm games? Come by my channel and hang out!
+                    Do you like co-op, horror, building and rhythm games and enjoy watching someone be so bad at them? Come by my channel and hang out!
                 </p>
                 <div className="actions">
                     <Link className="g-action" to="/twitch"><i className="fa-brands fa-twitch"></i> the13thgeek on Twitch<i className="fa-solid fa-chevron-right"></i></Link>

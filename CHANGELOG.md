@@ -10,8 +10,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ---
 
-## [0.2.5] - 2024-09-01
+## [0.2.5] - 2024-09-02
+### Fixed
+- [About] Social media display error
+- [Navbar] Added support for navigating between page-to-anchor link to another page via "isHome" prop
 ### Added
+- [Home] Added photo flipcard
 - [About] PH language support
 - [Twitch] Embedded player
 - [Twitch] History
@@ -23,7 +27,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - [Global] Fixed pages to top scroll for each load
 - [About] Updated/cleaned layout
 - [Home] Updated layout
-### Deprecated
+- [Projects] renamed from [MyWork]
+### Removed
 - [Services] removed
 
 ## [0.2.4] - 2024-08-28

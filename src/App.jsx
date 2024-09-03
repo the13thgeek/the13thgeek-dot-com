@@ -21,7 +21,7 @@ const App = () => {
         <Routes>
           <Route index element={<Home />} />
           <Route exact path="/" element={<Home />} />
-          <Route exact path="/about" element={<About />} />
+          <Route path="/about" element={<About />} />
           <Route path="/twitch" element={<Twitch />} />
           <Route path='/terms-of-service' element={<Terms />} />
           <Route path='/privacy-policy' element={<PrivacyPolicy />} />
