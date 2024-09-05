@@ -1,47 +1,30 @@
 import React from 'react';
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 import { NavLink } from "react-router-dom";
-import heroVideo from '../../assets/home/video-wall.webm';
-import imgGeekA from '../../assets/home/profile-photo-geek-sideA.jpg';
-import imgGeekB from '../../assets/home/profile-photo-geek-sideB.jpg';
 import './Hero.scss';
+import imgProfilePhoto from '../../assets/home/hero-profile-photo.jpg';
 
 const Hero = () => {
   return (
-    <section id='home' className='hero'>
-      <div className="hero-video-wall">
-        <video autoPlay muted loop>
-            <source src={heroVideo} type='video/webm' />
-        </video>        
-        <div className="video-filter"></div>
-      </div>
-      <div className="g-content-container">
-        <div className="intro">
-          <div className="col-1">
-            <div className="g-descriptor home-1-intro">
-              <span className="title">Intro</span>
-            </div>
-            <h1>Hello,<br />I'm <span>Aldreich</span>.</h1>
-            <h2>I'm more commonly known in these parts as <span className="gid">@the13thgeek</span>.</h2>
-            <div className="actions">
-              <NavLink to="/about" className="g-action">About Me <i className="fa-solid fa-chevron-right"></i></NavLink>
-              <AnchorLink offset={50} className="g-action" href='#contact'>Connect with me <i className="fa-solid fa-chevron-right"></i></AnchorLink>
-            </div>
-          </div>
-          <div className="col-2">
-            <div className="pic-card">
-              <div className="pic-card-inner">
-                <div className="pic-card-front">
-                  <img src={imgGeekA} alt="Profile Photo (cartoon)" />
+    <section className="hero" id="hero">
+        <div className="content-container">
+            <div className="intro">
+                <div className="descriptor home-1-intro">
+                    <span className="title">Intro</span>
                 </div>
-                <div className="pic-card-back">
-                  <img src={imgGeekB} alt="Profile Photo (IRL)" />
+                <h1>Hello,<br />I'm <span className="prog-tag">&#123;</span><span className="highlight">Aldreich</span><span className="prog-tag">&#125;</span>.</h1>
+                <p>I'm a digital experience designer,<br />
+                also known as <span className="highlight">@the13thgeek</span>!</p>
+                <div className="call-to-action">
+                    <NavLink to="/about" className="cta-link">About Me <i className="fa-solid fa-chevron-right"></i></NavLink>
+                    <AnchorLink offset={50} className="cta-link" href='#contact'>Connect <i className="fa-solid fa-chevron-right"></i></AnchorLink>
                 </div>
-              </div>
             </div>
-          </div>
+            
         </div>
-      </div>
+        <div className="pic-chevron">
+            <img src={imgProfilePhoto} alt="" />
+        </div>
     </section>
   )
 }

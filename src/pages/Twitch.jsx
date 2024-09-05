@@ -27,7 +27,9 @@ const Twitch = () => {
 
   return (
     <div>
-      <Navbar />
+      <header className='main'>
+        <Navbar />
+      </header>
       <main>
         <section id="twitch" className="twitch">
           <div className="filter"></div>

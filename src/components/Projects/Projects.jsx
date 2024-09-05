@@ -1,88 +1,101 @@
 import React from 'react';
+import { NavLink } from "react-router-dom";
 import './Projects.scss';
 import prjArtis from '../../assets/home/project-item-artisreit.jpg';
 import prj300Main from '../../assets/home/project-item-300main.jpg';
 import prj300MainKiosk from '../../assets/home/project-item-300mainkiosk.jpg';
-import prjThe13thgeek from '../../assets/home/project-item-the13thgeek.jpg';
-import prjPmcPlanner from '../../assets/home/project-item-pmcplanner.jpg';
+
+const arrProjects = [
+    {
+        'id': 'artisreit',
+        'title': 'Artis REIT Corporate',
+        'timeline': '2014 - 2021',
+        'image': prjArtis,
+        'description': '<p>Led a major revamp to improve load speed, readability, and accessibility without alienating users. Converted the site from a table-based layout to Bootstrap, integrating AJAX for better search functionality.</p>',
+        'alertmsg': null,
+        'isArchived': false,
+        'tags': ['PHP','MySQL','jQuery','Bootstrap','SASS'],
+        'links': [{
+            'title': 'Website',
+            'url': 'https://www.artisreit.com/'
+        }]
+    },
+    {
+        'id': '300main',
+        'title': '300 Main',
+        'timeline': '2018 - 2021',
+        'image': prj300Main,
+        'description': '<p>Designed a showcase and landing page for 300 Main, an upcoming residential tower in downtown Winnipeg.</p>',
+        'alertmsg': 'The site has changed since I last worked on it. Archived link has been provided.',
+        'isArchived': true,
+        'tags': ['PHP','jQuery','Skrollr','Bootstrap','SASS'],
+        'links': [{
+            'title': 'Website',
+            'url': 'https://web.archive.org/web/20210906014213/https://300main.ca/'
+        }]
+    },
+    {
+        'id': '300mainkiosk',
+        'title': '300 Main Interactive Kiosk',
+        'timeline': '2016 - 2021',
+        'image': prj300MainKiosk,
+        'description': '<p>Developed an HTML5-based kiosk app for a residential tower using a LEAP Motion sensor for interactive controls. It displayed building renders and historical content via a touchless interface.</p>',
+        'alertmsg': null,
+        'isArchived': false,
+        'tags': ['HTML5','CSS3','jQuery','LEAP Motion','Kiosk'],
+        'links': null
+    }
+];
 
 const Projects = () => {
   return (
     <section className="projects" id="projects">
-        <div className="g-content-container">
-            <div className="g-descriptor home-3-projects">
-                <span className="title">Projects</span>
+        <div className="content-container">
+            <div className="title-area">
+                <div className="descriptor home-4-projects">
+                    <span className="title">Projects</span>
+                </div>
+                <h2>Past Work</h2>
             </div>
-            <h2>Portfolio</h2>
             <div className="projects-list">
-                <div className="item">
-                    <img src={prjArtis} alt="Artis REIT Corporate Website" />
+
+                {arrProjects.map((item, index) => 
+                <div key={index} className={"item prj-" + item.id}>
+                    {/* <div className="preview" style={{backgroundImage: `url(${item.image})` }}></div> */}
+                    <div className="preview">
+                        <img src={item.image} alt="Project Preview" />
+                    </div>
                     <div className="info">
-                        <h3>Artis REIT Corporate</h3>
-                        <small>2014-2021</small>
-                        <p className='generic'>This project involves converting the website's old table-based layout to responsive and accessible. It is a major revamp of the company's corporate website.</p>
-                        <ul className="tags">
-                            <li>WordPress</li>
-                            <li>Bootstrap</li>
-                            <li>jQuery</li>
-                            <li>Responsive</li>
-                        </ul>
+                        <div className="heading">
+                            <small className='timeline'>{item.timeline}</small>
+                            <h3 className='project-title'>{item.title}</h3>
+                            <ul className="tags">
+                                {item.tags.map((tagitem,tid)=> 
+                                    <li key={tid}>{tagitem}</li>
+                                )}
+                            </ul>
+                        </div>
+                        <div className="contents-wrapper">
+                            <div className='description' dangerouslySetInnerHTML={{__html:item.description}}></div>
+                            {item.alertmsg ? (
+                            <div className='notice'><i className="fa-solid fa-triangle-exclamation"></i> {item.alertmsg}</div>
+                            ) : ('')}
+                            <div className="links-list">
+                                {item.links ? (
+                                    item.links.map((linkitem,idx) => 
+                                        <NavLink key={idx} to={linkitem.url} target='_blank' className="ll-link">
+                                        <i className="fa-solid fa-up-right-from-square"></i> 
+                                            {linkitem.title} {item.isArchived ? (<small>(archived)</small>) : ('')}
+                                            <i className="fa-solid fa-chevron-right"></i>
+                                        </NavLink>
+                                    )
+                                ) : ('')}
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div className="item">
-                    <img src={prjPmcPlanner} alt="PMC Planner" />
-                    <div className="info">
-                        <h3>PMC '24 Planner</h3>
-                        <small>2024</small>
-                        <p className='generic'>The PMC Planner provides an accessible, easy-to-read and searchable list of the convention events to help attendees plan their weekend at this biennial event.</p>
-                        <ul className="tags">
-                            <li>React</li>
-                            <li>GitHub</li>
-                        </ul>
-                    </div>
-                </div>
-                <div className="item">
-                    <img src={prjThe13thgeek} alt="the13thgeek Blog" />
-                    <div className="info">
-                        <h3>the13thgeek&trade;</h3>
-                        <small>2011-present</small>
-                        <p className='generic'>the13thgeek.com is my personal website. Over the years it hosted some of my writings, adventures and small photography projects.</p>
-                        <ul className="tags">
-                            <li>WordPress</li>
-                            <li>Boostrap</li>
-                            <li>Responsive</li>
-                            <li>jQuery</li>
-                            <li>MySQL</li>
-                        </ul>
-                    </div>
-                </div>
-                <div className="item">
-                    <img src={prj300MainKiosk} alt="300 Main Kiosk" />
-                    <div className="info">
-                        <h3>300 Main Interactive Kiosk</h3>
-                        <small>2018-2021</small>
-                        <p className='generic'>This project involves developing an HTML-based kiosk application that utilizes the LEAP Motion controller for user interaction.</p>
-                        <ul className="tags">
-                            <li>HTML5</li>
-                            <li>jQuery</li>
-                            <li>LEAP Motion</li>
-                        </ul>
-                    </div>
-                </div>
-                <div className="item">
-                    <img src={prj300Main} alt="300 Main" />
-                    <div className="info">
-                        <h3>300main.ca</h3>
-                        <small>2018-2021</small>
-                        <p className='generic'>This project involves creating a landing page for 300 Main, an upcoming residential tower in downtown Winnipeg.</p>
-                        <ul className="tags">
-                            <li>HTML5</li>
-                            <li>jQuery</li>
-                            <li>Skrollr</li>
-                            <li>Responsive</li>
-                        </ul>
-                    </div>
-                </div>
+                )}
+                
             </div>
         </div>
     </section>

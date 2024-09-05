@@ -1,0 +1,277 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+section#workshop {
+    background-color: #eee;
+    color: #000;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 0;
+
+    h2 {
+        margin-bottom: 60px;
+    }
+
+    .wip-descriptor {
+        display: inline-block;
+        transition: all .3s;
+        margin-top: 150px;
+        opacity: 0.2;
+        width: 20px;
+        height: 220px;
+        overflow: hidden;
+        background-image: url('../../assets/home/wip-descriptors.png');
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        margin-bottom: 20px;
+    
+        span.title {
+            opacity: 0;
+        }
+    
+        &.wip-3a {
+            background-position: 0 0;
+            height: 235px;
+        }
+
+        &.wip-3b {
+            background-position: -20px 0;
+            height: 235px;
+        }
+    }
+
+    .wip-list {
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+
+        .item {
+            display: flex;
+            flex-direction: row;
+            position: relative;
+            bottom: -25px;
+            flex: 1;
+            max-width: 50%;
+            //padding-bottom: 30px;
+            background-color: #fff;
+            clip-path: polygon(0 45px, 45px 0, 100% 0, 100% 100%, 0 100%);
+            transition: all 0.5s;
+
+            &:hover {
+                bottom: 0;
+
+                .wip-descriptor {
+                    margin-top: 60px;
+                    opacity: 1;
+                }
+            }
+
+            h3 {
+                display: inline-block;
+                font-size: 35px;
+                padding: 5px 15px 5px 15px;
+                transform: rotate(-2deg);
+                position: relative;
+                left: -20px;
+                top: -45px;
+                background-color: $swatch-2;
+                clip-path: polygon(6% 0, 100% 0, 94% 100%, 2% 100%);
+            }
+
+            img.preview {
+                border-bottom: #dfdfdf 10px solid;
+            }
+
+            .wip-label {
+                display: flex;
+                justify-content: center;
+                width: 45px;
+                height: 100%;
+            }
+
+            .wip-detail {
+                flex: 1;
+                background-color: #f9f9f9;
+            }
+
+            .wrapper {
+                padding: 20px 30px;
+
+                p:last-child {
+                    margin-bottom: 0;
+                }
+            }
+
+            h4 {
+                position: relative;
+                left: 20px;
+                z-index: 2;
+                display: inline-block;
+                font-size: 20px;
+                background-color: #000;
+                color: #fff;
+                padding: 5px 15px 5px 13px;
+                transform: rotate(-3deg);
+                clip-path: polygon(6% 0, 100% 0, 94% 100%, 2% 100%);
+            }
+
+            .tech-stack {
+                position: relative;
+                top: -10px;
+                z-index: 1;
+                background-color: #dadada;
+                overflow: hidden;
+                padding: 30px 25px 20px 25px;
+
+                ul {
+                    list-style: none;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: start;
+                    gap: 15px;
+    
+                    li {
+                        padding: 10px 15px;
+                        float: left;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        background-color: #fff;
+                        font-size: 12px;
+                        gap: 10px;
+                        border-radius: 5px;
+
+                        i {
+                            font-size: 25px;
+                        }
+                    }
+                }
+
+            }
+
+            .links-list {
+                margin: 20px 20px 30px;
+
+                a.ll-link {
+                    display: flex;
+                    align-items: center;
+                    border-radius: 5px;
+                    border-color: #666;
+                    color: #666;
+                    font-size: 12px;
+                    padding: 15px 25px 15px 20px;
+
+                    &:hover {
+                        background-color: #666;
+                        color: #fff;
+                    }
+
+                    i {
+                        font-size: 20px;
+                    }
+                }
+            }
+
+            
+        }
+    }
+
+    .title-area {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+}
+
+@media (max-width: $screen-lg) {
+}
+
+@media (max-width: $screen-md) {
+
+    section#workshop {
+
+        .wip-list {
+
+            .item {
+                clip-path: polygon(0 35px, 35px 0, 100% 0, 100% 100%, 0 100%);
+
+                h3 {
+                    font-size: 30px;
+                }
+
+                .wip-label {
+                    width: 35px;
+                }
+
+                .wrapper {
+                    padding: 15px 20px;
+
+                    p {
+                        font-size: 14px;
+                        line-height: 22px;
+                        margin-bottom: 20px;
+                    }
+
+                }
+
+                .tech-stack {
+                    padding: 20px 15px 10px 15px;
+
+                    ul {
+
+                        li {
+                            padding: 10px;
+
+                            i {
+                                font-size: 20px;
+                            }
+
+                            span {
+                                display: none;
+                            }
+
+                        }
+
+                    }
+
+                }
+
+                .links-list {
+                    flex-direction: column;
+                    gap: 5px;
+                }
+
+            }
+
+        }
+
+    }
+
+}
+
+@media (max-width: $screen-sm) {
+
+    section#workshop {
+        padding-bottom: 40px;
+
+        h2 {
+            margin-bottom: 30px;
+        }
+
+        .wip-list {
+            flex-direction: column;
+            gap: 15px;
+
+            .item {
+                clip-path: none;
+                max-width: 100%;
+                bottom: 0;
+            }
+        }
+
+    }
+
+}

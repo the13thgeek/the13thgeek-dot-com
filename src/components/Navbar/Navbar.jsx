@@ -20,8 +20,7 @@ const Navbar = ({ isHome = false }) => {
   }
 
   return (
-    <header className='main'>
-      <div className="g-content-container">
+      <div className="content-container">
         <nav className='global'>
             <img className='header-logo' src={logo} alt="the13thgeek logo" />
             <img src={menu_open} onClick={openMenu} className='nav-mob-open' alt="" />
@@ -30,6 +29,11 @@ const Navbar = ({ isHome = false }) => {
                 {/* Keep old link just in case */}
                 {/* <li><AnchorLink className='anchor-link' href='#home'><p onClick={()=>setMenu("home")}>Home</p></AnchorLink>{menu==="home" ? <img src={underline} alt='' />:<></>}</li> */ }
                 <li><NavLink className={({ isActive }) => isActive ? "anchor-link current" : "anchor-link" } to="/">Home</NavLink></li>
+                { isHome ? (
+                  <li><AnchorLink className='anchor-link' offset={0} href='#workshop'>W.I.P.</AnchorLink></li>
+                ) : (
+                  <li><NavLink className='anchor-link' to="/#workshop">W.I.P.</NavLink></li>
+                ) }
                 { isHome ? (
                   <li><AnchorLink className='anchor-link' offset={0} href='#projects'>Projects</AnchorLink></li>
                 ) : (
@@ -49,7 +53,6 @@ const Navbar = ({ isHome = false }) => {
             )}
         </nav>
       </div>
-    </header>
 
   )
 }

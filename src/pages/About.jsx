@@ -4,8 +4,6 @@ import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
 import "./About.scss";
 import profilePhoto from '../assets/about/profile-photo-geek.jpg';
-import theme_pattern from "../assets/theme_pattern.svg";
-import profile_img from "../assets/about_profile.svg";
 
 const About = () => {
 
@@ -22,7 +20,7 @@ const About = () => {
 
   return (
     <>
-      <header>
+      <header className='main'>
         <Navbar />
       </header>
       <main>
