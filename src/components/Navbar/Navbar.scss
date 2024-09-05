@@ -1,22 +1,22 @@
-@use '../../global' as *;
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
 
 header.main {
-    position: fixed;
-    top: 13px;
-    left: 0;
-    right: 0;
-    z-index: 99;
+    position: relative;
+    // top: 0;
+    // left: 0;
+    // right: 0;
+    //z-index: 99;
+    display: flex;
+    justify-content: center;
+    background-color: $navbar-bg-color;
 }
 
 nav.global {
-    background: rgba(0,0,0,0.9);
-    mix-blend-mode: color;
     display: flex;
     align-items: center;
     justify-content: space-around;
-    margin: 0 100px;
-    border-left: #333 2px solid;
-    border-right: #333 2px solid;
+    padding: 10px 0;
 
     img.header-logo {
         height: 50px;
@@ -36,17 +36,34 @@ nav.global {
         gap: 5px;
         cursor: pointer;
 
-        a {
-            font-weight: 200;
+        a {            
+            font-weight: 400;
             color: #fff;
-            font-size: 13px;
+            font-size: 12px;
+            line-height: 12px;
             letter-spacing: 2px;
-            padding: 15px 0;
+            padding: 8px 15px 5px;
             border-bottom: transparent 3px solid;
+            border-radius: 5px;
 
             &.current {
+                position: relative;
+                background-color: #eee;
                 font-weight: 800;
-                border-bottom: $shade-d 3px solid;
+                color: #000;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    left: 50%;
+                    bottom: -9px;
+                    transform: translateX(-50%);
+                    width: 0;
+                    height: 0;
+                    border-left: 10px solid transparent;
+                    border-right: 10px solid transparent;
+                    border-top: 10px solid #eee;
+                  }
             }
         }
 
@@ -68,10 +85,9 @@ nav.global {
 }
 
 .nav-connect {
+    @include boxgradient($deg: 90deg, $color1: $swatch-2, $color2: $swatch-3);
     padding: 5px 30px;
     border-radius: 50px;
-    // background: linear-gradient(267deg,#da7c25 0.36%, #b923e1 102.06%);
-    background-color: $shade-d;
     font-size: 18px;
     line-height: 18px;    
     cursor: pointer;
@@ -84,6 +100,7 @@ nav.global {
 }
 
 .nav-connect:hover {
+    background: #fff;
     transform: scale(1.05);
 }
 

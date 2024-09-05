@@ -1,0 +1,225 @@
+@use './variables' as *;
+@use './mixins' as *;
+
+
+/* General */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    background: $default-bg-color;
+    color: white;
+    font-family: $global-font-family, sans-serif;
+    background-color: $swatch-1;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+p {
+    font-size: 16px;
+    line-height: 25px;
+    margin-bottom: 30px;
+}
+
+section, footer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding: 80px 0;
+    width: 100%;
+    cursor: default;
+    overflow: hidden;
+
+    h1, h2 {
+        font-size: 60px;
+        line-height: 60px;
+        font-weight: 800;
+    }
+}
+
+.call-to-action, .links-list {
+    display: flex;
+    gap: 25px;
+    position: relative;
+    z-index: 1;
+    margin-top: 40px;
+
+    .cta-link, .ll-link {
+        text-transform: uppercase;
+        font-size: 14px;
+        line-height: 14px;
+        font-weight: 600;
+        color: #fff;
+        border: #fff 1px solid;
+        padding: 15px 40px;
+        border-radius: 13px;
+        transition: all 0.3s;
+        text-decoration: none;
+    
+        i:first-child {
+            margin-right: 10px;
+        }
+    
+        i:last-child {
+            transform: translateX(5px);
+            transition: all 0.3s;
+        }
+    
+        &:hover {
+            border-color: transparent;
+            background-color: $swatch-3;
+            color: #000;
+    
+            i:last-child {
+                transform: translateX(15px);
+            }
+        }
+    
+    }
+}
+
+.content-container {
+    display: flex;
+    width: 1400px;
+    flex-direction: column;
+    justify-content: start;
+}
+
+.descriptor {
+    display: inline-block;
+    width: 300px;
+    height: 20px;
+    background-image: url('../assets/global/descriptors.png');
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    margin-bottom: 20px;
+
+    span.title {
+        opacity: 0;
+    }
+
+    &.test {
+        background-position: 0 0;
+        width: 160px;
+    }
+
+    &.home-1-intro {
+        background-position: 0 -20px;
+        width: 190px;
+    }
+    &.home-2-profile {
+        background-position: 0 -40px;
+        width: 250px;
+    }
+    &.home-3-workshop {
+        background-position: 0 -60px;
+        width: 250px;
+    }
+    &.home-4-projects {
+        background-position: 0 -80px;
+        width: 250px;
+    }
+    &.home-5-gaming {
+        background-position: 0 -100px;
+        width: 215px;
+    }
+    &.home-6-connect {
+        background-position: 0 -120px;
+        width: 230px;
+    }
+}
+
+.highlight {    
+    @include textgradient($deg: 90deg, $color1: $swatch-2, $color2: $swatch-3);
+}
+
+.pixel-filter {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../assets/global/pixel-filter.png');
+}
+
+// .g-video-wall {
+//     position: relative;
+//     width: 100%;
+//     height: 100%;
+//     overflow: hidden;
+
+//     .video-filter {        
+//         position: absolute;
+//         top: 0;
+//         width: 100%;
+//         height: 100%;
+//         z-index: 1;
+//         background-image: url('./assets/global/pixel-filter.png');
+//     }
+
+//     video {
+//         position: absolute;
+//         top: 50%;
+//         left: 50%;
+//         width: 100%;
+//         height: 100%;
+//         object-fit: cover;
+//         transform: translate(-50%, -50%);
+//         z-index: 0;
+//     }
+// }
+
+@media (max-width: $screen-lg) {
+    .content-container {
+        width: 960px;
+    }
+}
+
+@media (max-width: $screen-md) {
+
+    section {
+        padding: 60px 0;
+
+        h1, h2 {
+            font-size: 50px;
+            line-height: 50px;
+            font-weight: 600;
+        }
+    }
+
+    .content-container {
+        width: 95%;
+    }
+
+    .g-video-wall {
+        video {
+            width: auto;
+            height: 100%;
+        }
+    }
+
+}
+
+@media (max-width: $screen-sm) {
+
+    section {
+        padding: 40px 0;
+
+        h1, h2 {
+            font-size: 45px;
+            line-height: 45px;
+            font-weight: 600;
+        }
+    }
+
+    .content-container {
+        width: 97%;
+    }
+
+}

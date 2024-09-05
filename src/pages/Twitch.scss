@@ -1,0 +1,391 @@
+@use '../styles/variables' as *;
+@use '../styles/mixins' as *;
+
+section.twitch {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    background-image: url('../assets/twitch/header-bg.jpg');
+    background-position: 50% 0;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 1;
+
+    .filter {
+        position: absolute;
+        top: 0;
+        height: 50%;
+        width: 100%;
+        z-index: 1;
+        background-image: url('../assets/global/pixel-filter.png');
+    }
+
+    h1 {
+        font-size: 60px;
+        line-height: 60px;
+    }
+
+    .g-content-container {
+        position: relative;
+        margin-top: 50px;
+        z-index: 2;
+        gap: 40px;
+
+    }
+}
+
+section.twitch-history {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 0;
+    padding: 0;
+
+    .col-1 {
+        flex: 1;
+        background-color: #000;
+
+        .g-video-wall.twitch-footage {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+
+            .video-filter {
+                background-image: url('../assets/global/pixel-filter.png');
+                position: absolute;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 1;
+            }
+
+            video {
+                position: absolute;
+                top: 50%;
+                right: 0;
+                min-height: 100%;
+                min-width: 100%;
+                transform: translateY(-50%);
+                object-fit: cover;
+                z-index: 0;
+            }
+        }
+
+        .avatar {
+            width: 200px;
+            height: 200px;
+            background-color: #000;
+            border-radius: 100%;
+            overflow: hidden;
+            transition: all 0.3s;
+
+            &:hover {
+                background-color: $shade-c;
+            }
+
+            img {
+                bottom: 0;
+            }
+        }
+    }
+
+    .col-2 {
+        display: flex;
+        align-items: center;
+        flex: 1;
+        background-color: #000;
+
+        .contents {
+            padding: 60px;
+            max-width: 440px;
+        }
+
+        h2 {
+            font-size: 35px;
+            margin-bottom: 30px;
+        }
+
+    }
+
+}
+
+section.twitch-now-streaming {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    background-color: #333;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    transition: all 1s;
+
+    &.evil-within {
+        background-color: #000;
+        background-image: url('../assets/twitch/game-full-evil-within.jpg');
+    }
+    &.zelda-minish-cap {
+        background-color: #005532;
+        background-image: url('../assets/twitch/game-full-zelda-minish-cap.jpg');
+    }
+    &.skylines {
+        background-color: #2669ae;
+        background-image: url('../assets/twitch/game-full-skylines.jpg');
+    }
+    &.ddr {
+        background-color: #096b4e;
+        background-image: url('../assets/twitch/game-full-ddr.jpg');
+    }
+
+    .game-details {
+
+        .category {
+            display: inline-block;
+            background-color: #000;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 5px 20px 5px 15px;
+            border-left: #fff 3px solid;
+            clip-path: polygon(0 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%);
+            margin-bottom: 5px;
+        }
+
+        h2 {
+            font-size: 45px;
+            margin-bottom: 30px;
+            font-weight: 800;
+            max-width: 60%;
+        }
+
+        p.description {
+            max-width: 50%;
+            color: #fff;
+        }
+
+        .schedule {
+            display: inline-block;
+            padding: 6px 25px 10px;
+            background-color: #333;
+            border-radius: 8px;
+            max-width: 30%;
+
+            small {
+                color: #999;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                font-size: 10px;
+                line-height: 12px;
+
+                &.footnote {
+                    color: #aaa;
+                    text-transform: none;
+                    line-height: 10px;
+
+                    a {
+                        font-weight: 400;
+                        text-decoration: none;
+                        color: #fff;
+
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+
+            .timeslot {
+                font-weight: 600;
+                font-size: 18px;
+                margin-bottom: 10px;
+            }
+        }
+
+    }
+
+    .game-list {
+        display: flex;
+        flex-direction: row;
+        width: 60%;
+        gap: 15px;
+        margin-bottom: 30px;
+
+        .item {
+            flex: 1;
+            background-color: #000;
+            background-size: cover;
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            height: 100px;
+            border-radius: 20px;
+            border: #000 5px solid;
+            cursor: pointer;
+            transition: all 0.5s;
+
+            &.evil-within {
+                background-image: url('../assets/twitch/game-thumb-evil-within.jpg');
+            }
+
+            &.zelda-minish-cap {
+                background-image: url('../assets/twitch/game-thumb-zelda-minish-cap.jpg');
+            }
+
+            &.skylines {
+                background-image: url('../assets/twitch/game-thumb-skylines.jpg');
+            }
+
+            &.ddr {
+                background-image: url('../assets/twitch/game-thumb-ddr.jpg');
+            }
+
+            &.active {
+                border: #fff 5px solid;
+            }            
+        }
+    }
+}
+
+section.twitch-community {
+    display: flex;
+    padding-bottom: 0;
+    flex-direction: row;
+    justify-content: center;
+    gap: 0;
+
+    &:hover {
+        .g-content-container {
+            div.avatar {
+                img {
+                    bottom: 0;
+                }
+            }
+        }
+    }
+
+    h2 {
+        font-size: 35px;
+        margin-bottom: 30px;
+    }
+
+    .actions {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        padding-bottom: 60px;
+        align-items: start;
+
+        a {
+            text-decoration: none;
+        }
+    }
+
+    .g-content-container {
+        display: flex;
+        flex-direction: row;
+        gap: 50px;
+
+        div {
+            &:first-child {
+                flex: 2;
+            }
+            
+
+            &.avatar {
+                flex: 1;
+                display: flex;
+                align-items: end;
+                overflow: hidden;
+
+                img {
+                    transition: all 0.5s;
+                    position: relative;
+                    bottom: -100%;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:992px) {
+
+section.twitch-history {
+        .col-1 {
+
+            .g-video-wall.twitch-footage {
+                video {
+                    top: 50%;
+                    left: 50%;
+                    height: 100%;
+                    width: 100%;
+                    transform: translate(-50%,-50%);
+                }
+            }
+        }
+
+    }
+}
+
+@media (max-width:768px) {
+
+    section.twitch-history {
+        flex-direction: column;
+        
+        .col-1 {
+            .g-video-wall.twitch-footage {
+                height: 300px;
+            }
+            
+        }
+    }
+
+    section.twitch-now-streaming {
+        background-image: none !important;
+
+        .game-list {
+            width: 100%;
+
+            .item {
+                height: 60px;
+            }
+        }
+
+        .game-details {
+            h2 {
+                max-width: 90%;
+            }
+
+            p.description {
+                max-width: 90%;
+            }
+
+            .schedule {
+                max-width: 60%;
+            }
+        }
+    
+    }
+
+    section.twitch-community {
+        .actions {
+            padding-bottom: 0;
+        }
+
+        .g-content-container {
+            flex-direction: column;
+
+            div.avatar {
+                justify-content: center;
+
+                img {
+                    bottom: 0;
+                    height: 200px;
+                }
+            }
+        }
+    }
+
+
+}

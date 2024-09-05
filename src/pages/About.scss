@@ -1,11 +1,11 @@
-@use '../global' as *;
+@use '../styles/variables' as *;
+@use '../styles/mixins' as *;
 
-.about {
+section.about {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 40px;
-    padding: 80px 0;
+    gap: 40px;    
     background-image: url('../assets/about/header-bg.jpg');
     background-position: 50% 0;
     background-repeat: no-repeat;
@@ -21,12 +21,6 @@
         background-image: url('../assets/global/pixel-filter.png');
     }
 
-    // display: flex;
-    // flex-direction: column;
-    // align-items: start;
-    // gap: 80px;
-    // margin: 60px 170px;
-
     h1 {
         font-size: 60px;
         line-height: 60px;
@@ -37,6 +31,169 @@
         margin-top: 50px;
         z-index: 2;
     }
+
+    .overview {
+        display: flex;
+        position: relative;
+        margin-top: 40px;
+        align-items: start;
+        justify-content: end;
+        gap: 30px;
+
+        .profile-photo {
+            position: absolute;
+            left: -5%;
+            top: 0;
+            width: 25%;
+            z-index: -1;
+
+            img {
+                border-radius: 50%;
+            }
+
+        }
+
+        .profile-main {
+            display: flex;
+            flex: 4;
+            flex-direction: column;
+            gap: 20px;
+
+            .heading {
+                margin-left: 25%;
+                margin-top: 40px;
+
+                h3 {
+        
+                    &.name-dictionary {
+                        font-size: 30px;
+                        margin-bottom: 30px;
+                        background-color: $shade-d;
+                        color: #000;
+                        display: inline-block;
+                        padding: 10px 25px 10px 20px;
+                        clip-path: polygon(0 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%);
+                        border-bottom: #fff 3px solid;
+
+                        small {
+                            font-size: 70%;
+                            font-weight: 400;
+                        }
+                    }
+                
+                    &.highlighter {
+                        font-weight: 400;
+                        margin-bottom: 30px;
+
+                        div {
+                            color: #000;
+                            display: inline;
+                            font-size: 25px;
+                            line-height: 35px;
+                            background: rgba(255, 255, 255, 0.8);
+                        }
+                    }
+                }
+            }
+
+            .body-content {
+                p {
+                    a {
+                        color: $shade-d;
+                        text-decoration: underline;
+                        font-weight: 600;
+                    }
+            
+                    b {
+                        color: $shade-d;
+                        font-weight: 600;
+                    }
+                }
+            }
+
+            .actions {
+                display: flex;
+                align-items: center;
+                gap: 25px;
+                font-size: 24px;
+                font-weight: 500;
+                margin-top: 30px;
+            
+                &.social {
+                    flex-direction: column;
+                    align-items: start;
+                }
+            
+                a {
+                    text-decoration: none;
+                }
+            }
+        }
+
+        .profile-misc {
+            display: flex;
+            flex-direction: column;
+            flex: 2;
+        
+            .tags {
+                list-style: none;
+                margin: 30px 0;
+                float: right;
+            
+                li {
+                    width: 100%;
+                    text-align: right;
+                    font-size: 30px;
+                    font-weight: 100;
+                    transition: all 0.3s;
+                    cursor: default;
+                    font-weight: 200;
+                    margin-right: 0;
+                    transition: 0.2s;
+                    position: relative;
+            
+                    &:hover {
+                        scale: 1.2;
+                        z-index: 3;
+                        text-shadow: 0 0 20px #fff;
+                        color: $shade-d;
+                        letter-spacing: 1px;
+                        font-weight: 500;
+                        // font-size: 35px;
+                    }
+                    &:has(+ li:hover),
+                    &:hover + li {
+                        scale: 1.1;
+                        z-index: 2;
+                        font-weight: 400;
+                        color: lighten($shade-d, 20%);
+                    }
+
+                }
+            }
+        
+            .geek-origin {
+                font-size: 14px;
+                line-height: 23px;
+                margin-bottom: 30px;
+                background-color: $shade-e;
+                color: #ccc;
+                display: inline-block;
+                padding: 10px 25px 10px 20px;
+                clip-path: polygon(0 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%);
+                border-bottom: #fff 3px solid;
+        
+                h4 {
+                    color: #eee;
+                    font-size: 30px;
+                    font-weight: 600;
+                    margin: 10px 0 30px;
+                }
+            }
+        }
+
+    }
+    
 }
 
 .off-the-grid {
@@ -74,7 +231,7 @@
         margin: 10px 0;
         justify-content: center;
         border-radius: 30px;
-        width: 300px;
+        width: 400px;
         padding: 10px 25px;
         display: flex;
         gap: 20px;
@@ -124,9 +281,6 @@
         width: 60%;
 
         p {
-            font-size: 16px;
-            line-height: 25px;
-            margin-bottom: 30px;
             background-color: rgba(0,0,0,0.8);
 
             &.jp {
@@ -136,7 +290,7 @@
     }
 }
 
-.socials {
+.about-socials {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -210,149 +364,6 @@
             }
         }
     }
-}
-
-.sections {
-    display: flex;
-    position: relative;
-    flex-direction: row;
-    align-items: start;
-    justify-content: end;
-    gap: 40px;
-
-    .photo-geek {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 250px;
-        height: 250px;
-        background: url('../assets/profile-photo-geek.jpg') 50% 50% / cover no-repeat;
-        border-radius: 50%;
-        z-index: -1;
-    }
-    
-    .profile-main {
-        flex: 3;
-        margin-top: 50px;
-        margin-left: 22%;
-
-        h3 {
-
-            &.name-dictionary {
-                font-size: 30px;
-                margin-bottom: 30px;
-                background-color: $shade-d;
-                color: #000;
-                display: inline-block;
-                padding: 10px 25px 10px 20px;
-                clip-path: polygon(0 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%);
-                border-bottom: #fff 3px solid;
-            }
-        
-            &.highlighter {
-                font-weight: 400;
-                margin-bottom: 30px;
-        
-                div {
-                    color: #000;
-                    display: inline;
-                    font-size: 25px;
-                    line-height: 35px;
-                    background: rgba(255, 255, 255, 0.8);
-                }
-            }
-            
-        }
-
-        p {
-            font-size: 16px;
-            line-height: 25px;
-            margin-bottom: 30px;
-
-            a {
-                color: $shade-d;
-                text-decoration: underline;
-                font-weight: 600;
-            }
-
-            b {
-                color: $shade-d;
-                font-weight: 600;
-            }
-        }
-    }
-
-    .profile-misc {
-        display: flex;
-        flex-direction: column;
-        flex: 2;
-
-        .tags {
-            list-style: none;
-            margin: 30px 0;
-            float: right;
-        
-            li {
-                width: 100%;
-                text-align: right;
-                font-size: 30px;
-                font-weight: 100;
-                transition: all 0.3s;
-                cursor: default;
-                font-weight: 200;
-                margin-right: 0;
-        
-                &:nth-child(even) {
-                    font-weight: 500;
-                }
-        
-                &:hover {
-                    color: $shade-d;
-                    letter-spacing: 1px;
-                    font-size: 35px;
-                }
-            }
-        }
-
-        .geek-origin {
-            font-size: 14px;
-            line-height: 23px;
-            margin-bottom: 30px;
-            background-color: $shade-e;
-            color: #ccc;
-            display: inline-block;
-            padding: 10px 25px 10px 20px;
-            clip-path: polygon(0 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%);
-            border-bottom: #fff 3px solid;
-
-            h4 {
-                color: #eee;
-                font-size: 30px;
-                font-weight: 600;
-                margin: 10px 0 30px;
-            }
-        }
-
-    }
-
-    .actions {
-        display: flex;
-        align-items: center;
-        gap: 25px;
-        font-size: 24px;
-        font-weight: 500;
-        margin: 30px 0;
-
-        &.social {
-            flex-direction: column;
-            align-items: start;
-        }
-
-        a {
-            text-decoration: none;
-        }
-    }
-    
 }
 
 // .about-title {
@@ -458,7 +469,70 @@
 //     font-weight: 500;
 // }
 
-@media(max-width: 768px) {
+@media (max-width: 992px) {
+
+    .off-the-grid {
+        background-position: 150%;
+    }
+
+    .about-socials {
+
+        .showcase {
+            grid-template-columns: 1fr 1fr;
+
+            a.social-item {
+                height: 200px;
+            }
+
+        }
+
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    section.about {
+
+        .overview {
+            flex-direction: column;
+            gap: 30px;
+
+            .profile-photo {
+                display: none;
+            }
+
+            .profile-main {
+                .heading {
+                    margin-top: 0;
+                    margin-left: 0;
+                }
+            }
+
+            .profile-misc {
+                .tags {
+                    display: none;
+                }
+            }
+        }
+
+    }
+
+    .off-the-grid {
+        background: #000;
+
+        .col-a {
+            width: 100%;
+        }
+    }
+
+    .about-socials {
+
+        .showcase {
+            grid-template-columns: 1fr 1fr;
+        }
+
+    }
 
     // .about {
     //     gap: 80px;

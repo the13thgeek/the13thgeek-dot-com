@@ -2,21 +2,29 @@ import React from 'react';
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 import { NavLink } from "react-router-dom";
 import './Hero.scss';
+import imgProfilePhoto from '../../assets/home/hero-profile-photo.jpg';
 
 const Hero = () => {
   return (
-    <section id='home' className='hero'>
-      <div className="g-content-container">
-        <div className="intro">
-          <div className="descriptor">01 <span className="title">Intro</span></div>
-          <h1>Hello,<br />I'm <span>Aldreich</span>.</h1>
-          <h2>I'm more commonly known in these parts as <span className="gid">@the13thgeek</span>.</h2>
-          <div className="actions">
-            <NavLink to="/about" className="g-action">About Me <i class="fa-solid fa-chevron-right"></i></NavLink>
-            <AnchorLink offset={50} className="g-action" href='#contact'>Connect with me <i class="fa-solid fa-chevron-right"></i></AnchorLink>
-          </div>
+    <section className="hero" id="hero">
+        <div className="content-container">
+            <div className="intro">
+                <div className="descriptor home-1-intro">
+                    <span className="title">Intro</span>
+                </div>
+                <h1>Hello,<br />I'm <span className="prog-tag">&#123;</span><span className="highlight">Aldreich</span><span className="prog-tag">&#125;</span>.</h1>
+                <p>I'm a digital experience designer,<br />
+                also known as <span className="highlight">@the13thgeek</span>!</p>
+                <div className="call-to-action">
+                    <NavLink to="/about" className="cta-link">About Me <i className="fa-solid fa-chevron-right"></i></NavLink>
+                    <AnchorLink offset={50} className="cta-link" href='#contact'>Connect <i className="fa-solid fa-chevron-right"></i></AnchorLink>
+                </div>
+            </div>
+            
         </div>
-      </div>
+        <div className="pic-chevron">
+            <img src={imgProfilePhoto} alt="" />
+        </div>
     </section>
   )
 }

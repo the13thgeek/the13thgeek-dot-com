@@ -1,0 +1,161 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+section#gaming {
+    padding: 0;
+    background-color: #fff;
+    color: #000;
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+
+    h2 {
+        margin-bottom: 40px;
+    }
+
+    hr {
+        border: none;
+        border-top: #ccc 1px dotted;
+    }
+
+    p {
+        font-size: 18px;
+        line-height: 30px;
+        margin-bottom: 0;
+    }
+
+    .call-to-action {
+        margin-bottom: 30px;
+
+        .cta-link {
+            border-color: #000;
+            color: #000;
+
+            &:hover {
+                background-color: #000;
+                color: #fff;
+            }
+        }
+
+    }
+
+    .info {
+        flex: 2;
+        display: flex;
+        flex-direction: column;
+        //justify-content: start;
+        //align-items: start;
+        padding: 180px 80px 80px 0;
+    }
+
+    .now-playing {
+        background-color: #eee;
+        border-radius: 15px;
+        overflow: hidden;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        flex-direction: row;
+        gap: 20px;
+
+        h3 {
+            font-size: 25px;
+        }
+
+        .arrow {
+            display: flex;
+            align-items: center;
+            background-color: #000;
+            color: $swatch-2;
+            height: 100%;
+            font-size: 40px;
+            padding: 0 30px;
+            clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
+        }
+        .game-info {
+            flex: 4;
+            padding: 15px 0;
+        }
+
+        .category {
+            display: inline-block;
+            font-size: 11px;
+            text-transform: uppercase;
+            background-color: #fff;
+            padding: 4px 6px;
+        }
+
+        .schedule {
+            font-size: 14px;
+        }
+    }
+
+    .screen {
+        flex: 3;
+        display: flex;
+
+        .display-area {
+            flex: 1;
+            width: 100%;
+            position: relative;
+            background-color: #eee;
+            background-position: 50% 50%;
+            background-size: cover;
+            background-repeat: no-repeat;
+            margin-top: 60px;
+            border-top-right-radius: 60px;
+            overflow: hidden;
+        }
+    }
+
+}
+
+@media (max-width: $screen-md) {
+
+    section#gaming {
+
+        .info {
+            padding: 100px 40px 80px 0;
+        }
+
+        .now-playing {
+
+            .arrow {
+                font-size: 30px;
+                padding: 0 10px;
+            }
+
+        }
+
+    }
+
+}
+
+@media (max-width: $screen-sm) {
+
+    section#gaming {
+        flex-direction: column;
+        gap: 10px;
+
+        .screen {
+            flex: auto;
+            height: 250px;
+            margin-top: 20px;
+
+            .display-area {
+                margin-top: 0;
+                border-top-right-radius: 0;
+            }
+        }
+
+        .info {
+            flex: auto;
+            padding: 20px;
+        }
+
+        .now-playing {
+            display: none;
+        }
+    }
+
+}
