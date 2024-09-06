@@ -13,7 +13,7 @@ const Hero = () => {
                     <span className="title">Intro</span>
                 </div>
                 <h1>Hello,<br />I'm <span className="prog-tag">&#123;</span><span className="highlight">Aldreich</span><span className="prog-tag">&#125;</span>.</h1>
-                <p>I'm a digital experience designer,<br />
+                <p>I'm a web experience creator,<br />
                 also known as <span className="highlight">@the13thgeek</span>!</p>
                 <div className="call-to-action">
                     <NavLink to="/about" className="cta-link">About Me <i className="fa-solid fa-chevron-right"></i></NavLink>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import logo from '../../assets/global/header-logo-default.png';
 import './Footer.scss';
 
 const Footer = () => {
@@ -8,8 +9,10 @@ const Footer = () => {
   return (
     <footer className="global">
         <div className="content-container">
-            <p>Copyright© 2011 &mdash; {(new Date().getFullYear())}</p>
-            <p><b>Aldreich Aguilar // @the13thgeek</b></p>
+            <img className='footer-logo' src={logo} alt="Logo" />
+            <p>Copyright© 2011 &mdash; {(new Date().getFullYear())}<br />
+            <b>Aldreich Aguilar // @the13thgeek</b></p>
+            
         </div>
     </footer>
 

@@ -10,6 +10,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ---
 
+## [0.2.6] - 2024-09-05
+### Fixed
+- [Navbar] Fixed/cleaned up global styles
+### Changed
+- [404] updated
+- [About] Page updated to reflect updated colour scheme
+### Added
+- [About] Background info
+
 ## [0.2.5] - 2024-09-05
 ### Fixed
 - [About] Social media display error

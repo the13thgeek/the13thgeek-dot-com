@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import './Gaming.scss';
 import imgNowPlaying from '../../assets/twitch/nowplaying-evil-within.jpg';
-
+    
 const Gaming = () => {
   return (
     <section id="gaming" className="gaming">

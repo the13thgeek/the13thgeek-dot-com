@@ -20,146 +20,132 @@ const About = () => {
 
   return (
     <>
-      <header className='main'>
+      <header className="main">
         <Navbar />
-      </header>
-      <main>
-        <section id="about" className="about">
-          <div className="g-content-container intro">
-            <div className="descriptor">01 <span className="title">Profile</span></div>
-            <h1>About Me</h1>
-
-            <div className="overview">
-              <div className="profile-photo">
-                <img src={profilePhoto} alt="Profile Photo" />
-              </div>
-                <div className="profile-main">
-                  <div className="heading">
-                    <h3 className="name-dictionary">Aldreich <small>/ˈɔːldrɪtʃ/</small></h3>
-                    <h3 className="highlighter">
-                      <div>Frontend developer currently based in Toronto, Canada. Mostly focused on working on the front-end side of things including UI/UX and graphic design.</div>
-                    </h3>
-                  </div>
-                  <div className="body-content">
-                    <p className='generic'>I began my front-end journey in the early 2000s as a high school student. My initial thought was that I wanted to put together a website for my class as we just got our first Internet connection. I used the gool ol' <b>Microsoft FrontPage Express</b> that came with Windows and signed up for a free <b>GeoCities</b> (!) account.</p>
-                    <p className='generic'>It was that project that started off as a hobby and it eventually ignited my interest in web development, and the rest was history. I've been a front-end developer for the last ten years. I've specialized in UI/UX and client interaction while working with frameworks and languages including React, HTML5, CSS, SASS, PHP, Laravel and WordPress.</p>
-                    <p className='generic'>I've worked closely with numerous design and consulting organizations over the past decade, overseeing and contributing to projects in a variety of roles. These included application management, digital transformations, and redesigns of company websites. I'm particularly passionate about modernizing legacy systems and streamlining business processes.</p>
-                    <p className='generic'>My work on the visual side of things has fueled my interest in multimedia and engaging user experiences. I'm currently expanding my skillset in UI/UX to blend creativity with logic and turning the subjective into objective.</p>
-                    <div className="actions">
-                      <Link className="g-action" target="_blank" to="#"><i className="fa-solid fa-file-pdf"></i> My Resume <i className="fa-solid fa-chevron-right"></i></Link>
+        <div className="page-title-bar about">
+            <div className="content-container">
+                <div className="descriptor about-1-profile">
+                    <span className="title">Profile</span>
+                </div>
+                <h1>About Me</h1>
+            </div>
+        </div>
+    </header>
+      <main className="page-about">
+        <section id="about-profile" className="about-profile">
+            <div className="content-container">
+                <div className="overview">
+                    <div className="profile-photo">
+                        <img src={profilePhoto} alt="Profile Photo" />
                     </div>
-                  </div>
+                    <div className="profile-main">
+                        <div className="heading">
+                            <h3 className="name-dictionary">Aldreich <small>/ˈɔːldrɪtʃ/</small></h3>
+                            <h3 className="highlighter">
+                            <div>Web experience creator [designer+developer] currently based in Toronto, Canada. Mostly focused on working on the front-end side of things including UX and graphic design.</div>
+                            </h3>
+                        </div>
+                        <div className="body-content">
+                            <p>My web dev journey began in the early 2000s when I built a class website using <b>FrontPage Express</b> and a free <b>GeoCities (!)</b> account back in high school. What started as a hobby sparked a lasting passion.</p>
+                            <p>With over ten years of experience, I've specialized in UI/UX and client interaction, working with technologies like HTML5/CSS3, SASS, PHP, Laravel and WordPress. While my background is mostly in PHP/WordPress, I'm currently upskilling in React, REST, and Node.js and applying what I've learned so far on my ongoing projects.</p>
+                            <p>I've collaborated with design and consulting firms, contributing to projects involving application management, digital transformations and website redesigns. I'm particularly passionate about modernizing legacy systems.</p>
+                            <p>My focus on visual design has deepened my interest in multimedia and interactive user experiences. I'm currently expanding my UI/UX skills to merge creativity with logic.</p>
+                            {/* <div className="call-to-action">
+                                <Link className="cta-link" target="_blank" to="#"><i className="fa-solid fa-file-pdf"></i> My Resume <i className="fa-solid fa-chevron-right"></i></Link>
+                            </div> */}
+                            <hr className="divider" />
+                            <div className="descriptor about-2-background">
+                                <span className="title">Projects</span>
+                            </div>
+                            <div className="background-data">
+                            <div className="item">
+                                    <h3>Skill: Tech</h3>
+                                    <hr className="sub-divider" />
+                                    <p>
+                                        HTML5 + CSS<br />
+                                        JavaScript<br />
+                                        jQuery<br />
+                                        React<br />
+                                        PHP<br />
+                                        SQL/mySQL<br />
+                                        WordPress<br />
+                                        Git<br />
+                                        Figma<br />
+                                        Photoshop<br />
+                                        After Effects<br />
+                                        Microsoft Office
+                                    </p>
+                                    <h3>Skill: People</h3>
+                                    <hr className="sub-divider" />
+                                    <p>
+                                        Attention to Detail<br />
+                                        Empathy<br />
+                                        Collaboration<br />
+                                        Communication<br />
+                                        Customer Service<br />
+                                        Problem-Solving
+                                    </p>
+                                </div>
+                                <div className="item">
+                                    <h3>Work</h3>
+                                    <hr className="sub-divider" />
+                                    <p>
+                                        <b>Online Business Systems</b><br />
+                                        Jr Software Engineer,<br />Digital Transformation<br />
+                                        <em>2021 - 2024</em>
+                                    </p>
+                                    <p>
+                                        <b>Artis REIT</b><br />
+                                        Full-Stack Web Developer,<br />Marketing & Creative<br />
+                                        <em>2014 - 2021</em>
+                                    </p>
+                                    <p>
+                                        <b>Web Wizards, Inc</b><br />
+                                        Web Developer<br />
+                                        <em>2011 - 2013</em>
+                                    </p>
+                                    <p>
+                                        <b>Tsukiden Global Solutions, Inc</b><br />
+                                        Design Engineer II,<br />2nd Business Unit<br />
+                                        <em>2008 - 2011</em>
+                                    </p>
+                                </div>
+                                <div className="item">
+                                    <h3>Education</h3>
+                                    <hr className="sub-divider" />
+                                    <p>
+                                        <b>Polytechnic University of the Philippines</b><br />
+                                        Bachelor of Science, Information Technology<br />
+                                        <em>March 2008</em>
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div className="profile-misc">
+                        <ul className="tags">
+                            <li>web dev</li>
+                            <li>cosplayer</li>
+                            <li>storyteller</li>
+                            <li>moviegoer</li>
+                            <li>low-key avgeek</li>
+                            <li>traveller</li>
+                            <li>sitcom junkie</li>
+                            <li>gamer</li>
+                            <li>cosplayer</li>
+                        </ul>
+                        <div className="geek-origin">
+                            <h4><span className="highlight">the13thgeek</span>?</h4>
+                            <p>During my university days when BBCode forums were popular, I frequently posted and shared C-language tips and hacks for the IT freshmen. I initially wanted to use the handle "13thgeek"&mdash; with thirteen being my lucky number and "geek" being an IT undergrad at the time. However, the forum system didn't allow usernames to start with a digit, so I added <i>"the"</i> to bypass the restriction. This workaround not only solved the issue but also gave the handle a more distinct and definitive tone!</p>
+                        </div>
+                    </div>
+
                 </div>
-                <div className="profile-misc">
-                  <ul className="tags">
-                    <li>web dev</li>
-                    <li>cosplayer</li>
-                    <li>storyteller</li>
-                    <li>moviegoer</li>
-                    <li>low-key avgeek</li>
-                    <li>traveller</li>
-                    <li>sitcom junkie</li>
-                    <li>gamer</li>
-                    <li>cosplayer</li>
-                  </ul>
-                  <div className="geek-origin">
-                    <h4>the13thgeek?</h4>
-                    <p>During my university days when BBCode forums were popular, I frequently posted and shared C-language tips and hacks for the IT freshmen. I initially wanted to use the handle "13thgeek"&mdash; with thirteen being my lucky number and "geek" being an IT undergrad at the time. However, the forum system didn't allow usernames to start with a digit, so I added <i>"the"</i> to bypass the restriction. This workaround not only solved the issue but also gave the handle a more distinct and definitive tone!</p>
-                  </div>
-                </div>
-
             </div>
-
-
-          </div>
-
-          {/* <div className="g-content-container overview">
-            
-            <div className="profile-main">
-              <h3 className="name-dictionary">Aldreich <small>/ˈɔːldrɪtʃ/</small></h3>
-              <h3 className="highlighter">
-                <div>Frontend developer currently based in Toronto, Canada. Mostly focused on working on the front-end side of things including UI/UX and graphic design.</div>
-              </h3>
-              <p className='generic'>I began my front-end journey in the early 2000s as a high school student. My initial thought was that I wanted to put together a website for my class as we just got our first Internet connection. I used the gool ol' <b>Microsoft FrontPage Express</b> that came with Windows and signed up for a free <b>GeoCities</b> (!) account.</p>
-              <p className='generic'>It was that project that started off as a hobby and it eventually ignited my interest in web development, and the rest was history. I've been a front-end developer for the last ten years. I've specialized in UI/UX and client interaction while working with frameworks and languages including React, HTML5, CSS, SASS, PHP, Laravel and WordPress.</p>
-              <p className='generic'>I've worked closely with numerous design and consulting organizations over the past decade, overseeing and contributing to projects in a variety of roles. These included application management, digital transformations, and redesigns of company websites. I'm particularly passionate about modernizing legacy systems and streamlining business processes.</p>
-              <p className='generic'>My work on the visual side of things has fueled my interest in multimedia and engaging user experiences. I'm currently expanding my skillset in UI/UX to blend creativity with logic and turning the subjective into objective.</p>
-              <div className="actions">
-                <Link className="g-action" target="_blank" to="#"><i className="fa-solid fa-file-pdf"></i> My Resume <i className="fa-solid fa-chevron-right"></i></Link>
-              </div>
-            </div>
-            <div className="profile-misc">
-              <ul className="tags">
-                <li>web dev</li>
-                <li>cosplayer</li>
-                <li>storyteller</li>
-                <li>traveller</li>
-                <li>gamer</li>
-                <li>cosplayer</li>
-              </ul>
-              <div className="geek-origin">
-                <h4>the13thgeek?</h4>
-                <p>During my university days when BBCode forums were popular, I frequently posted and shared C-language tips and hacks for the IT freshmen. I initially wanted to use the handle "13thgeek"&mdash; with thirteen being my lucky number and "geek" being an IT undergrad at the time. However, the forum system didn't allow usernames to start with a digit, so I added <i>"the"</i> to bypass the restriction. This workaround not only solved the issue but also gave the handle a more distinct and definitive tone!</p>
-              </div>
-            </div>
-          </div> */}
-
-          <div className="filter"></div>
-
-          {/* <div className="about-sections">
-            <div className="about-left">
-              
-            </div>
-            <div className="about-right">
-              <div className="about-para">
-                
-                <p>
-                  Vestibulum nunc ex, lacinia eget felis eget, sodales tempus sem.
-                  Nam id elit eget sapien sodales accumsan in id enim. Nam tellus
-                  massa, lacinia vel massa id, pulvinar ultricies massa.
-                  Suspendisse vestibulum diam ex, finibus blandit nulla maximus
-                  vitae. Praesent ultrices porttitor tortor eu rhoncus. Cras
-                  ultricies turpis in velit feugiat, nec posuere elit interdum.
-                </p>
-              </div>
-              <div className="about-skills">
-                <div className="about-skill">
-                  <p>HTML5 & CSS</p>
-                  <hr style={{ width: "50%" }} />
-                </div>
-                <div className="about-skill">
-                  <p>ReactJS</p>
-                  <hr style={{ width: "70%" }} />
-                </div>
-                <div className="about-skill">
-                  <p>JavaScript</p>
-                  <hr style={{ width: "60%" }} />
-                </div>
-                <div className="about-skill">
-                  <p>NextJS</p>
-                  <hr style={{ width: "50%" }} />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="about-achievements">
-            <div className="about-achievement">
-              <h1>10+</h1>
-              <p>YEARS OF EXPERIENCE</p>
-            </div>
-            <hr />
-            <div className="about-achievement">
-              <h1>90+</h1>
-              <p>PROJECTS COMPLETED</p>
-            </div>
-            <hr />
-            <div className="about-achievement">
-              <h1>15+</h1>
-              <p>HAPPY CLIENTS</p>
-            </div>
-          </div> */}
-
         </section>
+
+
         <section id="off-the-grid" className="off-the-grid">        
             <div className="g-content-container">
               <div className="descriptor">02 <span className="title">Profile Extended</span></div>

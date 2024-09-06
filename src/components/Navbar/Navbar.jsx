@@ -20,8 +20,9 @@ const Navbar = ({ isHome = false }) => {
   }
 
   return (
-      <div className="content-container">
-        <nav className='global'>
+      <nav className='global'>
+        <div className="content-container">
+        
             <img className='header-logo' src={logo} alt="the13thgeek logo" />
             <img src={menu_open} onClick={openMenu} className='nav-mob-open' alt="" />
             <ul ref={menuRef} className="nav-menu">
@@ -47,12 +48,13 @@ const Navbar = ({ isHome = false }) => {
                 <li><AnchorLink className='anchor-link' offset={50} href='#contact'><p onClick={()=>setMenu("contact")}>Contact</p></AnchorLink>{menu==="contact" ? <img src={underline} alt='' />:<></>}</li> */}
             </ul>
             { isHome ? (
-              <div className="nav-connect"><AnchorLink className='anchor-link' offset={0} href='#contact'>Connect</AnchorLink></div>
+              <div className="nav-connect"><AnchorLink className='anchor-link' offset={0} href='#connect'>Connect</AnchorLink></div>
             ) : (
               <div className="nav-connect"><NavLink className='anchor-link' to='/#contact'>Connect</NavLink></div>
             )}
-        </nav>
-      </div>
+ 
+        </div>
+      </nav>
 
   )
 }

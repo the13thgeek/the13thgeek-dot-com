@@ -1,22 +1,17 @@
 @use '../../styles/variables' as *;
 @use '../../styles/mixins' as *;
 
-header.main {
-    position: relative;
-    // top: 0;
-    // left: 0;
-    // right: 0;
-    //z-index: 99;
+nav.global {
+    width: 100%;
+    padding: 10px 0;
     display: flex;
     justify-content: center;
-    background-color: $navbar-bg-color;
-}
 
-nav.global {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    padding: 10px 0;
+    .content-container {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+    }
 
     img.header-logo {
         height: 50px;
@@ -111,9 +106,9 @@ nav.global {
 
 @media(max-width: 768px) {
     
-    nav.global {
-        margin: 20px 50px;
-    }
+    // nav.global {
+    //     margin: 20px 50px;
+    // }
 
     .nav-connect {
         display: none;

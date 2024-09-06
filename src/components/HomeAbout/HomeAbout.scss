@@ -175,7 +175,13 @@ section#home-about {
                 }
                 .col.type-1,
                 .col.type-2 {
-                    flex: 2;
+                    flex: 1;
+                }
+
+                .col {
+                    .wrapper {
+                        padding: 10px 15px;
+                    }
                 }
 
             }
