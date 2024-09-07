@@ -12,7 +12,7 @@ const HomeAbout = () => {0
                     <div className="descriptor home-2-profile">
                         <span className="title">Profile</span>
                     </div>
-                    <h2>In a nutshell</h2>
+                    <h2>Nice to meet you.</h2>
                 </div>
                 <div className="col">
                     <div className="call-to-action">

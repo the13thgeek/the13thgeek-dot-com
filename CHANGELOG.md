@@ -16,8 +16,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ### Changed
 - [404] updated
 - [About] Page updated to reflect updated colour scheme
+- [Twitch] Page layout updated
 ### Added
 - [About] Background info
+- [About] Added 'open to work' badge
 
 ## [0.2.5] - 2024-09-05
 ### Fixed

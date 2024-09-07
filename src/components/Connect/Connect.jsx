@@ -3,17 +3,17 @@ import Obfuscate from 'react-obfuscate';
 import { Link } from "react-router-dom";
 import './Connect.scss';
 
-const Connect = () => {
+const Connect = ({ customStyle = 'home-6-connect' }) => {
   return (
     <section id="connect" className="connect">
         <div className="title-area">
-            <div className="descriptor home-6-connect">
+            <div className={`descriptor ` + customStyle }>
                 <span className="title">Connect</span>
             </div>
         </div>
         <h2>Get in touch</h2>
         <hr />
-        <p><Obfuscate email='hello@the13thgeek.net' headers={{subject: 'Let\'s Connect'}} /></p>
+        <p><Obfuscate email='hello@the13thgeek.com' headers={{subject: 'Let\'s Connect'}} /></p>
         <div className="social-links">
             <Link to='https://github.com/the13thgeek/' target='_blank' rel='nofollow'><i className="fa-brands fa-github"></i></Link>
             <Link to='https://twitch.tv/the13thgeek/' target='_blank' rel='nofollow'><i className="fa-brands fa-twitch"></i></Link>
