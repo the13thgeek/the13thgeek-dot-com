@@ -1,13 +1,28 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { TwitchEmbed } from 'react-twitch-embed';
+import {Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Autoplay, EffectFade } from 'swiper/modules';
 import { Link } from "react-router-dom";
 import Navbar from '../components/Navbar/Navbar';
 import Footer from '../components/Footer/Footer';
 import './Twitch.scss';
+import 'swiper/scss';
+import 'swiper/scss/navigation';
+import 'swiper/scss/effect-fade';
+
+/* Local assets */
 import twitchAvatar from '../assets/twitch/avatar-geek.png';
 import twitchFootage from '../assets/twitch/twitch-footage.webm';
-import imgMainFeature from '../assets/twitch/mainfeature-evil-within.jpg';
-import imgMainFeatureLogo from '../assets/twitch/logo-evil-within.png';
+
+import imgFeatureEvilWithin from '../assets/twitch/feature/slide-evil-within.jpg';
+import imgFeatureEvilWithinLogo from '../assets/twitch/feature/logo-evil-within.png';
+import imgFeatureHelldivers2 from '../assets/twitch/feature/slide-helldivers2.jpg';
+import imgFeatureHelldivers2Logo from '../assets/twitch/feature/logo-helldivers2.png';
+import imgFeatureParkitect from '../assets/twitch/feature/slide-parkitect.jpg';
+import imgFeatureParkitectLogo from '../assets/twitch/feature/logo-parkitect.png';
+import imgFeatureSplat3 from '../assets/twitch/feature/slide-splat3.jpg';
+import imgFeatureSplat3Logo from '../assets/twitch/feature/logo-splat3.png';
+
 import imgGameCities2 from '../assets/twitch/rotation/game-cities2.jpg';
 import imgGameSplat3 from '../assets/twitch/rotation/game-splat3.jpg';
 import imgGameParkitect from '../assets/twitch/rotation/game-parkitect.jpg';
@@ -36,6 +51,49 @@ const Twitch = () => {
     document.title = "Twitch | " + import.meta.env.VITE_GLOBAL_SITE_TITLE;
     window.scrollTo(0, 0);
   }, []);
+
+  const pageFeatures = [
+    {
+      'background': imgFeatureEvilWithin,
+      'logo': imgFeatureEvilWithinLogo,
+      'gametitle': 'The Evil Within',
+      'title': "Terrors of the Unknown",
+      'schedule': 'Thursdays @ 7pm EST',
+      'description': 'On this stream, expect a lot of nervous laughter and jump scares as @the13thgeek navigates through twisted environments and face off against terrifying creatures.',
+      'caption': null,
+      'scheme': 'dark'
+    },
+    {
+      'background': imgFeatureSplat3,
+      'logo': imgFeatureSplat3Logo,
+      'gametitle': 'Splatoon 3',
+      'title': "The Final Splatfest",
+      'schedule': 'weekend of Sep 13th-16th',
+      'description': 'The dawn of the final Splatoon 3 Splatfest is upon us. @the13thgeek chose to fight for Team Future. Will they prevail against the Past and Present Teams?',
+      'caption': null,
+      'scheme': 'dark'
+    },
+    {
+      'background': imgFeatureHelldivers2,
+      'logo': imgFeatureHelldivers2Logo,
+      'gametitle': 'Helldivers II',
+      'title': "Say Hello to Democracy!",
+      'schedule': null,
+      'description': 'Watch as @the13thgeek and his friends explore new locations in the galaxy and fight for some (Managed) Democracy!',
+      'caption': null,
+      'scheme': 'dark'
+    },
+    {
+      'background': imgFeatureParkitect,
+      'logo': imgFeatureParkitectLogo,
+      'gametitle': 'Parkitect',
+      'title': "Let's Build a Theme Park!",
+      'schedule': 'Tuesdays @ 7pm EST',
+      'description': 'Come chill and help @the13thgeek build a virtual theme park and try to keep it functional in this charming simulation game.',
+      'caption': null,
+      'scheme': 'dark'
+    }
+  ]
 
   const gameRotation = [
     {
@@ -117,21 +175,29 @@ const Twitch = () => {
     </header>
     <main className="page-twitch">
         <section id="now-playing" className="now-playing">
-            <div className="back-screen" style={{backgroundImage: `url(${imgMainFeature})`}}></div>
-            <div className="content-container">
-                <div className="page-title-box dark">
-                    <div className="descriptor twitch-1-nowplaying">
-                        <span className="title">Now Playing</span>
+          <Swiper autoplay={{ delay: 6000, disableOnInteraction: false }} loop={true} effect={'fade'} navigation={true} modules={[Navigation, Autoplay, EffectFade]} className="carousel-now-playing">
+              {pageFeatures.map((slide,index) => 
+              <SwiperSlide key={index}>
+                <div className="back-screen" style={{backgroundImage: `url(${slide.background})`}}>
+                    <div className="filter"></div>
+                </div>
+                <div className="content-container">
+                    <div className={`page-title-box ` + slide.scheme}>
+                        <div className="descriptor twitch-1-nowplaying">
+                            <span className="title">Now Playing</span>
+                        </div>
+                        <img src={slide.logo} alt={slide.gametitle} className="event-logo" />
+                        <h1>{slide.title}</h1>
+                        <p className="schedule">{slide.schedule ? ('Streams ' + slide.schedule) : 'Streaming in Regular Rotation' }</p>
+                        <p className='caption'>{slide.description}</p>
                     </div>
-                    <img src={imgMainFeatureLogo} alt="The Evil Within" className="event-logo" />
-                    <h1>Terrors of the Unknown</h1>
-                    <p className="schedule">Streams Thursdays @ 7pm EST</p>
-                    <p className='caption'>On this stream, expect a lot of nervous laughter and jump scares as @the13thgeek navigates through twisted environments and face off against terrifying creatures. </p>
+                    <div className="call-to-action">
+                        <Link className="cta-link" target='_blank' to="https://twitch.tv/the13thgeek"><i className="fa-brands fa-twitch"></i> {slide.caption ? slide.caption : 'Watch Live' } <i className="fa-solid fa-chevron-right"></i></Link>
+                    </div>
                 </div>
-                <div className="call-to-action">
-                    <Link className="cta-link" target='_blank' to="https://twitch.tv/the13thgeek"><i className="fa-brands fa-twitch"></i> Watch Live <i className="fa-solid fa-chevron-right"></i></Link>
-                </div>
-            </div>
+              </SwiperSlide>
+              )}
+          </Swiper>
         </section>
         <section id='twitch-history' className="twitch-history">
             <div className="col-1">
