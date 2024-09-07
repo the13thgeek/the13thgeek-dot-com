@@ -10,6 +10,14 @@ import imgMainFeature from '../assets/twitch/mainfeature-evil-within.jpg';
 import imgMainFeatureLogo from '../assets/twitch/logo-evil-within.png';
 import imgGameCities2 from '../assets/twitch/rotation/game-cities2.jpg';
 import imgGameSplat3 from '../assets/twitch/rotation/game-splat3.jpg';
+import imgGameParkitect from '../assets/twitch/rotation/game-parkitect.jpg';
+import imgGameDdr3Mk from '../assets/twitch/rotation/game-ddr3mk.jpg';
+import imgGameAceCombat7 from '../assets/twitch/rotation/game-acecombat7.jpg';
+import imgGameHelldivers2 from '../assets/twitch/rotation/game-helldivers2.jpg'
+import imgGameItTakesTwo from '../assets/twitch/rotation/game-ittakestwo.jpg';
+import imgGameUntilThen from '../assets/twitch/rotation/game-untilthen.jpg';
+import imgGameEvilWithin from '../assets/twitch/rotation/game-evilwithin.jpg';
+import imgGameMarioKart8D from '../assets/twitch/rotation/game-mariokart8d.jpg';
 
 const Twitch = () => {
 
@@ -31,6 +39,27 @@ const Twitch = () => {
 
   const gameRotation = [
     {
+      'isNew': true,
+      'title': 'The Evil Within',
+      'category': 'Community Challenge',
+      'schedule': 'Thursdays @ 7pm EST',
+      'image': imgGameEvilWithin
+    },
+    {
+      'isNew': true,
+      'title': 'Parkitect',
+      'category': 'Geek Builds',
+      'schedule': 'Tuesdays @ 7pm EST',
+      'image': imgGameParkitect
+    },
+    {
+      'isNew': true,
+      'title': 'Until Then: New Game+',
+      'category': null,
+      'schedule': null,
+      'image': imgGameUntilThen
+    },
+    {
       'isNew': false,
       'title': 'Cities Skylines 2',
       'category': 'Geek Builds',
@@ -38,12 +67,47 @@ const Twitch = () => {
       'image': imgGameCities2
     },
     {
-      'isNew': true,
+      'isNew': false,
+      'title': 'Dance Dance Revolution 3rdMIX ver.KOREA2',
+      'category': 'GEEK×RETRO',
+      'schedule': 'Saturdays @ 10am EST',
+      'image': imgGameDdr3Mk
+    },
+    {
+      'isNew': false,
+      'title': 'Mario Kart 8 Deluxe',
+      'category': 'Danger Zone',
+      'schedule': null,
+      'image': imgGameMarioKart8D
+    },
+    {
+      'isNew': false,
       'title': 'Splatoon 3',
       'category': 'Poptart',
       'schedule': null,
       'image': imgGameSplat3
+    },
+    {
+      'isNew': false,
+      'title': 'Helldivers II',
+      'category': 'Collaborations',
+      'schedule': null,
+      'image': imgGameHelldivers2
     }
+    // {
+    //   'isNew': false,
+    //   'title': 'It Takes Two feat. @lilnerdgamer',
+    //   'category': 'Collaborations',
+    //   'schedule': null,
+    //   'image': imgGameItTakesTwo
+    // },
+    // {
+    //   'isNew': false,
+    //   'title': 'Ace Combat 7: Skies Unknown',
+    //   'category': 'Danger Zone',
+    //   'schedule': null,
+    //   'image': imgGameAceCombat7
+    // }
   ];
 
   return (
@@ -107,7 +171,7 @@ const Twitch = () => {
                           </div>
                           <h4>{game.title}</h4>
                           <p className="schedule">{game.schedule ? ('streams ' + game.schedule) : 'Regular Rotation'}</p>
-                          <p className="category"><span>{game.category}</span> <i className="fa-solid fa-tv"></i></p>
+                          <p className="category"><span>{game.category ? game.category : 'the13thgeek Live!'}</span> <i className="fa-solid fa-tv"></i></p>
                       </div>
                     )}
 

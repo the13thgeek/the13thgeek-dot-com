@@ -51,8 +51,8 @@ const About = () => {
                           </h3>
                       </div>
                       <div className="body-content">
-                          <p>With over 10 years in web development, Aldreich has worked with design and consulting firms to redesign corporate websites and modernize legacy systems. He has a knack of creating interactive experiences and bringing mockups to life. He maintains an ever-growing "special set of skills" that includes PHP, WordPress and a healthy dose of Javascript with React.</p>
-                          <p>When he's not coding or fixing something, Aldreich dabbles in playing video games, action figure photography, cosplay at comic cons and learning Japanese. He's currently upskilling in UX Design, Node.js and REST APIs, so expect even more dynamic projects from him in the future.</p>
+                          <p>With over 10 years in web development, Aldreich has worked with design and consulting firms to redesign corporate websites and modernize legacy systems. He has a knack for creating interactive experiences and bringing mockups to life. He maintains an ever-growing "special set of skills" that includes PHP, WordPress and a healthy dose of Javascript with React.</p>
+                          <p>When he's not coding or fixing something, Aldreich dabbles in playing video games, action figure photography, cosplay at comic cons and learning Japanese. He's currently upskilling in UX Design, Node.js and REST APIs, and applying what he's learned to his current projects.</p>
                           <p>Aldreich believes that web development is the art of trying to please everybody&mdash; and just like Barney Stinson, he'd say, "Challenge accepted!"</p>
                           {/* <div className="call-to-action">
                               <Link className="cta-link" target="_blank" to="#"><i className="fa-solid fa-file-pdf"></i> My Resume <i className="fa-solid fa-chevron-right"></i></Link>
