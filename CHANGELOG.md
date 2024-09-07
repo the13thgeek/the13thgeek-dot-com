@@ -10,6 +10,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ---
 
+## [0.2.7] - 2024-09-07
+### Added
+- [Twitch] Slider implementation
+
 ## [0.2.6] - 2024-09-05
 ### Fixed
 - [Navbar] Fixed/cleaned up global styles
