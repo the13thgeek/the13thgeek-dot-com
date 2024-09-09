@@ -91,8 +91,8 @@ const Workshop = () => {
                             </ul>
                         </div>
                         <div className="links-list">
-                            <NavLink to="https://the13thgeek.github.io/power-morphicon-2024-planner/" target='_blank' className="ll-link"><i className="fa-solid fa-up-right-from-square"></i> Project Page <i className="fa-solid fa-chevron-right"></i></NavLink>
-                            <NavLink to="https://github.com/the13thgeek/power-morphicon-2024-planner" target='_blank' className="ll-link"><i className="fa-brands fa-github"></i> Repository <i className="fa-solid fa-chevron-right"></i></NavLink>
+                            <NavLink to="https://the13thgeek.github.io/power-morphicon-planner/" target='_blank' className="ll-link"><i className="fa-solid fa-up-right-from-square"></i> Project Page <i className="fa-solid fa-chevron-right"></i></NavLink>
+                            <NavLink to="https://github.com/the13thgeek/power-morphicon-planner" target='_blank' className="ll-link"><i className="fa-brands fa-github"></i> Repository <i className="fa-solid fa-chevron-right"></i></NavLink>
                         </div>
                     </div>
                 </div>
