@@ -10,6 +10,19 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ---
 
+## [0.2.8] - 2024-09-08
+### Added
+- [Home] Text animation effect on Hero
+- [About] Branding section
+- [Twitch] Community/Staff section
+### Changed
+- [Global] Changed navigation from BrowserRouter -> HashRouter
+- [Home] Minor layout tweaks
+- [About] Tweaks on wording/layout
+- [Twitch] Tweaks on wording
+### Fixed
+- [Home] Repository links
+
 ## [0.2.7] - 2024-09-07
 ### Added
 - [Twitch] Slider implementation
