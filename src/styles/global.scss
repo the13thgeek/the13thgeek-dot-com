@@ -169,21 +169,29 @@ main {
         background-position: 0 -200px;
         width: 170px;
     }
-    &.about-4-connect {
+    &.about-4-branding {
         background-position: 0 -220px;
+        width: 250px;
+    }
+    &.about-5-connect {
+        background-position: 0 -240px;
         width: 230px;
     }
     &.twitch-1-nowplaying {
-        background-position: 0 -240px;
+        background-position: 0 -260px;
         width: 290px;
     }
     &.twitch-2-history {
-        background-position: 0 -260px;
+        background-position: 0 -280px;
         width: 230px;
     }
     &.twitch-3-rotation {
-        background-position: 0 -280px;
+        background-position: 0 -300px;
         width: 250px;
+    }
+    &.twitch-4-community {
+        background-position: 0 -320px;
+        width: 280px;
     }
 }
 

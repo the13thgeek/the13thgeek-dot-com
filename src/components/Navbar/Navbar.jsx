@@ -50,7 +50,7 @@ const Navbar = ({ isHome = false }) => {
             { isHome ? (
               <div className="nav-connect"><AnchorLink className='anchor-link' offset={0} href='#connect'>Connect</AnchorLink></div>
             ) : (
-              <div className="nav-connect"><NavLink className='anchor-link' to='/#contact'>Connect</NavLink></div>
+              <div className="nav-connect"><NavLink className='anchor-link' to='/#connect'>Connect</NavLink></div>
             )}
  
         </div>

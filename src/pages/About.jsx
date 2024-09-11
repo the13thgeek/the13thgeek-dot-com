@@ -5,6 +5,7 @@ import Connect from "../components/Connect/Connect";
 import Footer from "../components/Footer/Footer";
 import "./About.scss";
 import profilePhoto from '../assets/about/profile-photo-geek.jpg';
+import imgBranding from '../assets/global/the13thgeek-brand.svg';
 import imgFlagCan from '../assets/about/lang-en.png';
 import imgFlagJpn from '../assets/about/lang-jp.png';
 import imgFlagPhl from '../assets/about/lang-ph.png';
@@ -47,13 +48,17 @@ const About = () => {
                           <h3 className="name-dictionary">Aldreich <small>/ˈɔːldrɪtʃ/</small></h3>
                           <h3 className="popup"><i className="fa-solid fa-thumbs-up"></i> Open to work!</h3>
                           <h3 className="highlighter">
-                          <div>Aldreich is a Toronto-based designer+developer who's surprisingly not always glued to his screen. He likes poutine, staring up at the CN Tower and is highly allergic to Mario Kart's spiny shells.</div>
+                          <div>Aldreich is a Toronto-based designer+developer who's surprisingly not always glued to his screen.<sup>1</sup> He likes poutine, binging NBC comedies and staring up at the CN Tower.</div>
                           </h3>
                       </div>
                       <div className="body-content">
-                          <p>With over 10 years in web development, Aldreich has worked with design and consulting firms to redesign corporate websites and modernize legacy systems. He has a knack for creating interactive experiences and bringing mockups to life. He maintains an ever-growing "special set of skills" that includes PHP, WordPress and a healthy dose of Javascript with React.</p>
-                          <p>When he's not coding or fixing something, Aldreich dabbles in playing video games, action figure photography, cosplay at comic cons and learning Japanese. He's currently upskilling in UX Design, Node.js and REST APIs, and applying what he's learned to his current projects.</p>
-                          <p>Aldreich believes that web development is the art of trying to please everybody&mdash; and just like Barney Stinson, he'd say, "Challenge accepted!"</p>
+                          <p>He likes video games too, though nothing makes him question his life choices more than a spiny shell in Mario Kart. He claims he's allergic to them but somehow always seems to attract them.</p>
+                          <p>With over 10 years in web development, Aldreich has worked with design and consulting firms to redesign corporate websites and modernize legacy systems. He has a knack for creating interactive experiences and bringing mockups to life. He maintains an ever-growing "special set of skills" that include PHP, WordPress and a healthy dose of Javascript with React.</p>
+                          <p>When he's not coding or fixing something, Aldreich dabbles in streaming his video games, travelling, action figure photography, cosplaying at comic cons and learning Japanese.<sup>2</sup> He's currently upskilling in UX Design, Node.js and REST APIs, and applying what he's learned to his current projects.</p>
+                          <p>Aldreich personally believes that web development is the art of trying to please everybody&mdash; and just like Barney Stinson, he'd say, "Challenge accepted!"</p>
+                          <p className="footnote">
+                            1. (boldly) assuming video games don't count
+                          </p>
                           {/* <div className="call-to-action">
                               <Link className="cta-link" target="_blank" to="#"><i className="fa-solid fa-file-pdf"></i> My Resume <i className="fa-solid fa-chevron-right"></i></Link>
                           </div> */}
@@ -133,22 +138,17 @@ const About = () => {
                           <li>cosplayer</li>
                           <li>storyteller</li>
                           <li>moviegoer</li>
-                          <li>low-key avgeek</li>
+                          <li>avgeek</li>
                           <li>traveller</li>
-                          <li>sitcom junkie</li>
+                          <li>sitcom buff</li>
                           <li>gamer</li>
                           <li>cosplayer</li>
                       </ul>
-                      <div className="geek-origin">
-                          <h4><span className="highlight">the13thgeek</span>?</h4>
-                          <p>During my university days when BBCode forums were popular, I frequently posted and shared C-language tips and hacks for the IT freshmen. I initially wanted to use the handle "13thgeek"&mdash; with thirteen being my lucky number and "geek" being an IT undergrad at the time. However, the forum system didn't allow usernames to start with a digit, so I added <i>"the"</i> to bypass the restriction. This workaround not only solved the issue but also gave the handle a more distinct and definitive tone!</p>
-                      </div>
                   </div>
 
               </div>
           </div>
       </section>
-
 
       <section id="off-the-grid" className="off-the-grid">        
           <div className="content-container">
@@ -189,7 +189,7 @@ const About = () => {
             <div className="col-a">
               { (lang === "EN") ? (
                 <>
-                  <p>When I'm not busy crafting digital experiences, you'll often find me enjoying movies and video games on Twitch with friends, doing casual cosplays at comic conventions, or just walking around exploring Toronto while listening to J-Pop and EDM. I also make time for running, (casual) photography, and exploring new places! My travels have taken me to the United States, Japan, Hong Kong, and Macau so far&mdash; and this is just the beginning!</p>
+                  <p>When I'm not busy crafting digital experiences, you'll often find me enjoying movies and video games on Twitch with friends, doing casual cosplays at comic conventions, or just walking around exploring Toronto while listening to J-Pop and EDM. I also make time for running, (casual) photography, and exploring new places! My travels have taken me to the United States, Japan, Hong Kong, and Macau so far&mdash; and I'd love to visit more places!</p>
                   <p>I'm currently learning Japanese, so you might spot the occasional Japanese post (with translations, of course!).</p>
                   <p>While I'm not exactly a bookworm, I enjoy a good read! Some of my favourite authors include Kyle Higgins, Dan Brown and Suzanne Collins. I recently finished reading <i>Mary and the Secret Garden</i> and I'm currently hooked on Boom! series' <i>Power Rangers Comics</i> universe.</p>
                 </>
@@ -213,7 +213,26 @@ const About = () => {
           </div>
           <div className="filter"></div>
       </section>
-      <Connect customStyle="about-4-connect" />
+
+      <section id="branding" className="branding">
+        <div className="content-container">
+          <div className="descriptor about-4-branding">
+              <span className="title">Branding</span>
+          </div>
+          <h2>Why <span className="highlight">the13thgeek</span>?</h2>
+          <div className="row">
+            <div className="brand">
+              <img src={imgBranding} alt="the13thgeek logo" />
+            </div>
+            <div className="content">
+              <p>During Aldreich's university days when BBCode forums were popular, he frequently posted and shared C-language tips and hacks for his fellow IT freshmen. He initially wanted to use the handle "13thgeek"&mdash; because thirteen is his lucky number and "geek" being an IT undergrad at the time. However, the forum system didn't allow usernames to start with a digit, so he added "the" to bypass the restriction. This workaround not only solved the issue but also gave the handle a more distinct and definitive tone!</p>
+              <p>The branding depicts both serious and playful personalities converging together in harmony. The default "style" for the logo is a paint splatter, but can be versatile and changed depending on the event or occasion.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <Connect customStyle="about-5-connect" />
     </main>
     <Footer />
     </>

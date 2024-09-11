@@ -28,6 +28,7 @@ section#now-playing {
     .swiper-button-prev,
     .swiper-button-next {
         color: #fff;
+        padding: 10px;
     }
 
     .back-screen {
@@ -261,6 +262,7 @@ section#rotation {
                     align-items: center;
                     margin-bottom: 0;
                     font-size: 14px;
+                    line-height: 18px;
 
                     span, i {
                         flex: 1;
@@ -278,6 +280,82 @@ section#rotation {
 
 }
 
+section#community {
+    background-color: $swatch-2;
+    color: #000;
+
+    h2 {
+        margin-bottom: 30px;
+    }
+
+    .call-to-action {
+        flex-direction: column;
+        align-items: start;
+
+        a.cta-link {
+            border-color: #000;
+            color: #000;
+
+            &:hover {
+                background-color: #000;
+                color: $swatch-2;
+            }
+        }
+    }
+
+    .content-container {
+        flex-direction: row;
+        gap: 80px;
+    }
+
+    .information {
+        flex: 2;
+    }
+    .staff {
+        flex: 1;
+        .staff-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-row-gap: 5px;
+            grid-column-gap: 5px;
+            .item {
+                position: relative;
+                .polaroid {
+                    box-shadow: #ccc 0 0 10px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    background-color: #eee;
+                    padding: 10px 10px 20px 10px;
+                    transition: all 0.5s;
+                    transform: rotate(4deg) scale(0.9);
+                    img {
+                        width: 100%;
+                    }
+                    h4 {
+                        margin-top: 15px;
+                    }
+                    i {
+                        color: $swatch-2;
+                    }
+                    &.the13thgeek {
+                        position: absolute;
+                        z-index: 2;
+                        transform: rotate(-2deg) scale(1.1);
+                        &:hover {
+                            transform: rotate(2deg) scale(1.2);
+                        }
+                    }
+
+                    &:hover {
+                        transform: rotate(-2deg) scale(1.2);
+                    }
+                }
+            }
+        }
+    }
+}
+
 @media (max-width: $screen-lg) {
 
     section#now-playing {
@@ -292,6 +370,146 @@ section#rotation {
         }
         
 
+    }
+
+    section#community {
+        .information {
+            flex: 1;
+        }
+        .staff {
+            flex: 1;
+        }
+    }
+
+}
+
+@media (max-width: $screen-md) {
+
+    section#now-playing {
+        height: 65vh;
+
+        .page-title-box {
+            margin-left: 30px;
+
+            p {
+                font-size: 14px;
+                line-height: 22px;
+            }
+            .event-logo {
+                max-width: 250px;
+            }
+        }
+        .call-to-action {
+            margin-left: 30px;
+            margin-bottom: 50px;
+        }
+
+    }
+
+    section#twitch-history {
+        flex-direction: column;
+        .col-1 .video-wall.video-wall.twitch-footage {
+            height: 600px;
+        }
+        .col-2 {
+            .contents {
+                padding: 60px;
+            }
+        }
+    }
+
+    section#rotation {
+
+        .games-list {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+    }
+
+    section#community {
+        .staff {
+            .staff-grid {
+                .item {
+                    .polaroid {
+                        h4 {
+                            font-size: 11px;
+                            margin-top: 5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+@media (max-width: $screen-sm) {
+
+    section#now-playing {
+        height: 55vh;
+
+        h1 {
+            font-size: 25px;
+            line-height: 32px;
+        }
+
+        .page-title-box {
+            margin-left: 60px;
+    
+            p {
+                font-size: 14px;
+                line-height: 22px;
+
+                &.caption {
+                    display: none;
+                }
+                &.schedule {
+                    margin-bottom: 0;
+                }
+
+            }
+            .event-logo {
+                max-width: 150px;
+            }
+        }
+        .call-to-action {
+            margin-left: 60px;
+            margin-bottom: 50px;
+        }
+    }
+
+    section#twitch-history {
+        .col-1 {
+            display: none;
+        }
+        .col-2 {
+            .contents {
+                padding: 40px;
+                max-width: 90%;
+            }
+        }
+    }
+
+    section#rotation {
+
+        .games-list {
+            grid-template-columns: 1fr 1fr;
+
+            .game-item {
+                p.schedule {
+                    margin-bottom: 10px;
+                }
+            }
+        }
+
+    }
+
+    section#community {
+        .content-container {
+            .staff {
+                display: none;
+            }
+        }
     }
 
 }

@@ -34,6 +34,11 @@ import imgGameUntilThen from '../assets/twitch/rotation/game-untilthen.jpg';
 import imgGameEvilWithin from '../assets/twitch/rotation/game-evilwithin.jpg';
 import imgGameMarioKart8D from '../assets/twitch/rotation/game-mariokart8d.jpg';
 
+import imgStaffThe13thgeek from '../assets/twitch/staff-the13thgeek.jpg';
+import imgStaffTooniearcade from '../assets/twitch/staff-tooniearcade.jpg'
+import imgStaffHreowan from '../assets/twitch/staff-hreowan.jpg'
+import imgStaffBriofthegrid from '../assets/twitch/staff-briofthegrid.jpg'
+
 const Twitch = () => {
 
   const embed = useRef(); // We use a ref instead of state to avoid rerenders.
@@ -244,6 +249,53 @@ const Twitch = () => {
                     
                 </div>
             </div>
+        </section>
+        <section id="community" className="community">
+        <div className="content-container">
+            <div className="information">
+                <div className="descriptor twitch-4-community">
+                    <span className="title">Community</span>
+                </div>
+                <h2>#TheMainframe</h2>
+                <p>Like what you see so far?<br />
+                Do you play the same games and would be down to collab?<br />
+                Got another game or activity to recommend?</p>
+                <p>If you'd like to be part of the action, you can join in the fun on @the13thgeek's Discord channel! It's the perfect place to hang out, chat, meet fellow geeks and stay updated with the latest news, stream schedules and other shenanigans.</p>
+                <p>You can follow on Twitch as well so you never miss out!</p>
+                <div className="call-to-action">
+                  <Link className="cta-link" target="_blank" rel='nofollow noopener' to="//discord.gg/GdsHhkJD9v"><i className="fa-brands fa-discord"></i> Join the Channel <i className="fa-solid fa-chevron-right"></i></Link>
+                  <Link className="cta-link" target="_blank" to="https://twitter.com/the13thgeek"><i className="fa-brands fa-x-twitter"></i> @the13thgeek <i className="fa-solid fa-chevron-right"></i></Link>
+                </div>              
+            </div>          
+            <div className="staff">
+              <div className="staff-grid">
+                <div className="item">
+                  <div className="polaroid the13thgeek">
+                    <img src={imgStaffThe13thgeek} alt="Mug shot: @the13thgeek" />
+                    <h4><i className="fa-solid fa-video"></i> @the13thgeek</h4>
+                  </div>
+                </div>
+                <div className="item">
+                  <div className="polaroid">
+                    <img src={imgStaffTooniearcade} alt="Mug shot: @Tooniearcade" />
+                    <h4><i className="fa-solid fa-shield-halved"></i> @Tooniearcade</h4>
+                  </div>
+                </div>
+                <div className="item">
+                  <div className="polaroid">
+                    <img src={imgStaffBriofthegrid} alt="Mug shot: @BriOfTheGrid" />
+                    <h4><i className="fa-solid fa-shield-halved"></i> @BriOfTheGrid</h4>
+                  </div>
+                </div>
+                <div className="item">
+                  <div className="polaroid">
+                    <img src={imgStaffHreowan} alt="Mug shot: @hreowan" />
+                    <h4><i className="fa-solid fa-shield-halved"></i> @hreowan</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
     </main>
     <Footer />

@@ -34,9 +34,10 @@ section#about-profile  {
 
     .profile-photo {
         position: absolute;
-        left: -5%;
+        left: 0;
         top: 0;
-        width: 23%;
+        width: 25%;
+        max-width: 300px;
         z-index: 0;
 
         img {
@@ -103,11 +104,19 @@ section#about-profile  {
                     margin-bottom: 30px;
 
                     div {
+                        position: relative;
                         color: #000;
                         display: inline;
                         font-size: 25px;
                         line-height: 35px;
                         background: rgba(220, 220, 220, 0.8);
+
+                        sup {
+                            position: relative;
+                            bottom: 0;
+                            font-size: 80%;
+                            line-height: 5px;
+                        }
                     }
                 }
             }
@@ -131,6 +140,11 @@ section#about-profile  {
         
                 b {
                     font-weight: 800;
+                }
+
+                &.footnote {
+                    font-size: 14px;
+                    font-style: italic;
                 }
             }
 
@@ -190,7 +204,7 @@ section#about-profile  {
     .profile-misc {
         display: flex;
         flex-direction: column;
-        flex: 2;
+        flex: 1;
     
         .tags {
             list-style: none;
@@ -200,8 +214,8 @@ section#about-profile  {
             li {
                 width: 100%;
                 text-align: right;
-                font-size: 30px;
-                line-height: 28px;
+                font-size: 45px;
+                line-height: 43px;
                 font-weight: 100;
                 transition: all 0.3s;
                 cursor: default;
@@ -223,38 +237,13 @@ section#about-profile  {
                 &:hover + li {
                     scale: 1.1;
                     z-index: 2;
-                    font-weight: 400;
-                    color: lighten($swatch-2, 20%);
+                    font-weight: 300;
+                    //color: lighten($swatch-2, 20%);
+                    //color: #999;
                 }
 
             }
-        }
-    
-        .geek-origin {
-            background-color: #333;
-            color: #fff;
-            display: inline-block;
-            padding: 10px 25px 10px 20px;
-            clip-path: polygon(0 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%);
-            border-bottom: #ccc 3px solid;
-    
-            h4 {
-                color: #ddd;
-                font-size: 30px;
-                font-weight: 800;
-                margin: 10px 0 30px;
-
-                span {
-                    font-size: 40px;
-                }
-            }
-
-            p {
-                font-size: 14px;
-                line-height: 23px;
-                margin-bottom: 30px;
-            }
-        }
+        }        
     }
 
 }
@@ -265,7 +254,7 @@ section#off-the-grid {
     position: relative;
     align-items: center;
     gap: 40px;
-    padding: 80px 0;
+    //padding: 80px 0;
     background: #000 url('../assets/about/offgrid-1.jpg') 100% 50% / contain no-repeat;
     color: #fff;
 
@@ -366,11 +355,31 @@ section#off-the-grid {
     }
 }
 
+section#branding {
+    display: flex;
+    flex-direction: column;
+    background-color: #333;
+    color: #fff;
+    align-items: center;
 
+    .row {
+        margin-top: 40px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 30px;
 
-
-
-
+        .brand {
+            flex: 1;
+            img {
+                max-width: 500px;
+            }
+        }
+        .content {
+            flex: 2;
+        }
+    }
+}
 
 @media (max-width: $screen-lg) {
 
@@ -389,6 +398,15 @@ section#off-the-grid {
 
         }
 
+        .profile-misc {
+            .tags {
+                li {
+                    font-size: 35px;
+                    line-height: 35px;
+                }
+            }
+        }
+
     }
 
 }
@@ -401,6 +419,19 @@ section#off-the-grid {
 
             .body-content {
                 margin-left: 5%;                
+            }
+
+        }
+
+        .profile-misc {
+
+            .tags {
+
+                li {
+                    font-size: 30px;
+                    line-height: 30px;
+                }
+
             }
 
         }
@@ -453,6 +484,19 @@ section#off-the-grid {
 
         .col-a {
             width: 95%;
+        }
+    }
+
+    section#branding {
+        .row {
+            flex-direction: column;
+
+            .brand {
+                img {
+                    width: 380px;
+                    margin: 0;
+                }
+            }
         }
     }
 
