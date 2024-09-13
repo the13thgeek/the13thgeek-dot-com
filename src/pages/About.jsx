@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from 'react-helmet-async';
 import Navbar from "../components/Navbar/Navbar";
 import Connect from "../components/Connect/Connect";
 import Footer from "../components/Footer/Footer";
@@ -9,6 +10,7 @@ import imgBranding from '../assets/global/the13thgeek-brand.svg';
 import imgFlagCan from '../assets/about/lang-en.png';
 import imgFlagJpn from '../assets/about/lang-jp.png';
 import imgFlagPhl from '../assets/about/lang-ph.png';
+import seoCard from '../assets/global/seo-card-about.jpg';
 
 const About = () => {
 
@@ -19,12 +21,30 @@ const About = () => {
   };
   
     useEffect(() => {
-    document.title = "About | " + import.meta.env.VITE_GLOBAL_SITE_TITLE;
-    window.scrollTo(0, 0);
+      window.scrollTo(0, 0);
   }, []);
 
   return (
     <>
+    <Helmet>
+        <title>About | {import.meta.env.VITE_GLOBAL_SITE_TITLE}</title>
+        <meta name="description" content="Learn more about Aldreich, the tech geek behind @the13thgeek. Discover his journey as a web developer, gamer and geek culture enthusiast!" />
+        <meta name='keywords' content='Web development, React developer, tech blog, geek culture, Kamen Rider fan, Power Rangers fan, gaming, Twitch streamer, Toronto developer, developer portfolio, the13thgeek' />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://the13thgeek.com/#/about" />
+
+        <meta property="og:title" content={`About | ` + import.meta.env.VITE_GLOBAL_SITE_TITLE} />
+        <meta property="og:description" content="Learn more about Aldreich, the tech geek behind @the13thgeek. Discover his journey as a web developer, gamer and geek culture enthusiast!" />
+        <meta property="og:image" content={seoCard} />
+        <meta property="og:url" content="https://the13thgeek.com/#/about" />
+        <meta property="og:type" content="website" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={`About | ` + import.meta.env.VITE_GLOBAL_SITE_TITLE} />
+        <meta name="twitter:description" content="Learn more about Aldreich, the tech geek behind @the13thgeek. Discover his journey as a web developer, gamer and geek culture enthusiast!" />
+        <meta name="twitter:image" content={seoCard} />
+        <meta name="twitter:site" content="@the13thgeek" />
+    </Helmet>
     <header className="main">
         <Navbar />
         <div className="page-title-bar about">

@@ -1,8 +1,10 @@
 import React, { useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 import Navbar from '../components/Navbar/Navbar';
 import Footer from '../components/Footer/Footer';
 import './FourOhFour.scss';
 import imgAvatar from '../assets/global/geek-avatar-404.png';
+import seoCard from '../assets/global/seo-card-404.jpg';
 
 const FourOhFour = () => {
 
@@ -12,7 +14,23 @@ const FourOhFour = () => {
   }, []);
 
   return (
-    <div>
+    <>
+      <Helmet>
+          <title>404 Page Not Found | {import.meta.env.VITE_GLOBAL_SITE_TITLE}</title>
+          <meta name="description" content="Oops! The page you're looking for can't be found. Check out other content on @the13thgeek." />
+          <meta name="robots" content="noindex, follow" />
+
+          <meta property="og:title" content={`404 Page Not Found | ` + import.meta.env.VITE_GLOBAL_SITE_TITLE} />
+          <meta property="og:description" content="Oops! The page you're looking for can't be found. Check out other content on @the13thgeek." />
+          <meta property="og:image" content={seoCard} />
+          <meta property="og:type" content="website" />
+
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:title" content={`404 Page Not Found | ` + import.meta.env.VITE_GLOBAL_SITE_TITLE} />
+          <meta name="twitter:description" content="Oops! The page you're looking for can't be found. Check out other content on @the13thgeek." />
+          <meta name="twitter:image" content={seoCard} />
+          <meta name="twitter:site" content="@the13thgeek" />
+      </Helmet>
       <header className='main'>
         <Navbar isHome={false} />
         <div className="page-title-bar error-404">
@@ -37,7 +55,7 @@ const FourOhFour = () => {
         </div>
       </main>
       <Footer />
-    </div>
+    </>
   )
 }
 

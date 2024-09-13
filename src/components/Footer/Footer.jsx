@@ -12,7 +12,7 @@ const Footer = () => {
             <img className='footer-logo' src={logo} alt="Logo" />
             <p>Copyright© 2011 &mdash; {(new Date().getFullYear())}<br />
             <b>Aldreich Aguilar // @the13thgeek</b></p>
-            
+            <p><i>v{import.meta.env.VITE_SITE_VERSION}</i></p>
         </div>
     </footer>
 

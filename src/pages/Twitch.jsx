@@ -2,8 +2,10 @@ import React, { useEffect, useRef, useState } from 'react';
 import {Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay, EffectFade } from 'swiper/modules';
 import { Link } from "react-router-dom";
+import { Helmet } from 'react-helmet-async';
 import Navbar from '../components/Navbar/Navbar';
 import Footer from '../components/Footer/Footer';
+import seoCard from '../assets/global/seo-card-twitch.jpg';
 import './Twitch.scss';
 import 'swiper/scss';
 import 'swiper/scss/navigation';
@@ -130,7 +132,6 @@ const Twitch = () => {
     fetchLastClips();
     fetchLiveStatus();
 
-    document.title = "Twitch | " + import.meta.env.VITE_GLOBAL_SITE_TITLE;
     window.scrollTo(0, 0);
   }, []);
 
@@ -175,6 +176,25 @@ const Twitch = () => {
 
 return (
     <>
+    <Helmet>
+        <title>Twitch | {import.meta.env.VITE_GLOBAL_SITE_TITLE}</title>
+        <meta name="description" content="Join Aldreich, aka @the13thgeek, on Twitch for live streams of horror games, Dance Dance Revolution, Cities: Skylines, and more. Check out his streaming schedule and tune in!" />
+        <meta name='keywords' content='Twitch streamer, the13thgeek Twitch, gaming live streams, horror games, Dance Dance Revolution, Kamen Rider stream, Cities: Skylines streams, Zelda Minish Cap live, streaming schedule' />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://the13thgeek.com/#/twitch" />
+
+        <meta property="og:title" content={`Twitch | ` + import.meta.env.VITE_GLOBAL_SITE_TITLE} />
+        <meta property="og:description" content="Join Aldreich, aka @the13thgeek, on Twitch for live streams of horror games, Dance Dance Revolution, Cities: Skylines, and more. Check out his streaming schedule and tune in!" />
+        <meta property="og:image" content={seoCard} />
+        <meta property="og:url" content="https://the13thgeek.com/#/twitch" />
+        <meta property="og:type" content="website" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={`Twitch | ` + import.meta.env.VITE_GLOBAL_SITE_TITLE} />
+        <meta name="twitter:description" content="Join Aldreich, aka @the13thgeek, on Twitch for live streams of horror games, Dance Dance Revolution, Cities: Skylines, and more. Check out his streaming schedule and tune in!" />
+        <meta name="twitter:image" content={seoCard} />
+        <meta name="twitter:site" content="@the13thgeek" />
+    </Helmet>
     <header className="main">
         <Navbar />
     </header>
