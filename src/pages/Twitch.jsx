@@ -1,17 +1,16 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { TwitchEmbed } from 'react-twitch-embed';
 import {Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Autoplay, EffectFade } from 'swiper/modules';
+import { Navigation, Pagination, Autoplay, EffectFade } from 'swiper/modules';
 import { Link } from "react-router-dom";
 import Navbar from '../components/Navbar/Navbar';
 import Footer from '../components/Footer/Footer';
 import './Twitch.scss';
 import 'swiper/scss';
 import 'swiper/scss/navigation';
+import 'swiper/scss/pagination';
 import 'swiper/scss/effect-fade';
 
 /* Local assets */
-import twitchAvatar from '../assets/twitch/avatar-geek.png';
 import twitchFootage from '../assets/twitch/twitch-footage.webm';
 
 import imgFeatureEvilWithin from '../assets/twitch/feature/slide-evil-within.jpg';
@@ -23,17 +22,6 @@ import imgFeatureParkitectLogo from '../assets/twitch/feature/logo-parkitect.png
 import imgFeatureSplat3 from '../assets/twitch/feature/slide-splat3.jpg';
 import imgFeatureSplat3Logo from '../assets/twitch/feature/logo-splat3.png';
 
-import imgGameCities2 from '../assets/twitch/rotation/game-cities2.jpg';
-import imgGameSplat3 from '../assets/twitch/rotation/game-splat3.jpg';
-import imgGameParkitect from '../assets/twitch/rotation/game-parkitect.jpg';
-import imgGameDdr3Mk from '../assets/twitch/rotation/game-ddr3mk.jpg';
-import imgGameAceCombat7 from '../assets/twitch/rotation/game-acecombat7.jpg';
-import imgGameHelldivers2 from '../assets/twitch/rotation/game-helldivers2.jpg'
-import imgGameItTakesTwo from '../assets/twitch/rotation/game-ittakestwo.jpg';
-import imgGameUntilThen from '../assets/twitch/rotation/game-untilthen.jpg';
-import imgGameEvilWithin from '../assets/twitch/rotation/game-evilwithin.jpg';
-import imgGameMarioKart8D from '../assets/twitch/rotation/game-mariokart8d.jpg';
-
 import imgStaffThe13thgeek from '../assets/twitch/staff-the13thgeek.jpg';
 import imgStaffTooniearcade from '../assets/twitch/staff-tooniearcade.jpg'
 import imgStaffHreowan from '../assets/twitch/staff-hreowan.jpg'
@@ -41,18 +29,107 @@ import imgStaffBriofthegrid from '../assets/twitch/staff-briofthegrid.jpg'
 
 const Twitch = () => {
 
-  const embed = useRef(); // We use a ref instead of state to avoid rerenders.
-  const [nowStreaming, setNowStreaming] = useState("evil-within");
-  
-  const handleReady = (e) => {
-    embed.current = e;
-  };
+  const [lastStreams, setLastStreams] = useState([]);
+  const [lastClips, setLastClips] = useState([]);
+  const [liveData, setLiveData] = useState();
 
-  const changeGame = (name) => {
-    setNowStreaming(name);
-  };
+  const dateFormat = (input) => {
+    let initDate = new Date(input);
+    let convDate = initDate.toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    });
+    return convDate;
+  }
+
+  const timeFormat = (input) => {
+    let initTime = new Date(input);
+    let convTime = initTime.toLocaleTimeString('en-US', {
+      hour: 'numeric',
+      minute: 'numeric',
+      hour12: true,
+      timeZone: 'America/Toronto'
+    });
+    return convTime + " EST";
+  }
+
+  const fetchLiveData = async () => {
+    let response = await fetch(`https://api.twitch.tv/helix/streams?user_login=${import.meta.env.VITE_TWITCH_CHANNEL_NAME}`, {
+      headers: {
+        'Authorization': `Bearer ${import.meta.env.VITE_TWITCH_ACCESS_TOKEN}`,
+        'Client-Id': `${import.meta.env.VITE_TWITCH_CLIENT_ID}`
+      }
+    });
+    let data = await response.json();
+    let output = data.data[0]
+    return output;
+  }
+
+  const fetchVODs = async () => {
+    let response = await fetch(`https://api.twitch.tv/helix/videos?user_id=${import.meta.env.VITE_TWITCH_USER_ID}&type=archive&first=8`, {
+      headers: {
+        'Authorization': `Bearer ${import.meta.env.VITE_TWITCH_ACCESS_TOKEN}`,
+        'Client-Id': `${import.meta.env.VITE_TWITCH_CLIENT_ID}`
+      }
+    });
+    let data = await response.json();
+    return data.data;
+  }
+
+  const fetchClips = async () => {
+    let response = await fetch(`https://api.twitch.tv/helix/clips?broadcaster_id=${import.meta.env.VITE_TWITCH_USER_ID}`, {
+      headers: {
+        'Authorization': `Bearer ${import.meta.env.VITE_TWITCH_ACCESS_TOKEN}`,
+        'Client-Id': `${import.meta.env.VITE_TWITCH_CLIENT_ID}`
+      }
+    });
+    let data = await response.json();
+    return data.data;
+  }
+
+  const thumbnailResize = (url, width, height) => {
+    if (typeof url === 'undefined') {
+      console.error('URL is undefined');
+      console.error(width + 'x' + height);
+      return;
+    }
+
+    return url
+    .replace(/%\{width\}|\{width\}/g, width)
+    .replace(/%\{height\}|\{height\}/g, height);    
+  }
+
+  const isItemNew = (dateInput, age) => {
+    let itemDate = new Date(dateInput);
+    let todayDate = new Date();
+    let dateDiff = todayDate - itemDate;
+    let itemAge = dateDiff / (1000 * 60 * 60 * 24);
+    if(itemAge <= age) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 
   useEffect(() => {
+    const fetchLastStreams = async () => {
+      const lastStreams = await fetchVODs();
+      setLastStreams(lastStreams);
+    }
+    const fetchLastClips = async () => {
+      const lastClips = await fetchClips();
+      setLastClips(lastClips);
+    }
+    const fetchLiveStatus = async () => {
+      const liveData = await fetchLiveData();
+      setLiveData(liveData);
+    }
+
+    fetchLastStreams();
+    fetchLastClips();
+    fetchLiveStatus();
+
     document.title = "Twitch | " + import.meta.env.VITE_GLOBAL_SITE_TITLE;
     window.scrollTo(0, 0);
   }, []);
@@ -65,7 +142,6 @@ const Twitch = () => {
       'title': "Terrors of the Unknown",
       'schedule': 'Thursdays @ 7pm EST',
       'description': 'On this stream, expect a lot of nervous laughter and jump scares as @the13thgeek navigates through twisted environments and face off against terrifying creatures.',
-      'caption': null,
       'scheme': 'dark'
     },
     {
@@ -75,7 +151,6 @@ const Twitch = () => {
       'title': "The Final Splatfest",
       'schedule': 'weekend of Sep 13th-16th',
       'description': 'The dawn of the final Splatoon 3 Splatfest is upon us. @the13thgeek chose to fight for Team Future. Will they prevail against the Past and Present Teams?',
-      'caption': null,
       'scheme': 'dark'
     },
     {
@@ -85,7 +160,6 @@ const Twitch = () => {
       'title': "Say Hello to Democracy!",
       'schedule': null,
       'description': 'Watch as @the13thgeek and his friends explore new locations in the galaxy and fight for some (Managed) Democracy!',
-      'caption': null,
       'scheme': 'dark'
     },
     {
@@ -95,114 +169,124 @@ const Twitch = () => {
       'title': "Let's Build a Theme Park!",
       'schedule': 'Tuesdays @ 7pm EST',
       'description': 'Come chill and help @the13thgeek build a virtual theme park and try to keep it functional in this charming simulation game.',
-      'caption': null,
       'scheme': 'dark'
     }
   ]
 
-  const gameRotation = [
-    {
-      'isNew': true,
-      'title': 'The Evil Within',
-      'category': 'Community Challenge',
-      'schedule': 'Thursdays @ 7pm EST',
-      'image': imgGameEvilWithin
-    },
-    {
-      'isNew': true,
-      'title': 'Parkitect',
-      'category': 'Geek Builds',
-      'schedule': 'Tuesdays @ 7pm EST',
-      'image': imgGameParkitect
-    },
-    {
-      'isNew': true,
-      'title': 'Until Then: New Game+',
-      'category': null,
-      'schedule': null,
-      'image': imgGameUntilThen
-    },
-    {
-      'isNew': false,
-      'title': 'Cities Skylines 2',
-      'category': 'Geek Builds',
-      'schedule': 'Mondays @ 3pm EST',
-      'image': imgGameCities2
-    },
-    {
-      'isNew': false,
-      'title': 'Dance Dance Revolution 3rdMIX ver.KOREA2',
-      'category': 'GEEK×RETRO',
-      'schedule': 'Saturdays @ 10am EST',
-      'image': imgGameDdr3Mk
-    },
-    {
-      'isNew': false,
-      'title': 'Mario Kart 8 Deluxe',
-      'category': 'Danger Zone',
-      'schedule': null,
-      'image': imgGameMarioKart8D
-    },
-    {
-      'isNew': false,
-      'title': 'Splatoon 3',
-      'category': 'Poptart',
-      'schedule': null,
-      'image': imgGameSplat3
-    },
-    {
-      'isNew': false,
-      'title': 'Helldivers II',
-      'category': 'Collaborations',
-      'schedule': null,
-      'image': imgGameHelldivers2
-    }
-    // {
-    //   'isNew': false,
-    //   'title': 'It Takes Two feat. @lilnerdgamer',
-    //   'category': 'Collaborations',
-    //   'schedule': null,
-    //   'image': imgGameItTakesTwo
-    // },
-    // {
-    //   'isNew': false,
-    //   'title': 'Ace Combat 7: Skies Unknown',
-    //   'category': 'Danger Zone',
-    //   'schedule': null,
-    //   'image': imgGameAceCombat7
-    // }
-  ];
-
-  return (
+return (
     <>
     <header className="main">
         <Navbar />
     </header>
     <main className="page-twitch">
-        <section id="now-playing" className="now-playing">
-          <Swiper autoplay={{ delay: 6000, disableOnInteraction: false }} loop={true} effect={'fade'} navigation={true} modules={[Navigation, Autoplay, EffectFade]} className="carousel-now-playing">
-              {pageFeatures.map((slide,index) => 
-              <SwiperSlide key={index}>
-                <div className="back-screen" style={{backgroundImage: `url(${slide.background})`}}>
-                    <div className="filter"></div>
+        { liveData ? (
+          <section id="live-stream" className="live-stream">
+              <div className="back-screen" style={{backgroundImage: `url(${thumbnailResize(liveData.thumbnail_url, 1280, 720)})`}}>
+                  <div className="filter"></div>
+              </div>
+              <div className="content-container">
+                  <div className='page-title-box'>
+                      <div className="descriptor twitch-1-livestream">
+                          <span className="title">Live Stream</span>
+                      </div>
+                      <div className="live-indicator">
+                        <span><i className="fa-solid fa-video"></i>&nbsp;&nbsp;Now On Air</span>
+                      </div>
+                      <h1 className='live-title'>{ liveData.title.includes('|') ? liveData.title.substring(0, liveData.title.indexOf('|')).trim() : liveData.title }</h1>
+                      <p className="schedule">Stream started {dateFormat(liveData.started_at)} {timeFormat(liveData.started_at)}</p>
+                      <p className="caption">@the13thgeek is now live on Twitch!<br />Currently playing: <b>{liveData.game_name}</b></p>
+                  </div>
+                  <div className="call-to-action">
+                      <Link className="cta-link" target='_blank' to="https://twitch.tv/the13thgeek"><i className="fa-brands fa-twitch"></i> Watch Live!<i className="fa-solid fa-chevron-right"></i></Link>
+                  </div>
+              </div>
+          </section>
+        ) : (
+          <section id="now-playing" className="now-playing">
+            <Swiper autoplay={{ delay: 6000, disableOnInteraction: false }} loop={true} effect={'fade'} navigation={true} modules={[Navigation, Autoplay, EffectFade]} className="carousel-now-playing">
+                {pageFeatures.map((slide,index) => 
+                <SwiperSlide key={index}>
+                  <div className="back-screen" style={{backgroundImage: `url(${slide.background})`}}>
+                      <div className="filter"></div>
+                  </div>
+                  <div className="content-container">
+                      <div className={`page-title-box ` + slide.scheme}>
+                          <div className="descriptor twitch-1-nowplaying">
+                              <span className="title">Now Playing</span>
+                          </div>
+                          <img src={slide.logo} alt={slide.gametitle} className="event-logo" />
+                          <h1>{slide.title}</h1>
+                          <p className="schedule">{slide.schedule ? ('Streams ' + slide.schedule) : 'Streaming in Regular Rotation' }</p>
+                          <p className='caption'>{slide.description}</p>
+                      </div>
+                      <div className="call-to-action">
+                          &nbsp;
+                      </div>
+                  </div>
+                </SwiperSlide>
+                )}
+            </Swiper>
+          </section>
+        ) }
+        
+        <section id="rotation" className="rotation">
+            <div className="content-container">
+                <div className="descriptor twitch-2-rotation">
+                    <span className="title">Rotation</span>
                 </div>
-                <div className="content-container">
-                    <div className={`page-title-box ` + slide.scheme}>
-                        <div className="descriptor twitch-1-nowplaying">
-                            <span className="title">Now Playing</span>
-                        </div>
-                        <img src={slide.logo} alt={slide.gametitle} className="event-logo" />
-                        <h1>{slide.title}</h1>
-                        <p className="schedule">{slide.schedule ? ('Streams ' + slide.schedule) : 'Streaming in Regular Rotation' }</p>
-                        <p className='caption'>{slide.description}</p>
-                    </div>
-                    <div className="call-to-action">
-                        <Link className="cta-link" target='_blank' to="https://twitch.tv/the13thgeek"><i className="fa-brands fa-twitch"></i> {slide.caption ? slide.caption : 'Watch Live' } <i className="fa-solid fa-chevron-right"></i></Link>
-                    </div>
+                <h2>Latest Broadcasts</h2>
+                <div className="navigator">
+                  <div className="lb-prev"><i className="fa-solid fa-chevron-left"></i></div>
+                  <div className="lb-next"><i className="fa-solid fa-chevron-right"></i></div>
                 </div>
-              </SwiperSlide>
-              )}
-          </Swiper>
+                <div className="clips-area">
+                    <Swiper slidesPerView={2} spaceBetween={10} navigation={{ prevEl: '.lb-prev', nextEl: '.lb-next' }} modules={[Navigation]} breakpoints={{ 768: { slidesPerView: 2, spaceBetween: 10 }, 992: { slidesPerView: 3, spaceBetween: 20 }, 1200: { slidesPerView: 4, spaceBetween: 30 }}} className="carousel-latest-broadcasts">
+                      {lastStreams.map((stream, index) => 
+                      <SwiperSlide key={index}>
+                        <Link to={stream.url} target='_blank' key={index} className="clip-item">
+                          <div className="preview">
+                            {isItemNew(stream.created_at, 5) ? (<div className="new">New!</div>) : ('')}
+                            <img src={thumbnailResize(stream.thumbnail_url,640,360)} alt="Stream Preview" />
+                          </div>
+                          <h4>{stream.title.substring(0, stream.title.indexOf('|')).trim()}</h4>
+                          <p className="schedule">
+                            {dateFormat(stream.created_at)}<br />
+                            {timeFormat(stream.created_at)}
+                          </p>
+                          <p className="view-count"><span>{stream.view_count} views</span> <i className="fa-solid fa-tv"></i></p>
+                        </Link>
+                      </SwiperSlide>
+                      )}
+                    </Swiper>
+                </div>
+                <h2>Popular Clips</h2>
+                <div className="navigator">
+                    <div className="pc-prev"><i className="fa-solid fa-chevron-left"></i></div>
+                    <div className="pc-next"><i className="fa-solid fa-chevron-right"></i></div>
+                </div>
+                <div className="clips-area">
+                    <Swiper slidesPerView={2} spaceBetween={10} navigation={{ prevEl: '.pc-prev', nextEl: '.pc-next' }} modules={[Navigation]} breakpoints={{ 768: { slidesPerView: 2, spaceBetween: 10 }, 992: { slidesPerView: 3, spaceBetween: 20 }, 1200: { slidesPerView: 4, spaceBetween: 30 }}} className="carousel-popular-clips">
+                      {lastClips.slice(0,10).map((clip, index) => 
+                      <SwiperSlide key={index}>
+                          <Link to={clip.url} target='_blank' className='clip-item'>
+                            <div className="preview">
+                              <div className="clipper">
+                                <i className="fa-solid fa-user"></i> Clipped by <b>{clip.creator_name}</b>
+                              </div>
+                              <img src={clip.thumbnail_url} alt="Clip Preview" />
+                            </div>
+                            <h4>{clip.title}</h4>
+                            <p className="schedule">
+                              {dateFormat(clip.created_at)}<br />
+                              {timeFormat(clip.created_at)}
+                            </p>
+                            <p className="view-count"><span>{clip.view_count} views</span> <i className="fa-solid fa-tv"></i></p>
+                          </Link>
+                      </SwiperSlide>
+                      )}
+                    </Swiper>
+                </div>                
+            </div>
         </section>
         <section id='twitch-history' className="twitch-history">
             <div className="col-1">
@@ -216,7 +300,7 @@ const Twitch = () => {
             </div>            
             <div className='col-2'>
               <div className="contents">
-                  <div className="descriptor twitch-2-history">
+                  <div className="descriptor twitch-3-history">
                       <span className="title">History</span>
                   </div>
                 <h2>Going live in 3, 2, 1...</h2>
@@ -227,31 +311,8 @@ const Twitch = () => {
               </div>
             </div>
         </section>
-        <section id="rotation" className="rotation">
-            <div className="content-container">
-                <div className="descriptor twitch-3-rotation">
-                    <span className="title">Rotation</span>
-                </div>
-                <h2>Games on Broadcast</h2>
-                <div className="games-list">
-                    {gameRotation.map((game,index) => 
-                      <div key={index} className="game-item">
-                          <div className="preview">
-                              {game.isNew ? (<div className="new">New!</div>) : ('')}
-                              <img src={game.image} alt={game.title} />
-                          </div>
-                          <h4>{game.title}</h4>
-                          <p className="schedule">{game.schedule ? ('streams ' + game.schedule) : 'Regular Rotation'}</p>
-                          <p className="category"><span>{game.category ? game.category : 'the13thgeek Live!'}</span> <i className="fa-solid fa-tv"></i></p>
-                      </div>
-                    )}
-
-                    
-                </div>
-            </div>
-        </section>
         <section id="community" className="community">
-        <div className="content-container">
+          <div className="content-container">
             <div className="information">
                 <div className="descriptor twitch-4-community">
                     <span className="title">Community</span>
@@ -300,123 +361,6 @@ const Twitch = () => {
     </main>
     <Footer />
     </>
-    // <div>
-    //   <header className='main'>
-    //     <Navbar />
-    //   </header>
-    //   <main>
-    //     <section id="twitch" className="twitch">
-    //       <div className="filter"></div>
-    //       <div className="g-content-container intro">
-    //         <div>
-    //           <div className="descriptor">01 <span className="title">Live Stream</span></div>
-    //           <h1>Live on Twitch</h1>
-    //         </div>
-    //         <TwitchEmbed channel='the13thgeek' autoplay={true} muted withChat darkMode={true} width={'100%'} height={`50vh`} />
-    //       </div>
-    //     </section>
-    //     <section className={('twitch-now-streaming ' + nowStreaming)}>
-    //       <div className="g-content-container">
-    //         <div className="row">
-    //           <div className="descriptor">03 <span className="title">Now Streaming</span></div>
-    //         </div>
-    //         <div className="row game-list">
-    //             <div className={(nowStreaming === 'evil-within') ? 'item evil-within active' : 'item evil-within'} onClick={() => setNowStreaming('evil-within')}></div>
-    //             <div className={(nowStreaming === 'zelda-minish-cap') ? 'item zelda-minish-cap active' : 'item zelda-minish-cap'} onClick={() => setNowStreaming('zelda-minish-cap')}></div>
-    //             <div className={(nowStreaming === 'skylines') ? 'item skylines active' : 'item skylines'} onClick={() => setNowStreaming('skylines')}></div>
-    //             <div className={(nowStreaming === 'ddr') ? 'item ddr active' : 'item ddr'} onClick={() => setNowStreaming('ddr')}></div>
-    //         </div>
-    //         <div className="row game-details">
-    //           {(nowStreaming === 'evil-within') ? (
-    //             <>
-    //             <span className="category" style={{backgroundColor:'#900'}}>
-    //               Community Challenge
-    //             </span>
-    //             <h2 style={{color:'#c00'}}>The Evil Within</h2>
-    //             <p className="generic description">
-    //               On my stream, The Evil Within becomes a pulse-pounding ride through pure horror. Expect a lot of nervous laughter and jump scares as I navigate through twisted environments and face off against terrifying creatures. If you enjoy watching someone get spooked (and sometimes scream), while trying to outsmart the game's relentless enemies, you're in for a treat! 
-    //             </p>
-    //             <div className="schedule">
-    //               <small>When to watch</small>
-    //               <div className="timeslot">Thursdays @ 7pm EST*</div>
-    //               <small className="footnote">*Schedule is subject to change. Follow <a href="//twitter.com/the13thgeek" target='_blank'>@the13thgeek</a> on X (formerly Twitter) for the latest updates.</small>
-    //             </div>
-    //             </>
-    //           ) : (<></>)}
-    //           {(nowStreaming === 'zelda-minish-cap') ? (
-    //             <>
-    //             <span className="category" style={{backgroundColor:'#666'}}>
-    //               GEEK × RETRO
-    //             </span>
-    //             <h2 style={{color:'#fff'}}>The Legend of Zelda: The Minish Cap</h2>
-    //             <p className="generic description">
-    //             On my stream, The Minish Cap is a nostalgic journey through the magical world of Hyrule. You'll join me as I explore, solve puzzles, and take on the role of tiny Link in this charming adventure. Expect a mix of focused gameplay, moments of awe at the game's clever design, and a lot of nerdy enthusiasm as I dive into this classic Zelda title. Perfect for those who love a good story and some laid-back gaming vibes.
-    //             </p>
-    //             <div className="schedule">
-    //               <small>When to watch</small>
-    //               <div className="timeslot">Tuesdays @ 7pm EST*</div>
-    //               <small className="footnote">*Schedule is subject to change. Follow <a href="//twitter.com/the13thgeek" target='_blank'>@the13thgeek</a> on X (formerly Twitter) for the latest updates.</small>
-    //             </div>
-    //             </>
-    //           ) : (<></>)}
-    //           {(nowStreaming === 'skylines') ? (
-    //             <>
-    //             <span className="category" style={{backgroundColor:'#369'}}>
-    //               Regular Rotation
-    //             </span>
-    //             <h2 style={{color:'#fff'}}>Cities Skylines II</h2>
-    //             <p className="generic description">
-    //               When I'm playing Cities: Skylines 2, you'll see me geek out over city planning, infrastructure design, and all the tiny details that make a city thrive. I'll be balancing budgets, solving traffic problems, and maybe even creating the perfect city… or watching it hilariously fall apart. Whether you're into serious city-building or just want to hang out and chat while I build, my stream is a chill place to watch creativity and strategy unfold.
-    //             </p>
-    //             <div className="schedule">
-    //               <small>When to watch</small>
-    //               <div className="timeslot">Mondays @ 3pm EST*</div>
-    //               <small className="footnote">*Schedule is subject to change. Follow <a href="//twitter.com/the13thgeek" target='_blank'>@the13thgeek</a> on X (formerly Twitter) for the latest updates.</small>
-    //             </div>
-    //             </>
-    //           ) : (<></>)}
-    //           {(nowStreaming === 'ddr') ? (
-    //             <>
-    //             <span className="category" style={{backgroundColor:'#ffd700', color:'#000'}}>
-    //               GEEK × CARDIO
-    //             </span>
-    //             <h2 style={{color:'#fff'}}>Dance Dance Cardiolution</h2>
-    //             <p className="generic description">
-    //             Get ready to move to the beat as I tackle Dance Dance Revolution on stream! I'll be dancing through high-energy tracks with a mix of determination and fun, sometimes nailing the combos and sometimes totally messing up, but always having a blast. If you're into rhythm games or just want to see someone having a great time (with the occasional chipmunk voice filter), this is where the party's at!
-    //             </p>
-    //             <div className="schedule">
-    //               <small>When to watch</small>
-    //               <div className="timeslot">Saturdays @ 10pm EST*</div>
-    //               <small className="footnote">*Schedule is subject to change. Follow <a href="//twitter.com/the13thgeek" target='_blank'>@the13thgeek</a> on X (formerly Twitter) for the latest updates.</small>
-    //             </div>
-    //             </>
-    //           ) : (<></>)}
-    //         </div>            
-    //       </div>
-    //     </section>
-
-    //     <section className="twitch-community">
-    //       <div className="g-content-container">
-    //         <div>
-    //           <div className="descriptor">04 <span className="title">Community</span></div>
-    //           <h2>Join the chaos!</h2>
-    //           <p className="generic">Like what you see so far? If you want to be part of the action, you can in the fun on my channel's Discord channel!</p>
-    //           <p className="generic">It's the perfect place to hang out, chat, meet fellow geeks and stay updated with the latest news, stream schedules and other shenanigans.</p>
-    //           <p className="generic">You can follow me on Twitch as well so you never miss out!</p>
-    //           <div className="actions">
-    //             <Link className="g-action" target="_blank" rel='nofollow noopener' to="//discord.gg/GdsHhkJD9v"><i className="fa-brands fa-discord"></i> Join the Channel <i className="fa-solid fa-chevron-right"></i></Link>
-    //             <Link className="g-action" target="_blank" to="//twitter.com/the13thgeek"><i className="fa-brands fa-x-twitter"></i> @the13thgeek <i className="fa-solid fa-chevron-right"></i></Link>
-    //           </div>              
-    //         </div>
-    //         <div className='avatar'>
-    //           <img src={twitchAvatar} alt="Twitch Cartoon Avatar" />
-    //         </div>
-    //       </div>
-    //     </section>
-        
-    //   </main>
-    //   <Footer />
-    // </div>
   )
 }
 

@@ -3,7 +3,7 @@
 
 nav.global {
     width: 100%;
-    padding: 10px 0;
+    padding: 5px 0;
     display: flex;
     justify-content: center;
 
@@ -72,6 +72,10 @@ nav.global {
 
 }
 
+.header-link {
+    text-decoration: none;
+}
+
 .anchor-link {
     text-decoration: none;
     text-transform: uppercase;
@@ -104,7 +108,13 @@ nav.global {
     display: none;
 }
 
-@media(max-width: 768px) {
+@media(max-width: $screen-md) {
+    .nav-menu {
+        gap: 10px;
+    }
+}
+
+@media(max-width: $screen-sm) {
     
     // nav.global {
     //     margin: 20px 50px;
@@ -117,7 +127,9 @@ nav.global {
     .nav-mob-open {
         display: block;
         position: fixed;
-        right: 30px;
+        left: 30px;
+        cursor: pointer;
+        font-size: 23px;
     }
 
     .nav-mob-close {
@@ -126,6 +138,8 @@ nav.global {
         top: 30px;
         left: 290px;
         width: 30px;
+        cursor: pointer;
+        font-size: 23px;
     }
 
     .nav-menu {
@@ -134,12 +148,12 @@ nav.global {
         align-items: start;
         top: 0;
         gap: 30px;
-        background-color: #1f0016;
+        background-color: #000;
         width: 350px;
         height: 100%;
         z-index: 50;
-        transition: right 0.5s;
-        right: -350px;
+        transition: left 0.5s;
+        left: -350px;
     }
 
     .nav-menu li {

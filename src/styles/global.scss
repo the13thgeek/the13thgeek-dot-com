@@ -181,16 +181,20 @@ main {
         background-position: 0 -260px;
         width: 290px;
     }
-    &.twitch-2-history {
+    &.twitch-1-livestream {
         background-position: 0 -280px;
-        width: 230px;
+        width: 290px;
     }
-    &.twitch-3-rotation {
+    &.twitch-2-rotation {
         background-position: 0 -300px;
         width: 250px;
     }
-    &.twitch-4-community {
+    &.twitch-3-history {
         background-position: 0 -320px;
+        width: 230px;
+    }
+    &.twitch-4-community {
+        background-position: 0 -340px;
         width: 280px;
     }
 }

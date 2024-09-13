@@ -9,14 +9,6 @@ import Gaming from '../components/Gaming/Gaming';
 import Connect from '../components/Connect/Connect';
 import Footer from '../components/Footer/Footer';
 
-// import Hero from '../components/Hero/Hero';
-// import About from '../components/About/About';
-// import Skillset from '../components/Skillset/Skillset';
-// import Socials from '../components/Socials/Socials';
-// import Contact from '../components/Contact/Contact';
-// import Footer from '../components/Footer/Footer';
-
-
 const Home = () => {
   const { hash } = useLocation();
 

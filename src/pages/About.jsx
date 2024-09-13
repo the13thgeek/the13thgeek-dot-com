@@ -57,7 +57,8 @@ const About = () => {
                           <p>When he's not coding or fixing something, Aldreich dabbles in streaming his video games, travelling, action figure photography, cosplaying at comic cons and learning Japanese.<sup>2</sup> He's currently upskilling in UX Design, Node.js and REST APIs, and applying what he's learned to his current projects.</p>
                           <p>Aldreich personally believes that web development is the art of trying to please everybody&mdash; and just like Barney Stinson, he'd say, "Challenge accepted!"</p>
                           <p className="footnote">
-                            1. (boldly) assuming video games don't count
+                            1. (boldly) assuming video games don't count<br />
+                            2. He passed JLPT N5 level (Elementary), working towards N4
                           </p>
                           {/* <div className="call-to-action">
                               <Link className="cta-link" target="_blank" to="#"><i className="fa-solid fa-file-pdf"></i> My Resume <i className="fa-solid fa-chevron-right"></i></Link>

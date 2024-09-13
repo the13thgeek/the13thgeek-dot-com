@@ -9,6 +9,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - [Placeholder for ongoing development]
 
 ---
+## [1.0.0] - 2024-09-13
+- First release! =)
+
+## [0.2.9] - 2024-09-12
+### Added
+- [Global] GA4 integration
+- [Twitch] Twitch integration for VODs, clips and LIVE status
+- [Home] Twitch LIVE integration
+### Changed
+- [Twitch] Reversed layout order for History/Rotation
+- [Twitch] Converted Rotation to horizontal carousel
 
 ## [0.2.8] - 2024-09-08
 ### Added
