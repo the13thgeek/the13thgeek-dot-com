@@ -228,12 +228,26 @@ section#rotation {
                 position: relative;
                 margin-bottom: 10px;
 
-                .new {
+                .live {
                     position: absolute;
                     top: 4px;
                     left: 15px;
                     background-color: #c00;
                     color: #fff;
+                    text-transform: uppercase;
+                    padding: 5px 10px;
+                    font-size: 14px;
+                    font-weight: 600;
+                    z-index: 2;
+                    animation: highlight-new 0.5s infinite;
+                }
+
+                .new {
+                    position: absolute;
+                    top: 4px;
+                    left: 15px;
+                    background-color: $swatch-2;
+                    color: #000;
                     text-transform: uppercase;
                     padding: 5px 10px;
                     font-size: 14px;
