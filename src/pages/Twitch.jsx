@@ -263,10 +263,14 @@ return (
                     <Swiper slidesPerView={2} spaceBetween={10} navigation={{ prevEl: '.lb-prev', nextEl: '.lb-next' }} modules={[Navigation]} breakpoints={{ 768: { slidesPerView: 2, spaceBetween: 10 }, 992: { slidesPerView: 3, spaceBetween: 20 }, 1200: { slidesPerView: 4, spaceBetween: 30 }}} className="carousel-latest-broadcasts">
                       {lastStreams.map((stream, index) => 
                       <SwiperSlide key={index}>
-                        <Link to={stream.url} target='_blank' key={index} className="clip-item">
+                        <Link to={stream.url} target='_blank' key={index} className={`clip-item slide-`+index}>
                           <div className="preview">
                             {isItemNew(stream.created_at, 5) ? (<div className="new">New!</div>) : ('')}
-                            <img src={thumbnailResize(stream.thumbnail_url,640,360)} alt="Stream Preview" />
+                            { (liveData && index === 0) ? (
+                              <img src={thumbnailResize(liveData.thumbnail_url, 640, 360)} alt="Stream Preview" />
+                            ) : (
+                              <img src={thumbnailResize(stream.thumbnail_url,640,360)} alt="Stream Preview" />
+                            )}
                           </div>
                           <h4>{stream.title.substring(0, stream.title.indexOf('|')).trim()}</h4>
                           <p className="schedule">
