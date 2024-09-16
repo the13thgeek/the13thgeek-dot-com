@@ -6,7 +6,9 @@ const Analytics = () => {
     const location = useLocation();
 
     useEffect(() => {
+      if(import.meta.env.MODE === 'production') {
         ReactGA.send({ hitType: 'pageview', page: (location.pathname + location.search) });
+      }
     }, [location]);
 
   return null;

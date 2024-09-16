@@ -13,7 +13,9 @@ const App = () => {
   const isMaintenance = false;
 
   useEffect(() => {
-    ReactGA.initialize(import.meta.env.VITE_ANALYTICS_ID);
+    if(import.meta.env.MODE === 'production') {
+      ReactGA.initialize(import.meta.env.VITE_ANALYTICS_ID);
+    }
   },[]);
 
   return (
