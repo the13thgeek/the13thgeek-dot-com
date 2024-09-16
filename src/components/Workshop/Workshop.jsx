@@ -69,24 +69,20 @@ const Workshop = () => {
                         <div className="tech-stack">
                             <ul>
                                 <li>
-                                    <i className="fa-brands fa-node-js"></i>
-                                    <span>NodeJS</span>
-                                </li>
-                                <li>
-                                    <i className="fa-brands fa-js"></i>
-                                    <span>JSON</span>
-                                </li>
-                                <li>
-                                    <i className="fa-brands fa-html5"></i>
-                                    <span>HTML</span>
-                                </li>
-                                <li>
-                                    <i className="fa-brands fa-sass"></i>
-                                    <span>SASS</span>
+                                    <i className="fa-solid fa-database"></i>
+                                    <span>Sanity.io</span>
                                 </li>
                                 <li>
                                     <i className="fa-brands fa-react"></i>
                                     <span>React</span>
+                                </li>
+                                <li>
+                                    <i className="fa-brands fa-html5"></i>
+                                    <span>HTML5</span>
+                                </li>
+                                <li>
+                                    <i className="fa-brands fa-sass"></i>
+                                    <span>SASS</span>
                                 </li>
                             </ul>
                         </div>

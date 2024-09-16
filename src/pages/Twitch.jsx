@@ -21,8 +21,8 @@ import imgFeatureHelldivers2 from '../assets/twitch/feature/slide-helldivers2.jp
 import imgFeatureHelldivers2Logo from '../assets/twitch/feature/logo-helldivers2.png';
 import imgFeatureParkitect from '../assets/twitch/feature/slide-parkitect.jpg';
 import imgFeatureParkitectLogo from '../assets/twitch/feature/logo-parkitect.png';
-// import imgFeatureSplat3 from '../assets/twitch/feature/slide-splat3.jpg';
-// import imgFeatureSplat3Logo from '../assets/twitch/feature/logo-splat3.png';
+import imgFeatureDKC from '../assets/twitch/feature/slide-dkctf.jpg';
+import imgFeatureDKCLogo from '../assets/twitch/feature/logo-dkctf.png';
 
 import imgStaffThe13thgeek from '../assets/twitch/staff-the13thgeek.jpg';
 import imgStaffTooniearcade from '../assets/twitch/staff-tooniearcade.jpg'
@@ -137,6 +137,15 @@ const Twitch = () => {
 
   const pageFeatures = [
     {
+      'background': imgFeatureDKC,
+      'logo': imgFeatureDKCLogo,
+      'gametitle': 'Donkey Kong Country: Tropical Freeze',
+      'title': "When The Tropics Freeze Over",
+      'schedule': 'Tuesdays @7pm EST',
+      'description': '@the13thgeek\'s never played a DK game before. How will he fare platforming across a relentless jungle with a dozen projectiles flying around? Will he need Funky Kong\'s assistance at some point?',
+      'scheme': 'dark'
+    },
+    {
       'background': imgFeatureEvilWithin,
       'logo': imgFeatureEvilWithinLogo,
       'gametitle': 'The Evil Within',
@@ -145,15 +154,6 @@ const Twitch = () => {
       'description': 'On this stream, expect a lot of nervous laughter and jump scares as @the13thgeek navigates through twisted environments and face off against terrifying creatures.',
       'scheme': 'dark'
     },
-    // {
-    //   'background': imgFeatureSplat3,
-    //   'logo': imgFeatureSplat3Logo,
-    //   'gametitle': 'Splatoon 3',
-    //   'title': "The Final Splatfest",
-    //   'schedule': 'weekend of Sep 13th-16th',
-    //   'description': 'The dawn of the final Splatoon 3 Splatfest is upon us. @the13thgeek chose to fight for Team Future. Will they prevail against the Past and Present Teams?',
-    //   'scheme': 'dark'
-    // },
     {
       'background': imgFeatureHelldivers2,
       'logo': imgFeatureHelldivers2Logo,
