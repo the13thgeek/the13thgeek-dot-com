@@ -140,7 +140,7 @@ const Twitch = () => {
       'background': imgFeatureDKC,
       'logo': imgFeatureDKCLogo,
       'gametitle': 'Donkey Kong Country: Tropical Freeze',
-      'title': "When The Tropics Freeze Over",
+      'title': "Going Bananas!",
       'schedule': 'Tuesdays @7pm EST',
       'description': '@the13thgeek\'s never played a DK game before. How will he fare platforming across a relentless jungle with a dozen projectiles flying around? Will he need Funky Kong\'s assistance at some point?',
       'scheme': 'dark'
