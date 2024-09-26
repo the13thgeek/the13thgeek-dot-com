@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import FieldNoteItem from '../FieldNoteItem/FieldNoteItem';
 import { dateFormatter, generateExcerpt } from '../../utils/utils';
 import { fetchEntries } from '../../utils/fieldNotesUtils';
 import './HomeFieldNotes.scss';
@@ -32,7 +33,7 @@ const HomeFieldNotes = () => {
                 </div>
                 <div className="col">
                     <div className="call-to-action">
-                        <a className="cta-link" href="#/field-notes">Read more <i className="fa-solid fa-chevron-right" aria-hidden="true"></i></a>
+                        <Link className="cta-link" to="/field-notes">Read more <i className="fa-solid fa-chevron-right" aria-hidden="true"></i></Link>
                     </div>
                 </div>
             </div>
@@ -41,19 +42,16 @@ const HomeFieldNotes = () => {
                 <div className="loading">Loading...</div>
             ) : (
                 entries.map((blog,index) => 
-                <Link to={`/field-notes/`+blog.slug.current} className={`blog-item `+blog.slug.current} key={index} style={{backgroundImage: `url(${blog.image})`}}>
-                    <div className="filter"></div>
-                    <div className="field-note-content">
-                        <h3 className='blog-title'>{blog.title}</h3>
-                        <ul className="category">
-                            {blog.category.map((cat,idx) => <li key={idx}>{cat.name}</li>)}
-                        </ul>                        
-                        <p>{generateExcerpt(blog.content, 100)} <br />
-                        <span className="readmore">read more</span>
-                        </p>
-                        <p className='post-date'>{dateFormatter('simple-date',blog.date)}</p>
-                    </div>
-                </Link>
+                    <FieldNoteItem 
+                        key={index} 
+                        title={blog.title} 
+                        imgPath={blog.image} 
+                        slug={blog.slug.current}
+                        catList={blog.category}
+                        excerpt={generateExcerpt(blog.content, 100)}
+                        postDate={dateFormatter('simple-date',blog.date)}
+                        customClassName={`blog-item `+blog.slug.current} 
+                    />
                 )
             )}
             </div>

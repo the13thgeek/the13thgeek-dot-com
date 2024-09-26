@@ -34,6 +34,7 @@ const Navbar = ({ isHome = false }) => {
                 ) : (
                   <li><NavLink className='anchor-link' to="/#projects">Projects</NavLink></li>
                 ) }
+                <li><NavLink className={({ isActive }) => isActive ? "anchor-link current" : "anchor-link" } to="/field-notes">Blog</NavLink></li>
                 <li><NavLink className={({ isActive }) => isActive ? "anchor-link current" : "anchor-link" } to="/about">About</NavLink></li>
                 <li><NavLink className={({ isActive }) => isActive ? "anchor-link current" : "anchor-link" } to="/twitch">Twitch</NavLink></li>
             </ul>

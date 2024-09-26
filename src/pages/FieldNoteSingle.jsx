@@ -72,8 +72,8 @@ const FieldNoteSingle = () => {
                     </ul>
                     <h1>{entry.title}</h1>    
                 </div>
-                <div className="avatar">
-                    [ TODO: SHARE LINK ]
+                <div className="share-link">
+                    {/* [ TODO: SHARE LINK ] */}
                 </div>
             </div>
             </div>
