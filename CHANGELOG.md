@@ -9,6 +9,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - [Placeholder for ongoing development]
 
 ---
+## [1.2.0] - 2024-09-21
+### Added
+- [Global] Sanity.io integration
+- [FieldNotes] Added blogs!
+### Changed
+- [Global] created utils component for generic helpers
+- [Global] created fieldNotesUtils for blog helpers
+- [Global] created twitchUtils for Twitch API-related helpers
+
 ## [1.1.2] - 2024-09-14
 ### Fixed
 - [Twitch] Fixed link on Latest Broadcasts to make the first item point to the live stream during Live

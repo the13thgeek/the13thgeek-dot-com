@@ -6,6 +6,7 @@ import Hero from '../components/Hero/Hero';
 import HomeAbout from '../components/HomeAbout/HomeAbout';
 import Projects from '../components/Projects/Projects';
 import Workshop from '../components/Workshop/Workshop';
+import HomeFieldNotes from '../components/HomeFieldNotes/HomeFieldNotes';
 import Gaming from '../components/Gaming/Gaming';
 import Connect from '../components/Connect/Connect';
 import Footer from '../components/Footer/Footer';
@@ -54,6 +55,7 @@ const Home = () => {
         <HomeAbout />
         <Workshop />
         <Projects />
+        <HomeFieldNotes />
         <Gaming />
         <Connect />
       </main>

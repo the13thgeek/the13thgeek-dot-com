@@ -3,7 +3,7 @@ import Obfuscate from 'react-obfuscate';
 import { Link } from "react-router-dom";
 import './Connect.scss';
 
-const Connect = ({ customStyle = 'home-6-connect' }) => {
+const Connect = ({ customStyle = 'home-7-connect' }) => {
   return (
     <section id="connect" className="connect">
         <div className="title-area">

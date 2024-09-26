@@ -9,7 +9,6 @@ import seoCard from '../assets/global/seo-card-404.jpg';
 const FourOhFour = () => {
 
   useEffect(() => {
-    document.title = "Page Not Found | " + import.meta.env.VITE_GLOBAL_SITE_TITLE;
     window.scrollTo(0, 0);
   }, []);
 
