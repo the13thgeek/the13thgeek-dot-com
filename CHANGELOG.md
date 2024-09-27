@@ -12,6 +12,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ## [1.2.0] - 2024-09-21
 ### Added
 - [Global] Sanity.io integration
+- [Global] Fixed responsive navbar logo
 - [FieldNotes] Added blogs!
 ### Changed
 - [Global] created utils component for generic helpers

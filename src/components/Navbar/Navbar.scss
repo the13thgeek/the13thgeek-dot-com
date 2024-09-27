@@ -14,7 +14,7 @@ nav.global {
     }
 
     img.header-logo {
-        height: 50px;
+        max-height: 50px;
     }
 }
 
@@ -22,7 +22,7 @@ nav.global {
     display: flex;
     align-items: center;
     list-style: none;
-    gap: 50px;
+    gap: 40px;
     font-size: 20px;
 
     li {

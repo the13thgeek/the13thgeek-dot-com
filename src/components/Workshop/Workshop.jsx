@@ -25,14 +25,14 @@ const Workshop = () => {
                         <img src={prjThe13thgeek} className='preview' alt="the13thgeek.com" />
                         <div className="wrapper">
                             <h3>the13thgeek™</h3>
-                            <p>A constantly evolving personal site I started in university, from basic PHP to React. I'm exploring new back-end options to bring back the blog, weighing between MySQL or learning a fresh CMS. Stay tuned!</p>
+                            <p>A constantly evolving personal site I started in university, from basic PHP to React. I have recently implemented a backend integration to Sanity and I've got the blog up and running!</p>
                         </div>
                         <h4>Tech Stack</h4>
                         <div className="tech-stack">
                             <ul>
                                 <li>
-                                    <i className="fa-brands fa-node-js"></i>
-                                    <span>NodeJS</span>
+                                    <i className="fa-solid fa-database"></i>
+                                    <span>Sanity.io</span>
                                 </li>
                                 <li>
                                     <i className="fa-brands fa-html5"></i>

@@ -1,0 +1,17 @@
+@use '../styles/variables' as *;
+@use '../styles/mixins' as *;
+
+.page-fieldnotes {
+    background-color: #efefef;
+    color: #000;
+    align-items: center;
+    padding: 60px;
+
+    .entries-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-column-gap: 40px;
+        grid-row-gap: 40px;
+
+    }
+}
