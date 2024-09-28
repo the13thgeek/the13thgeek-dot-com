@@ -29,7 +29,7 @@ const FieldNotes = () => {
         <Helmet>
             <title>Field Notes | {import.meta.env.VITE_GLOBAL_SITE_TITLE}</title>
             <meta name="description" content="Check out Aldreich's blog, where he posts write-ups, updates and insights." />
-            <meta name='keywords' content='blog, dev blog, tech blogm, Web development, React developer, tech blog, geek culture, Kamen Rider fan, Power Rangers fan, gaming, Twitch streamer, Toronto developer, developer portfolio, the13thgeek' />
+            <meta name='keywords' content='blog, dev blog, tech blog, Web development, React developer, tech blog, geek culture, Kamen Rider fan, Power Rangers fan, gaming, Twitch streamer, Toronto developer, developer portfolio, the13thgeek' />
             <meta name="robots" content="index, follow" />
             <link rel="canonical" href="https://the13thgeek.com/#/field-notes" />
 
