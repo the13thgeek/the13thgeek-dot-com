@@ -47,7 +47,7 @@ const FieldNoteSingle = () => {
         <Helmet>
             <title>{entry.title} | Field Notes | {import.meta.env.VITE_GLOBAL_SITE_TITLE}</title>
             <meta name="description" content={generateExcerpt(entry.content,150)} />
-            <meta name='keywords' content='blog, Web development, React developer, tech blog, geek culture, Kamen Rider fan, Power Rangers fan, gaming, Twitch streamer, Toronto developer, developer portfolio, the13thgeek' />
+            <meta name='keywords' content='blog, dev blog, tech blog, Web development, React developer, tech blog, geek culture, Kamen Rider fan, Power Rangers fan, gaming, Twitch streamer, Toronto developer, developer portfolio, the13thgeek' />
             <meta name="robots" content="index, follow" />
             <link rel="canonical" href={`${window.location.href}`} />
 

@@ -89,6 +89,7 @@ const Workshop = () => {
                         <div className="links-list">
                             <Link to="https://pmc.the13thgeek.com/" target='_blank' className="ll-link"><i className="fa-solid fa-up-right-from-square"></i> Project Page <i className="fa-solid fa-chevron-right"></i></Link>
                             <Link to="https://github.com/the13thgeek/power-morphicon-planner" target='_blank' className="ll-link"><i className="fa-brands fa-github"></i> Repository <i className="fa-solid fa-chevron-right"></i></Link>
+                            <Link to="/field-notes/morphin-the-codebase-vol-1" className="ll-link"><i className="fa-regular fa-pen-to-square"></i> Dev Blog <i className="fa-solid fa-chevron-right"></i></Link>
                         </div>
                     </div>
                 </div>

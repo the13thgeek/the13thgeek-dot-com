@@ -61,10 +61,38 @@ main.field-note {
 
     .field-note-content {
         margin-top: -30px;
+
+        blockquote {
+            width: 80%;
+            margin: 0 auto 30px;
+            display: block;
+            border-left: #ccc 5px solid;
+            background-color: #efefef;
+            padding: 10px 15px;
+        }
+    
+        a {
+            color: darken($swatch-2, 5%);
+            font-weight: 600;
+            transition: all 0.3s;
+            text-decoration: none;
+
+            &:hover {
+                color: blue;
+                text-decoration: underline;
+            }
+        }
+
+        ul, ol {
+            margin: 30px;
+
+            li {
+                margin-bottom: 10px;
+            }
+        }
     }
 
     .polaroid {
-        box-sizing: border-box;
         background-color: #fff;
         max-width: 80%;
         margin: 0 auto 50px;
@@ -86,16 +114,7 @@ main.field-note {
             font-size: 14px;
             font-weight: 600;
         }
-    }
-
-    blockquote {
-        width: 80%;
-        margin: 0 auto 30px;
-        display: block;
-        border-left: #ccc 5px solid;
-        background-color: #efefef;
-        padding: 10px 15px;
-    }
+    }    
 
     .category-description {
         width: 80%;
@@ -156,6 +175,35 @@ main.field-note {
                 }
             }
             
+        }
+    }
+
+}
+
+@media (max-width: $screen-sm) {
+
+    main.field-note {
+
+        .polaroid {
+            max-width: 100%;
+            margin: 0 auto 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0;
+            box-shadow: none;
+
+            img {
+                max-width: 100%;
+                height: auto;
+                display: block;
+            }
+
+            figcaption {
+                margin-top: 10px;
+                font-size: 14px;
+                font-weight: 600;
+            }
         }
     }
 

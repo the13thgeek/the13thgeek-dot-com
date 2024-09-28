@@ -5,6 +5,7 @@ import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
 import { fetchEntries } from '../utils/fieldNotesUtils';
 import { dateFormatter, generateExcerpt } from '../utils/utils';
+import seoCard from '../assets/global/seo-card-blog.jpg';
 import './FieldNotes.scss';
 
 const FieldNotes = () => {
@@ -25,6 +26,25 @@ const FieldNotes = () => {
 
     return (
         <>
+        <Helmet>
+            <title>Field Notes | {import.meta.env.VITE_GLOBAL_SITE_TITLE}</title>
+            <meta name="description" content="Check out Aldreich's blog, where he posts write-ups, updates and insights." />
+            <meta name='keywords' content='blog, dev blog, tech blogm, Web development, React developer, tech blog, geek culture, Kamen Rider fan, Power Rangers fan, gaming, Twitch streamer, Toronto developer, developer portfolio, the13thgeek' />
+            <meta name="robots" content="index, follow" />
+            <link rel="canonical" href="https://the13thgeek.com/#/field-notes" />
+
+            <meta property="og:title" content={`Field Notes | ` + import.meta.env.VITE_GLOBAL_SITE_TITLE} />
+            <meta property="og:description" content="Check out Aldreich's blog, where he posts write-ups, updates and insights." />
+            <meta property="og:image" content={seoCard} />
+            <meta property="og:url" content="https://the13thgeek.com/#/field-notes" />
+            <meta property="og:type" content="website" />
+
+            <meta name="twitter:card" content="summary_large_image" />
+            <meta name="twitter:title" content={`Field Notes | ` + import.meta.env.VITE_GLOBAL_SITE_TITLE} />
+            <meta name="twitter:description" content="Check out Aldreich's blog, where he posts write-ups, updates and insights." />
+            <meta name="twitter:image" content={seoCard} />
+            <meta name="twitter:site" content="@the13thgeek" />
+        </Helmet>
         <header className="main">
             <Navbar />
             <div className="page-title-bar field-notes-index">
