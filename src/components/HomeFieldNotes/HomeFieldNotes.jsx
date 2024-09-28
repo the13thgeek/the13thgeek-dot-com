@@ -49,7 +49,7 @@ const HomeFieldNotes = () => {
                         slug={blog.slug.current}
                         catList={blog.category}
                         excerpt={generateExcerpt(blog.content, 100)}
-                        postDate={dateFormatter('simple-date',blog.date)}
+                        postDate={dateFormatter('simple-date-dot',blog.date)}
                         customClassName={`blog-item `+blog.slug.current} 
                     />
                 )

@@ -9,7 +9,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - [Placeholder for ongoing development]
 
 ---
-## [1.2.0] - 2024-09-21
+## [1.2.1] - 2024-09-28
+### Fixed
+- [Global] fixed mistake in date options object
+### Added
+- [Global] added MM.DD.YYYY display format in dateFormatter()
+### Removed 
+- [Global] remove Tiny5 font, no longer used
+
+## [1.2.0] - 2024-09-27
 ### Added
 - [Global] Sanity.io integration
 - [Global] Fixed responsive navbar logo

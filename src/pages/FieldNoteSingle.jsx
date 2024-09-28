@@ -77,6 +77,9 @@ const FieldNoteSingle = () => {
                         )}
                     </ul>
                     <h1>{entry.title}</h1>    
+                    <p className="date-posted">
+                        <i className="fa-solid fa-calendar-days"></i> {dateFormatter('date-with-day',entry.date)}
+                    </p>
                 </div>
                 <div className="share-link">
                     {/* [ TODO: SHARE LINK ] */}
@@ -93,11 +96,11 @@ const FieldNoteSingle = () => {
                         </figure>
                     ) : ('') }
                     <PortableTextRender blocks={entry.content} />
-                    { entry.category.some(cat => cat.name === "Lost Chronicles") ? (
+                    { entry.category.some(cat => cat.name === "Lost Chronicles") && (
                         <div className="category-description">
                             <p><b>"Lost Chronicles"</b> are some of my past blog entries from previous iterations that have been migrated here for archival purposes.</p>
                         </div>
-                    ) : ('') }
+                    )}
                 </div>
                 <div className="navigator">
                     <div className='blog-index'>

@@ -117,7 +117,7 @@ return (
     <Helmet>
         <title>Twitch | {import.meta.env.VITE_GLOBAL_SITE_TITLE}</title>
         <meta name="description" content="Join Aldreich, aka @the13thgeek, on Twitch for live streams of horror games, Dance Dance Revolution, Cities: Skylines, and more. Check out his streaming schedule and tune in!" />
-        <meta name='keywords' content='Twitch streamer, the13thgeek Twitch, gaming live streams, horror games, Dance Dance Revolution, Kamen Rider stream, Cities: Skylines streams, Zelda Minish Cap live, streaming schedule' />
+        <meta name='keywords' content='Twitch streamer, the13thgeek Twitch, gaming live streams, horror games, Dance Dance Revolution, Kamen Rider stream, Cities: Skylines streams, streaming schedule' />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://the13thgeek.com/#/twitch" />
 
