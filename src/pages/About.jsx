@@ -253,7 +253,7 @@ const About = () => {
         </div>
       </section>
 
-      <Connect customStyle="about-5-connect" />
+      <Connect customClassName="about-5-connect" />
     </main>
     <Footer />
     </>

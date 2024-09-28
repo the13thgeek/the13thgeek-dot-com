@@ -1,6 +1,6 @@
 import React from 'react';
 import './HomeAbout.scss';
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import imgAvatarHi from '../../assets/home/avatar-geek-hi.png';
 
 const HomeAbout = () => {0
@@ -16,7 +16,7 @@ const HomeAbout = () => {0
                 </div>
                 <div className="col">
                     <div className="call-to-action">
-                        <NavLink to="/about" className="cta-link">See more <i className="fa-solid fa-chevron-right"></i></NavLink>
+                        <Link to="/about" className="cta-link">See more <i className="fa-solid fa-chevron-right"></i></Link>
                     </div>
                 </div>
             </div>

@@ -151,7 +151,10 @@ section#workshop {
             }
 
             .links-list {
-                margin: 20px 20px 30px;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                margin: 20px 20px 40px;
 
                 a.ll-link {
                     display: flex;

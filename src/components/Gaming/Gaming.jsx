@@ -1,64 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
+import { dateFormatter, thumbnailResize } from '../../utils/utils';
+import { fetchLiveData } from '../../utils/twitchUtils';
 import './Gaming.scss';
     
 const Gaming = () => {
 
+    const [loading, setLoading] = useState(true);
     const [liveData, setLiveData] = useState();
 
-    const thumbnailResize = (url, width, height) => {
-        if (typeof url === 'undefined') {
-          console.error('URL is undefined');
-          console.error(width + 'x' + height);
-          return;
+    useEffect(() => {       
+        const loadLiveData = async () => {
+            const data = await fetchLiveData();
+            if(data) {
+                setLiveData(data);
+            }
+            setLoading(false);
         }
-    
-        return url
-        .replace(/%\{width\}|\{width\}/g, width)
-        .replace(/%\{height\}|\{height\}/g, height);    
-    }
-
-    const dateFormat = (input) => {
-        let initDate = new Date(input);
-        let convDate = initDate.toLocaleDateString('en-US', {
-          year: 'numeric',
-          month: 'long',
-          day: 'numeric'
-        });
-        return convDate;
-    }
-    
-    const timeFormat = (input) => {
-        let initTime = new Date(input);
-        let convTime = initTime.toLocaleTimeString('en-US', {
-            hour: 'numeric',
-            minute: 'numeric',
-            hour12: true,
-            timeZone: 'America/Toronto'
-        });
-        return convTime + " EST";
-    }
-
-    const fetchLiveData = async () => {
-        let response = await fetch(`https://api.twitch.tv/helix/streams?user_login=${import.meta.env.VITE_TWITCH_CHANNEL_NAME}`, {
-          headers: {
-            'Authorization': `Bearer ${import.meta.env.VITE_TWITCH_ACCESS_TOKEN}`,
-            'Client-Id': `${import.meta.env.VITE_TWITCH_CLIENT_ID}`
-          }
-        });
-        let data = await response.json();
-        let output = data.data[0]
-        return output;
-    }
-
-    useEffect(() => {
-        const fetchLiveStatus = async () => {
-            const liveData = await fetchLiveData();
-            setLiveData(liveData);
-        }
-      
-        fetchLiveStatus();
-    });
+        loadLiveData();
+    },[]);
 
 
   return (
@@ -76,7 +36,7 @@ const Gaming = () => {
             
         </div>
         <div className="info">
-            <div className="descriptor home-5-gaming">
+            <div className="descriptor home-6-gaming">
                 <span className="title">Gaming</span>
             </div>
             <h2>Let's Play!</h2>
@@ -85,6 +45,7 @@ const Gaming = () => {
                 <Link className="cta-link" to="/twitch">See more<i className="fa-solid fa-chevron-right"></i></Link>
             </div>
             <hr />
+            { loading ? <p>Loading...</p> : ''}
             { liveData ? (
             <div className="now-playing">
                 <div className="arrow">
@@ -95,7 +56,7 @@ const Gaming = () => {
                     <div className="category">Streaming Live Now</div>
                     <h3>{liveData.game_name}</h3>
                     <p className='game-title'>{ liveData.title.includes('|') ? liveData.title.substring(0, liveData.title.indexOf('|')).trim() : liveData.title }</p>
-                    <div className="schedule">stream started {dateFormat(liveData.started_at)} {timeFormat(liveData.started_at)}</div>
+                    <div className="schedule">stream started {dateFormatter('simple-date', liveData.started_at)} {dateFormatter('simple-time',liveData.started_at)}</div>
                 </div>
             </div>
             ) : ('')}

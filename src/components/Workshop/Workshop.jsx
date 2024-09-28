@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import './Workshop.scss';
 import prjThe13thgeek from '../../assets/home/project-item-the13thgeek.jpg';
 import prjPmcPlanner from '../../assets/home/project-item-pmcplanner.jpg';
@@ -25,14 +25,14 @@ const Workshop = () => {
                         <img src={prjThe13thgeek} className='preview' alt="the13thgeek.com" />
                         <div className="wrapper">
                             <h3>the13thgeek™</h3>
-                            <p>A constantly evolving personal site I started in university, from basic PHP to React. I'm exploring new back-end options to bring back the blog, weighing between MySQL or learning a fresh CMS. Stay tuned!</p>
+                            <p>A constantly evolving personal site I started in university, from basic PHP to React. I have recently implemented a backend integration to Sanity and I've got the blog up and running!</p>
                         </div>
                         <h4>Tech Stack</h4>
                         <div className="tech-stack">
                             <ul>
                                 <li>
-                                    <i className="fa-brands fa-node-js"></i>
-                                    <span>NodeJS</span>
+                                    <i className="fa-solid fa-database"></i>
+                                    <span>Sanity.io</span>
                                 </li>
                                 <li>
                                     <i className="fa-brands fa-html5"></i>
@@ -49,7 +49,7 @@ const Workshop = () => {
                             </ul>
                         </div>
                         <div className="links-list">
-                            <NavLink to="https://github.com/the13thgeek/the13thgeek-dot-com" target='_blank' className="ll-link"><i className="fa-brands fa-github"></i> Repository <i className="fa-solid fa-chevron-right"></i></NavLink>
+                            <Link to="https://github.com/the13thgeek/the13thgeek-dot-com" target='_blank' className="ll-link"><i className="fa-brands fa-github"></i> Repository <i className="fa-solid fa-chevron-right"></i></Link>
                         </div>
                     </div>
                 </div>
@@ -87,8 +87,9 @@ const Workshop = () => {
                             </ul>
                         </div>
                         <div className="links-list">
-                            <NavLink to="https://pmc.the13thgeek.com/" target='_blank' className="ll-link"><i className="fa-solid fa-up-right-from-square"></i> Project Page <i className="fa-solid fa-chevron-right"></i></NavLink>
-                            <NavLink to="https://github.com/the13thgeek/power-morphicon-planner" target='_blank' className="ll-link"><i className="fa-brands fa-github"></i> Repository <i className="fa-solid fa-chevron-right"></i></NavLink>
+                            <Link to="https://pmc.the13thgeek.com/" target='_blank' className="ll-link"><i className="fa-solid fa-up-right-from-square"></i> Project Page <i className="fa-solid fa-chevron-right"></i></Link>
+                            <Link to="https://github.com/the13thgeek/power-morphicon-planner" target='_blank' className="ll-link"><i className="fa-brands fa-github"></i> Repository <i className="fa-solid fa-chevron-right"></i></Link>
+                            <Link to="/field-notes/morphin-the-codebase-vol-1" className="ll-link"><i className="fa-regular fa-pen-to-square"></i> Dev Blog <i className="fa-solid fa-chevron-right"></i></Link>
                         </div>
                     </div>
                 </div>

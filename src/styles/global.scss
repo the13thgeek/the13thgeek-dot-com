@@ -145,62 +145,94 @@ main {
         background-position: 0 -80px;
         width: 250px;
     }
-    &.home-5-gaming {
+    &.home-5-fieldnotes {
         background-position: 0 -100px;
+        width: 160px;
+    }
+    &.home-6-gaming {
+        background-position: 0 -120px;
         width: 215px;
     }
-    &.home-6-connect {
-        background-position: 0 -120px;
+    &.home-7-connect {
+        background-position: 0 -140px;
         width: 230px;
     }
     &.error-404 {
-        background-position: 0 -140px;
+        background-position: 0 -160px;
         width: 200px;
     }
     &.about-1-profile {
-        background-position: 0 -160px;
+        background-position: 0 -180px;
         width: 215px;
     }
     &.about-2-background {
-        background-position: 0 -180px;
+        background-position: 0 -200px;
         width: 300px;
     }
     &.about-3-irl {
-        background-position: 0 -200px;
+        background-position: 0 -220px;
         width: 170px;
     }
     &.about-4-branding {
-        background-position: 0 -220px;
+        background-position: 0 -240px;
         width: 250px;
     }
     &.about-5-connect {
-        background-position: 0 -240px;
+        background-position: 0 -260px;
         width: 230px;
     }
     &.twitch-1-nowplaying {
-        background-position: 0 -260px;
-        width: 290px;
-    }
-    &.twitch-1-livestream {
         background-position: 0 -280px;
         width: 290px;
     }
-    &.twitch-2-rotation {
+    &.twitch-1-livestream {
         background-position: 0 -300px;
+        width: 290px;
+    }
+    &.twitch-2-rotation {
+        background-position: 0 -320px;
         width: 250px;
     }
     &.twitch-3-history {
-        background-position: 0 -320px;
+        background-position: 0 -340px;
         width: 230px;
     }
     &.twitch-4-community {
-        background-position: 0 -340px;
+        background-position: 0 -360px;
         width: 280px;
+    }
+    &.blog-1-index {
+        background-position: 0 -380px;
+        width: 180px;
+    }
+    &.blog-2-notebook {
+        background-position: 0 -400px;
+        width: 250px;
+    }
+    &.blog-1-fieldnote {
+        background-position: 0 -420px;
+        width: 270px;
     }
 }
 
 .highlight {    
     @include textgradient($deg: 90deg, $color1: $swatch-2, $color2: $swatch-3);
+}
+
+.field-note-content {
+
+    p {
+        margin-bottom: 30px;
+    }
+
+    code {
+        display: block;
+        margin: 15px 0;
+        background-color: #333;
+        color: #eee;
+        padding: 10px 15px;
+    }
+
 }
 
 // .page-title-bar {
@@ -268,7 +300,8 @@ main {
     }
 
     .content-container {
-        width: 95%;
+        width: 90%;
+        //margin: 0 40px;
     }
 
     .g-video-wall {
@@ -295,7 +328,8 @@ main {
     }
 
     .content-container {
-        width: 97%;
+        width: 90%;
+        //margin: 0 20px;
     }
 
 }

@@ -1,8 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
 import {Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Autoplay, EffectFade } from 'swiper/modules';
+import { Navigation, Autoplay, EffectFade } from 'swiper/modules';
 import { Link } from "react-router-dom";
 import { Helmet } from 'react-helmet-async';
+import { dateFormatter, thumbnailResize } from '../utils/utils';
+import { fetchClips, fetchLiveData, fetchVODs } from '../utils/twitchUtils';
 import Navbar from '../components/Navbar/Navbar';
 import Footer from '../components/Footer/Footer';
 import seoCard from '../assets/global/seo-card-twitch.jpg';
@@ -34,73 +36,7 @@ const Twitch = () => {
   const [lastStreams, setLastStreams] = useState([]);
   const [lastClips, setLastClips] = useState([]);
   const [liveData, setLiveData] = useState();
-
-  const dateFormat = (input) => {
-    let initDate = new Date(input);
-    let convDate = initDate.toLocaleDateString('en-US', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric'
-    });
-    return convDate;
-  }
-
-  const timeFormat = (input) => {
-    let initTime = new Date(input);
-    let convTime = initTime.toLocaleTimeString('en-US', {
-      hour: 'numeric',
-      minute: 'numeric',
-      hour12: true,
-      timeZone: 'America/Toronto'
-    });
-    return convTime + " EST";
-  }
-
-  const fetchLiveData = async () => {
-    let response = await fetch(`https://api.twitch.tv/helix/streams?user_login=${import.meta.env.VITE_TWITCH_CHANNEL_NAME}`, {
-      headers: {
-        'Authorization': `Bearer ${import.meta.env.VITE_TWITCH_ACCESS_TOKEN}`,
-        'Client-Id': `${import.meta.env.VITE_TWITCH_CLIENT_ID}`
-      }
-    });
-    let data = await response.json();
-    let output = data.data[0]
-    return output;
-  }
-
-  const fetchVODs = async () => {
-    let response = await fetch(`https://api.twitch.tv/helix/videos?user_id=${import.meta.env.VITE_TWITCH_USER_ID}&type=archive&first=8`, {
-      headers: {
-        'Authorization': `Bearer ${import.meta.env.VITE_TWITCH_ACCESS_TOKEN}`,
-        'Client-Id': `${import.meta.env.VITE_TWITCH_CLIENT_ID}`
-      }
-    });
-    let data = await response.json();
-    return data.data;
-  }
-
-  const fetchClips = async () => {
-    let response = await fetch(`https://api.twitch.tv/helix/clips?broadcaster_id=${import.meta.env.VITE_TWITCH_USER_ID}`, {
-      headers: {
-        'Authorization': `Bearer ${import.meta.env.VITE_TWITCH_ACCESS_TOKEN}`,
-        'Client-Id': `${import.meta.env.VITE_TWITCH_CLIENT_ID}`
-      }
-    });
-    let data = await response.json();
-    return data.data;
-  }
-
-  const thumbnailResize = (url, width, height) => {
-    if (typeof url === 'undefined') {
-      console.error('URL is undefined');
-      console.error(width + 'x' + height);
-      return;
-    }
-
-    return url
-    .replace(/%\{width\}|\{width\}/g, width)
-    .replace(/%\{height\}|\{height\}/g, height);    
-  }
+  const [loading, setLoading] = useState(true);
 
   const isItemNew = (dateInput, age) => {
     let itemDate = new Date(dateInput);
@@ -115,27 +51,29 @@ const Twitch = () => {
   }
 
   useEffect(() => {
-    const fetchLastStreams = async () => {
-      const lastStreams = await fetchVODs();
-      setLastStreams(lastStreams);
-    }
-    const fetchLastClips = async () => {
-      const lastClips = await fetchClips();
-      setLastClips(lastClips);
-    }
-    const fetchLiveStatus = async () => {
-      const liveData = await fetchLiveData();
-      setLiveData(liveData);
-    }
-
-    fetchLastStreams();
-    fetchLastClips();
-    fetchLiveStatus();
-
     window.scrollTo(0, 0);
-  }, []);
+    const pageInit = async () => {
+      try {
+        const [liveData,lastStreams,lastClips] = await Promise.all([
+          fetchLiveData(),
+          fetchVODs(),
+          fetchClips()
+        ]);
+        setLiveData(liveData);
+        setLastStreams(lastStreams);
+        setLastClips(lastClips);
+        setLoading(false);
 
-  const pageFeatures = [
+      } catch (e) {
+        console.error('Error loading data: ',e);
+        setLoading(false);
+      }
+    };
+
+    pageInit();
+  },[]);
+
+    const pageFeatures = [
     {
       'background': imgFeatureDKC,
       'logo': imgFeatureDKCLogo,
@@ -213,7 +151,7 @@ return (
                         <span><i className="fa-solid fa-video"></i>&nbsp;&nbsp;Now On Air</span>
                       </div>
                       <h1 className='live-title'>{ liveData.title.includes('|') ? liveData.title.substring(0, liveData.title.indexOf('|')).trim() : liveData.title }</h1>
-                      <p className="schedule">Stream started {dateFormat(liveData.started_at)} {timeFormat(liveData.started_at)}</p>
+                      <p className="schedule">Stream started {dateFormatter('simple-time',liveData.started_at) + ' ' + dateFormatter('simple-time',liveData.started_at)}</p>
                       <p className="caption">@the13thgeek is now live on Twitch!<br />Currently playing: <b>{liveData.game_name}</b></p>
                   </div>
                   <div className="call-to-action">
@@ -259,6 +197,7 @@ return (
                   <div className="lb-prev"><i className="fa-solid fa-chevron-left"></i></div>
                   <div className="lb-next"><i className="fa-solid fa-chevron-right"></i></div>
                 </div>
+                { loading ? (<p>Loading...</p>) : (
                 <div className="clips-area">
                     <Swiper slidesPerView={2} spaceBetween={10} navigation={{ prevEl: '.lb-prev', nextEl: '.lb-next' }} modules={[Navigation]} breakpoints={{ 768: { slidesPerView: 2, spaceBetween: 10 }, 992: { slidesPerView: 3, spaceBetween: 20 }, 1200: { slidesPerView: 4, spaceBetween: 30 }}} className="carousel-latest-broadcasts">
                       {lastStreams.map((stream, index) => 
@@ -279,8 +218,8 @@ return (
                           </div>
                           <h4>{stream.title.substring(0, stream.title.indexOf('|')).trim()}</h4>
                           <p className="schedule">
-                            {dateFormat(stream.created_at)}<br />
-                            {timeFormat(stream.created_at)}
+                            {dateFormatter('simple-date',stream.created_at)}<br />
+                            {dateFormatter('simple-time',stream.created_at)}
                           </p>
                           <p className="view-count"><span>{stream.view_count} views</span> <i className="fa-solid fa-tv"></i></p>
                         </Link>
@@ -288,11 +227,13 @@ return (
                       )}
                     </Swiper>
                 </div>
+                ) }
                 <h2>Popular Clips</h2>
                 <div className="navigator">
                     <div className="pc-prev"><i className="fa-solid fa-chevron-left"></i></div>
                     <div className="pc-next"><i className="fa-solid fa-chevron-right"></i></div>
                 </div>
+                { loading ? (<p>Loading...</p>) : (
                 <div className="clips-area">
                     <Swiper slidesPerView={2} spaceBetween={10} navigation={{ prevEl: '.pc-prev', nextEl: '.pc-next' }} modules={[Navigation]} breakpoints={{ 768: { slidesPerView: 2, spaceBetween: 10 }, 992: { slidesPerView: 3, spaceBetween: 20 }, 1200: { slidesPerView: 4, spaceBetween: 30 }}} className="carousel-popular-clips">
                       {lastClips.slice(0,10).map((clip, index) => 
@@ -306,15 +247,16 @@ return (
                             </div>
                             <h4>{clip.title}</h4>
                             <p className="schedule">
-                              {dateFormat(clip.created_at)}<br />
-                              {timeFormat(clip.created_at)}
+                              {dateFormatter('simple-date',clip.created_at)}<br />
+                              {dateFormatter('simple-time',clip.created_at)}
                             </p>
                             <p className="view-count"><span>{clip.view_count} views</span> <i className="fa-solid fa-tv"></i></p>
                           </Link>
                       </SwiperSlide>
                       )}
                     </Swiper>
-                </div>                
+                </div> 
+                )}               
             </div>
         </section>
         <section id='twitch-history' className="twitch-history">

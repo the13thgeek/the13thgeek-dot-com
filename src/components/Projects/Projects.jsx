@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import './Projects.scss';
 import prjArtis from '../../assets/home/project-item-artisreit.jpg';
 import prj300Main from '../../assets/home/project-item-300main.jpg';
@@ -83,11 +83,11 @@ const Projects = () => {
                             <div className="links-list">
                                 {item.links ? (
                                     item.links.map((linkitem,idx) => 
-                                        <NavLink key={idx} to={linkitem.url} target='_blank' className="ll-link">
+                                        <Link key={idx} to={linkitem.url} target='_blank' className="ll-link">
                                         <i className="fa-solid fa-up-right-from-square"></i> 
                                             {linkitem.title} {item.isArchived ? (<small>(archived)</small>) : ('')}
                                             <i className="fa-solid fa-chevron-right"></i>
-                                        </NavLink>
+                                        </Link>
                                     )
                                 ) : ('')}
                             </div>
