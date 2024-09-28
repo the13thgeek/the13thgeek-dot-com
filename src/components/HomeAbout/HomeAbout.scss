@@ -233,6 +233,12 @@ section#home-about {
     
         .content-container {
 
+            .row.title-bar {
+                .col:last-child {
+                    justify-content: start;
+                }
+            }
+
             .row {
                 flex-direction: column;
                 gap: 15px;

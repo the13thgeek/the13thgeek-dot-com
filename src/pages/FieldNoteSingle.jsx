@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import AnchorLink from 'react-anchor-link-smooth-scroll';
 import { useParams } from 'react-router-dom';
 import { dateFormatter, generateExcerpt } from '../utils/utils';
 import { Helmet } from 'react-helmet-async';
@@ -14,7 +16,11 @@ const FieldNoteSingle = () => {
     const { slug } = useParams();
     const [loading, setLoading] = useState(true);
     const [entry, setEntry] = useState(null);
-    const [notFound, setNotFound] = useState(false);
+    //const [notFound, setNotFound] = useState(false);
+
+    const scrollTop = () => {
+        window.scrollTo(0, 0);
+    }
 
     useEffect(() => {
         const loadEntry = async () => {
@@ -57,13 +63,13 @@ const FieldNoteSingle = () => {
             <meta name="twitter:image" content={entry.image || seoCard} />
             <meta name="twitter:site" content="@the13thgeek" />
         </Helmet>
-        <header className='main'>
+        <header className='main' id="top">
             <Navbar isHome={false} />
             <div className="page-title-bar field-notes">
             <div className="content-container">
                 <div className="title-area">
-                    <div className="descriptor fieldnote-1-entry">
-                        <span className="title">Entry</span>
+                    <div className="descriptor blog-1-fieldnote">
+                        <span className="title">Field Note</span>
                     </div>
                     <ul className="category">
                         {entry.category.map((cat,idx) => 
@@ -92,6 +98,22 @@ const FieldNoteSingle = () => {
                             <p><b>"Lost Chronicles"</b> are some of my past blog entries from previous iterations that have been migrated here for archival purposes.</p>
                         </div>
                     ) : ('') }
+                </div>
+                <div className="navigator">
+                    <div className='blog-index'>
+                        <Link to="/field-notes">
+                        <i className="fa-solid fa-circle-chevron-left"></i>
+                        <span>More Field Notes</span>
+                        </Link>
+                    </div>
+                    <hr />
+                    <div className='scroll-top'>
+                        <AnchorLink offset={0} href="#top">
+                        <i className="fa-solid fa-circle-chevron-up"></i>
+                        <span>Scroll to top</span>
+                        </AnchorLink>
+                    </div>
+                    <hr />
                 </div>
             </div>
         </main>

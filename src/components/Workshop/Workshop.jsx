@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import './Workshop.scss';
 import prjThe13thgeek from '../../assets/home/project-item-the13thgeek.jpg';
 import prjPmcPlanner from '../../assets/home/project-item-pmcplanner.jpg';
@@ -49,7 +49,7 @@ const Workshop = () => {
                             </ul>
                         </div>
                         <div className="links-list">
-                            <NavLink to="https://github.com/the13thgeek/the13thgeek-dot-com" target='_blank' className="ll-link"><i className="fa-brands fa-github"></i> Repository <i className="fa-solid fa-chevron-right"></i></NavLink>
+                            <Link to="https://github.com/the13thgeek/the13thgeek-dot-com" target='_blank' className="ll-link"><i className="fa-brands fa-github"></i> Repository <i className="fa-solid fa-chevron-right"></i></Link>
                         </div>
                     </div>
                 </div>
@@ -87,8 +87,8 @@ const Workshop = () => {
                             </ul>
                         </div>
                         <div className="links-list">
-                            <NavLink to="https://pmc.the13thgeek.com/" target='_blank' className="ll-link"><i className="fa-solid fa-up-right-from-square"></i> Project Page <i className="fa-solid fa-chevron-right"></i></NavLink>
-                            <NavLink to="https://github.com/the13thgeek/power-morphicon-planner" target='_blank' className="ll-link"><i className="fa-brands fa-github"></i> Repository <i className="fa-solid fa-chevron-right"></i></NavLink>
+                            <Link to="https://pmc.the13thgeek.com/" target='_blank' className="ll-link"><i className="fa-solid fa-up-right-from-square"></i> Project Page <i className="fa-solid fa-chevron-right"></i></Link>
+                            <Link to="https://github.com/the13thgeek/power-morphicon-planner" target='_blank' className="ll-link"><i className="fa-brands fa-github"></i> Repository <i className="fa-solid fa-chevron-right"></i></Link>
                         </div>
                     </div>
                 </div>

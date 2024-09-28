@@ -1,6 +1,6 @@
 import React from 'react';
 import AnchorLink from 'react-anchor-link-smooth-scroll'
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import './Hero.scss';
 import imgProfilePhoto from '../../assets/home/hero-profile-photo.jpg';
 
@@ -27,7 +27,7 @@ const Hero = () => {
                 <p>I'm a web experience creator,<br />
                 also known as <span className="highlight">@the13thgeek</span>!</p>
                 <div className="call-to-action">
-                    <NavLink to="/about" className="cta-link">About Me <i className="fa-solid fa-chevron-right"></i></NavLink>
+                    <Link to="/about" className="cta-link">About Me <i className="fa-solid fa-chevron-right"></i></Link>
                     <AnchorLink offset={50} className="cta-link" href='#connect'>Connect <i className="fa-solid fa-chevron-right"></i></AnchorLink>
                 </div>
             </div>

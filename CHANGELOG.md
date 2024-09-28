@@ -18,6 +18,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - [Global] created utils component for generic helpers
 - [Global] created fieldNotesUtils for blog helpers
 - [Global] created twitchUtils for Twitch API-related helpers
+### Fixed
+- [Global] changed NavLink -> Link for non-navigational links
 
 ## [1.1.2] - 2024-09-14
 ### Fixed
