@@ -8,7 +8,12 @@ const PortableTextRender = ({ blocks }) => {
         components={{
             types: {
                 image: ({value}) => <figure className='polaroid'><img src={value.asset.url} alt={value.asset.title || ''} />{ value.asset.title ? (<figcaption>{value.asset.title}</figcaption>) : ('') }</figure>,
-                code: ({value}) => <pre><code>{value.code}</code></pre>
+                code: ({value}) => <pre><code>{value.code}</code></pre>,
+                divider: ({value}) => {
+                    // keeping this for now in case something breaks
+                    //const borderStyle = value?.style !== '' ? 'dashed' : 'solid';
+                    return <hr className={`post-divider style-${value.style}`} />
+                }
             },
             marks: {
                 link: ({children,value}) => (

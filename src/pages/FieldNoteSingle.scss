@@ -82,6 +82,24 @@ main.field-note {
             background-color: #efefef;
             padding: 10px 15px;
         }
+
+        hr.post-divider {
+            border: 0;
+            border-top: 1px;
+            border-color:  #ccc;
+            width: 50%;
+            margin: 55px auto;
+
+            &.style-solid {
+                border-style: solid;
+            }
+            &.style-dotted {
+                border-style: dotted;
+            }
+            &.style-dashed {
+                border-style: dashed;
+            }
+        }
     
         a {
             color: darken($swatch-2, 5%);

@@ -9,6 +9,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - [Placeholder for ongoing development]
 
 ---
+## [1.2.2] - 2024-09-29
+### Added
+- [FieldNotes] added support for <hr /> rendering
+
 ## [1.2.1] - 2024-09-28
 ### Fixed
 - [Global] fixed mistake in date options object
