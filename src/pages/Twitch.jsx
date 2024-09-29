@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import {Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay, EffectFade } from 'swiper/modules';
 import { Link } from "react-router-dom";
 import { Helmet } from 'react-helmet-async';
@@ -8,6 +8,8 @@ import { fetchClips, fetchLiveData, fetchVODs } from '../utils/twitchUtils';
 import Navbar from '../components/Navbar/Navbar';
 import Footer from '../components/Footer/Footer';
 import seoCard from '../assets/global/seo-card-twitch.jpg';
+import TwitchNowPlaying from '../components/TwitchNowPlaying/TwitchNowPlaying';
+import TwitchNowLive from '../components/TwitchNowLive/TwitchNowLive';
 import './Twitch.scss';
 import 'swiper/scss';
 import 'swiper/scss/navigation';
@@ -16,15 +18,6 @@ import 'swiper/scss/effect-fade';
 
 /* Local assets */
 import twitchFootage from '../assets/twitch/twitch-footage.webm';
-
-import imgFeatureEvilWithin from '../assets/twitch/feature/slide-evil-within.jpg';
-import imgFeatureEvilWithinLogo from '../assets/twitch/feature/logo-evil-within.png';
-import imgFeatureHelldivers2 from '../assets/twitch/feature/slide-helldivers2.jpg';
-import imgFeatureHelldivers2Logo from '../assets/twitch/feature/logo-helldivers2.png';
-import imgFeatureParkitect from '../assets/twitch/feature/slide-parkitect.jpg';
-import imgFeatureParkitectLogo from '../assets/twitch/feature/logo-parkitect.png';
-import imgFeatureDKC from '../assets/twitch/feature/slide-dkctf.jpg';
-import imgFeatureDKCLogo from '../assets/twitch/feature/logo-dkctf.png';
 
 import imgStaffThe13thgeek from '../assets/twitch/staff-the13thgeek.jpg';
 import imgStaffTooniearcade from '../assets/twitch/staff-tooniearcade.jpg'
@@ -72,46 +65,7 @@ const Twitch = () => {
 
     pageInit();
   },[]);
-
-    const pageFeatures = [
-    {
-      'background': imgFeatureDKC,
-      'logo': imgFeatureDKCLogo,
-      'gametitle': 'Donkey Kong Country: Tropical Freeze',
-      'title': "Going Bananas!",
-      'schedule': 'Tuesdays @7pm EST',
-      'description': '@the13thgeek\'s never played a DK game before. How will he fare platforming across a relentless jungle with a dozen projectiles flying around? Will he need Funky Kong\'s assistance at some point?',
-      'scheme': 'dark'
-    },
-    {
-      'background': imgFeatureEvilWithin,
-      'logo': imgFeatureEvilWithinLogo,
-      'gametitle': 'The Evil Within',
-      'title': "Terrors of the Unknown",
-      'schedule': 'Thursdays @ 7pm EST',
-      'description': 'On this stream, expect a lot of nervous laughter and jump scares as @the13thgeek navigates through twisted environments and face off against terrifying creatures.',
-      'scheme': 'dark'
-    },
-    {
-      'background': imgFeatureHelldivers2,
-      'logo': imgFeatureHelldivers2Logo,
-      'gametitle': 'Helldivers II',
-      'title': "Say Hello to Democracy!",
-      'schedule': null,
-      'description': 'Watch as @the13thgeek and his friends explore new locations in the galaxy and fight for some (Managed) Democracy!',
-      'scheme': 'dark'
-    },
-    {
-      'background': imgFeatureParkitect,
-      'logo': imgFeatureParkitectLogo,
-      'gametitle': 'Parkitect',
-      'title': "Let's Build a Theme Park!",
-      'schedule': 'Tuesdays @ 7pm EST',
-      'description': 'Come chill and help @the13thgeek build a virtual theme park and try to keep it functional in this charming simulation game.',
-      'scheme': 'dark'
-    }
-  ]
-
+    
 return (
     <>
     <Helmet>
@@ -137,7 +91,13 @@ return (
         <Navbar />
     </header>
     <main className="page-twitch">
-        { liveData ? (
+      { liveData ? (
+        <TwitchNowLive />
+      ) : (
+        <TwitchNowPlaying />
+      ) }
+
+        {/* { liveData ? (
           <section id="live-stream" className="live-stream">
               <div className="back-screen" style={{backgroundImage: `url(${thumbnailResize(liveData.thumbnail_url, 1280, 720)})`}}>
                   <div className="filter"></div>
@@ -185,7 +145,7 @@ return (
                 )}
             </Swiper>
           </section>
-        ) }
+        ) } */}
         
         <section id="rotation" className="rotation">
             <div className="content-container">

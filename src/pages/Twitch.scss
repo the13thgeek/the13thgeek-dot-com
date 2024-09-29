@@ -25,6 +25,17 @@
     }
 }
 
+@keyframes slide-data-entry {
+    0% {
+        transform: translateY(15px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
 section#live-stream {
 
     .live-indicator span {
@@ -52,128 +63,134 @@ section#live-stream {
     }
 }
 
-section#now-playing, 
-section#live-stream {
-    background-color: #000;
-    height: 85vh;
-    position: relative;
-    padding: 0;
+// section#now-playing, 
+// section#live-stream {
+//     background-color: #000;
+//     height: 85vh;
+//     position: relative;
+//     padding: 0;
 
-    h1 {
-        font-size: 30px;
-        line-height: 35px;
+//     h1 {
+//         font-size: 30px;
+//         line-height: 35px;
 
-        &.live-title {
-            max-width: 40%;
-        }
-    }
+//         &.live-title {
+//             max-width: 40%;
+//         }
+//     }
 
-    .carousel-now-playing {
-        .swiper {
-            width: 100%;
-            height: 100%;
-        }
+//     .carousel-now-playing {
+//         .swiper {
+//             width: 100%;
+//             height: 100%;
+//         }
     
-        .swiper-slide {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #000;
-            background: #fff;
-        }
+//         .swiper-slide {
+//             display: flex;
+//             justify-content: center;
+//             align-items: center;
+//             color: #000;
+//             background: #fff;
+
+//             &.swiper-slide-active {
+//                 .page-title-box {
+//                     animation: slide-data-entry 1s 1;
+//                 }
+//             }
+//         }
     
-        .swiper-button-prev,
-        .swiper-button-next {
-            color: #fff;
-            padding: 10px;
-        }
-    }
+//         .swiper-button-prev,
+//         .swiper-button-next {
+//             color: #fff;
+//             padding: 10px;
+//         }
+//     }
 
-    .back-screen {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: #000;
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: 50% 50%;
-        z-index: 0;
-        opacity: 1;
-    }
+//     .back-screen {
+//         position: absolute;
+//         top: 0;
+//         left: 0;
+//         width: 100%;
+//         height: 100%;
+//         background-color: #000;
+//         background-size: contain;
+//         background-repeat: no-repeat;
+//         background-position: 50% 50%;
+//         z-index: 0;
+//         opacity: 1;
+//     }
 
-    .back-screen .filter {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-image: url('../assets/twitch/slideshow-filter.png');
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: 50% 50%;
-        z-index: 1;
-    }
+//     .back-screen .filter {
+//         position: absolute;
+//         top: 0;
+//         left: 0;
+//         width: 100%;
+//         height: 100%;
+//         background-image: url('../assets/twitch/slideshow-filter.png');
+//         background-size: contain;
+//         background-repeat: no-repeat;
+//         background-position: 50% 50%;
+//         z-index: 1;
+//     }
 
 
-    .content-container {
-        position: relative;
-        z-index: 1;
-        height: 100%;
-        justify-content: end;
-    }
+//     .content-container {
+//         position: relative;
+//         z-index: 1;
+//         height: 100%;
+//         justify-content: end;
+//     }
 
-    .page-title-box {
-        display: flex;
-        flex-direction: column;
+//     .page-title-box {
+//         display: flex;
+//         flex-direction: column;
 
-        .descriptor {
-            margin-bottom: 40px;
-        }
+//         .descriptor {
+//             margin-bottom: 40px;
+//         }
     
-        .event-logo {
-            max-width: 350px;
-            margin-bottom: 30px;
-        }
+//         .event-logo {
+//             max-width: 350px;
+//             margin-bottom: 30px;
+//         }
 
-        p {
-            max-width: 40%;
+//         p {
+//             max-width: 40%;
 
-            &.schedule {
-                font-weight: 500;
-                font-size: 14px;
-                color: #ccc;
-                margin-bottom: 20px;
-            }
+//             &.schedule {
+//                 font-weight: 500;
+//                 font-size: 14px;
+//                 color: #ccc;
+//                 margin-bottom: 20px;
+//             }
 
-            &:last-of-type {
-                margin-bottom: 0;
-            }
-        }
+//             &:last-of-type {
+//                 margin-bottom: 0;
+//             }
+//         }
 
-        &.dark {
-            color: #fff;
-        }
+//         &.dark {
+//             color: #fff;
+//         }
 
-        &.lite {
-            color: #000;
-        }
+//         &.lite {
+//             color: #000;
+//         }
 
 
-    }
+//     }
 
-    .call-to-action {
-        margin-bottom: 80px;
+//     .call-to-action {
+//         margin-bottom: 80px;
 
-        a:hover {
-            background-color: #fff;
-        }
+//         a:hover {
+//             background-color: #fff;
+//         }
 
-    }
+//     }
 
     
-}
+// }
 
 section#rotation {
     background-color: #232323;
@@ -500,34 +517,34 @@ section#community {
 
 @media (max-width: $screen-md) {
 
-    section#now-playing,
-    section#live-stream {
-        height: 65vh;
+    // section#now-playing,
+    // section#live-stream {
+    //     height: 65vh;
 
-        h1 {
-            &.live-title {
-                font-size: 30px;
-                max-width: 60%;
-            }
-        }
+    //     h1 {
+    //         &.live-title {
+    //             font-size: 30px;
+    //             max-width: 60%;
+    //         }
+    //     }
 
-        .page-title-box {
-            margin-left: 30px;
+    //     .page-title-box {
+    //         margin-left: 30px;
 
-            p {
-                font-size: 14px;
-                line-height: 22px;
-            }
-            .event-logo {
-                max-width: 250px;
-            }
-        }
-        .call-to-action {
-            margin-left: 30px;
-            margin-bottom: 50px;
-        }
+    //         p {
+    //             font-size: 14px;
+    //             line-height: 22px;
+    //         }
+    //         .event-logo {
+    //             max-width: 250px;
+    //         }
+    //     }
+    //     .call-to-action {
+    //         margin-left: 30px;
+    //         margin-bottom: 50px;
+    //     }
 
-    }
+    // }
 
     section#twitch-history {
         flex-direction: column;
@@ -566,42 +583,42 @@ section#community {
         }
     }
 
-    section#now-playing,
-    section#live-stream {
-        height: 55vh;
+    // section#now-playing,
+    // section#live-stream {
+    //     height: 55vh;
 
-        h1 {
-            font-size: 25px;
-            line-height: 32px;
-            &.live-title {
-                max-width: 80%;
-            }
-        }
+    //     h1 {
+    //         font-size: 25px;
+    //         line-height: 32px;
+    //         &.live-title {
+    //             max-width: 80%;
+    //         }
+    //     }
 
-        .page-title-box {
-            margin-left: 60px;
+    //     .page-title-box {
+    //         margin-left: 60px;
     
-            p {
-                font-size: 14px;
-                line-height: 22px;
+    //         p {
+    //             font-size: 14px;
+    //             line-height: 22px;
 
-                &.caption {
-                    display: none;
-                }
-                &.schedule {
-                    margin-bottom: 0;
-                }
+    //             &.caption {
+    //                 display: none;
+    //             }
+    //             &.schedule {
+    //                 margin-bottom: 0;
+    //             }
 
-            }
-            .event-logo {
-                max-width: 150px;
-            }
-        }
-        .call-to-action {
-            margin-left: 60px;
-            margin-bottom: 50px;
-        }
-    }
+    //         }
+    //         .event-logo {
+    //             max-width: 150px;
+    //         }
+    //     }
+    //     .call-to-action {
+    //         margin-left: 60px;
+    //         margin-bottom: 50px;
+    //     }
+    // }
 
     section#twitch-history {
         .col-1 {
