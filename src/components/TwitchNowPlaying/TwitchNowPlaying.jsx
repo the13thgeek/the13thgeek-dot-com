@@ -1,9 +1,9 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Autoplay } from 'swiper/modules';
+import { Pagination, Autoplay } from 'swiper/modules';
 import './TwitchNowPlaying.scss';
 import 'swiper/scss';
-import 'swiper/scss/navigation';
+import 'swiper/scss/pagination';
 
 import imgFeatureFilter from '../../assets/twitch/slideshow-filter.png';
 import imgFeatureEvilWithin from '../../assets/twitch/feature/slide-evil-within.jpg';
@@ -62,17 +62,18 @@ const pageFeatures = [
             <div className="descriptor twitch-1-nowplaying">
                 <span className="title">Now Playing</span>
             </div>
-            <h1><i className="fa-brands fa-twitch"></i> @the13thgeek on Twitch</h1>
+            <h1><i className="fa-brands fa-twitch"></i> the13thgeek on Twitch</h1>
         </div>
         <Swiper 
-            autoplay={{ delay: 6000, disableOnInteraction: true }} 
+            autoplay={{ delay: 5000, disableOnInteraction: false }} 
             loop={true}
             slidesPerView={'auto'}
             speed={500}
-            // spaceBetween={60}
             centeredSlides={true}
-            navigation={true} 
-            modules={[Navigation, Autoplay]} 
+            pagination={{
+                el: '.np-pagination'
+            }}
+            modules={[Pagination, Autoplay]} 
             className="carousel-now-playing">
             {pageFeatures.map((slide,index) => 
                 <SwiperSlide key={index} className='slide-item'>
@@ -88,20 +89,8 @@ const pageFeatures = [
                     </div>
                 </SwiperSlide>    
             )}
-
-            {/* <SwiperSlide className='slide-item'>
-                <div className="slide-wrapper">1</div>
-            </SwiperSlide>
-            <SwiperSlide className='slide-item'>
-                <div className="slide-wrapper">2</div>
-            </SwiperSlide>
-            <SwiperSlide className='slide-item'>
-                <div className="slide-wrapper">3</div>
-            </SwiperSlide>
-            <SwiperSlide className='slide-item'>
-                <div className="slide-wrapper">4</div>
-            </SwiperSlide> */}
         </Swiper>
+        <div className="np-pagination"></div>
     </section>
   )
 }

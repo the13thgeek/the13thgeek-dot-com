@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Autoplay, EffectFade } from 'swiper/modules';
+import { Navigation } from 'swiper/modules';
 import { Link } from "react-router-dom";
 import { Helmet } from 'react-helmet-async';
 import { dateFormatter, thumbnailResize } from '../utils/utils';
@@ -13,12 +13,9 @@ import TwitchNowLive from '../components/TwitchNowLive/TwitchNowLive';
 import './Twitch.scss';
 import 'swiper/scss';
 import 'swiper/scss/navigation';
-import 'swiper/scss/pagination';
-import 'swiper/scss/effect-fade';
 
 /* Local assets */
 import twitchFootage from '../assets/twitch/twitch-footage.webm';
-
 import imgStaffThe13thgeek from '../assets/twitch/staff-the13thgeek.jpg';
 import imgStaffTooniearcade from '../assets/twitch/staff-tooniearcade.jpg'
 import imgStaffHreowan from '../assets/twitch/staff-hreowan.jpg'
@@ -92,60 +89,10 @@ return (
     </header>
     <main className="page-twitch">
       { liveData ? (
-        <TwitchNowLive />
+        <TwitchNowLive liveData={liveData} />
       ) : (
         <TwitchNowPlaying />
       ) }
-
-        {/* { liveData ? (
-          <section id="live-stream" className="live-stream">
-              <div className="back-screen" style={{backgroundImage: `url(${thumbnailResize(liveData.thumbnail_url, 1280, 720)})`}}>
-                  <div className="filter"></div>
-              </div>
-              <div className="content-container">
-                  <div className='page-title-box'>
-                      <div className="descriptor twitch-1-livestream">
-                          <span className="title">Live Stream</span>
-                      </div>
-                      <div className="live-indicator">
-                        <span><i className="fa-solid fa-video"></i>&nbsp;&nbsp;Now On Air</span>
-                      </div>
-                      <h1 className='live-title'>{ liveData.title.includes('|') ? liveData.title.substring(0, liveData.title.indexOf('|')).trim() : liveData.title }</h1>
-                      <p className="schedule">Stream started {dateFormatter('simple-time',liveData.started_at) + ' ' + dateFormatter('simple-time',liveData.started_at)}</p>
-                      <p className="caption">@the13thgeek is now live on Twitch!<br />Currently playing: <b>{liveData.game_name}</b></p>
-                  </div>
-                  <div className="call-to-action">
-                      <Link className="cta-link" target='_blank' to="https://twitch.tv/the13thgeek"><i className="fa-brands fa-twitch"></i> Watch Live!<i className="fa-solid fa-chevron-right"></i></Link>
-                  </div>
-              </div>
-          </section>
-        ) : (
-          <section id="now-playing" className="now-playing">
-            <Swiper autoplay={{ delay: 6000, disableOnInteraction: false }} loop={true} effect={'fade'} navigation={true} modules={[Navigation, Autoplay, EffectFade]} className="carousel-now-playing">
-                {pageFeatures.map((slide,index) => 
-                <SwiperSlide key={index}>
-                  <div className="back-screen" style={{backgroundImage: `url(${slide.background})`}}>
-                      <div className="filter"></div>
-                  </div>
-                  <div className="content-container">
-                      <div className={`page-title-box ` + slide.scheme}>
-                          <div className="descriptor twitch-1-nowplaying">
-                              <span className="title">Now Playing</span>
-                          </div>
-                          <img src={slide.logo} alt={slide.gametitle} className="event-logo" />
-                          <h1>{slide.title}</h1>
-                          <p className="schedule">{slide.schedule ? ('Streams ' + slide.schedule) : 'Streaming in Regular Rotation' }</p>
-                          <p className='caption'>{slide.description}</p>
-                      </div>
-                      <div className="call-to-action">
-                          &nbsp;
-                      </div>
-                  </div>
-                </SwiperSlide>
-                )}
-            </Swiper>
-          </section>
-        ) } */}
         
         <section id="rotation" className="rotation">
             <div className="content-container">

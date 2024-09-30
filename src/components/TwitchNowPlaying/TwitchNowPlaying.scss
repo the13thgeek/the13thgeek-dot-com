@@ -32,17 +32,17 @@
     }
 }
 
-
-
 section#now-playing {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #161616;
+    //background-color: #161616;
+    background-color: #6441a5;
     position: relative;
+    //padding: 50px 0 20px;
 
     h1 {
-        margin-bottom: 60px;
+        margin-bottom: 40px;
     }
 
     .carousel-now-playing {
@@ -55,16 +55,17 @@ section#now-playing {
         }
 
         .slide-item {
-            // width: 1440px;
             width: 90vw;
             max-width: 1440px;
-            border-top-left-radius: 20px;
-            border-bottom-right-radius: 20px;
+            border-top-left-radius: 40px;
+            border-bottom-right-radius: 40px;
             overflow: hidden;
             transition: all 0.3s;
             margin: 0 20px;
+            opacity: 0.5;
 
             &.swiper-slide-active {
+                opacity: 1;
                 img.game-photo {
                     opacity: 1;
                     transform: scale(1);
@@ -133,115 +134,18 @@ section#now-playing {
         }
     }
 
-    // .carousel-now-playing {
-    //     .swiper {
-    //         width: 100%;
-    //         height: 100%;
-    //     }
-    
-    //     .swiper-slide {
-    //         display: flex;
-    //         justify-content: center;
-    //         align-items: center;
-    //         color: #000;
-    //         background: #fff;
+    .np-pagination {
+        text-align: center;
+        margin: 10px auto;
 
-    //         &.swiper-slide-active {
-    //             .page-title-box {
-    //                 animation: slide-data-entry 1s 1;
-    //             }
-    //         }
-    //     }
-    
-    //     .swiper-button-prev,
-    //     .swiper-button-next {
-    //         color: #fff;
-    //         padding: 10px;
-    //     }
-    // }
-
-    .back-screen {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: #000;
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: 50% 50%;
-        z-index: 0;
-        opacity: 1;
-    }
-
-    .back-screen .filter {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-image: url('../assets/twitch/slideshow-filter.png');
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: 50% 50%;
-        z-index: 1;
-    }
-
-
-    .content-container {
-        position: relative;
-        z-index: 1;
-        height: 100%;
-        justify-content: end;
-    }
-
-    .page-title-box {
-        display: flex;
-        flex-direction: column;
-
-        .descriptor {
-            margin-bottom: 40px;
+        .swiper-pagination-bullet {
+            background-color: #999;
         }
-    
-        .event-logo {
-            max-width: 350px;
-            margin-bottom: 30px;
-        }
-
-        p {
-            max-width: 40%;
-
-            &.schedule {
-                font-weight: 500;
-                font-size: 14px;
-                color: #ccc;
-                margin-bottom: 20px;
-            }
-
-            &:last-of-type {
-                margin-bottom: 0;
-            }
-        }
-
-        &.dark {
-            color: #fff;
-        }
-
-        &.lite {
-            color: #000;
-        }
-
-
-    }
-
-    .call-to-action {
-        margin-bottom: 80px;
-
-        a:hover {
+        .swiper-pagination-bullet {
             background-color: #fff;
         }
-
     }
+
 }
 
 @media (max-width: $screen-lg) {
@@ -276,11 +180,58 @@ section#now-playing {
             }
            
             .contents {
-                margin-left: 30px;
+                margin-left: 50px;
                 p.caption {
                     display: none;
                 }
             }
+        }
+
+    }    
+
+}
+
+@media (max-width: $screen-sm) {
+
+    section#now-playing {
+
+        .carousel-now-playing {
+
+            .slide-wrapper {
+                align-items: center;
+                aspect-ratio: 3 / 2;
+
+                img.filter {
+                    width: 100%;
+                    height: 100%;
+                }
+
+                img.game-photo {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    transform: translate(-50%,-50%);
+                    width: 200%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+
+            }
+
+            .contents {
+                width: 40%;
+                //text-align: center;
+
+                h3 {
+                    font-size: 16px;
+                    margin-bottom: 5px;
+                }
+                p {
+                    font-size: 12px;
+                    line-height: 16px;
+                }
+            }
+
         }
 
     }    
