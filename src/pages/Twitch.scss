@@ -35,183 +35,39 @@
     }
 }
 
-@keyframes live {
-    0% {
-        border: #fff 4px solid;
-    }
-    50% {
-        border: #c00 4px solid;
-    }
-    100% {
-        border: #fff 4px solid;
-    }
-}
-
-section#live-stream {
-
-    .live-indicator span {
-        display: inline-block;
-        margin-bottom: 20px;
-        text-transform: uppercase;
-        padding: 10px 20px;
-        font-size: 40px;
-        border-radius: 20px;
-        background-color: #000;
-        animation: live 0.75s infinite;
-        font-weight: 800;
-    }
-
-    .call-to-action {
-        a.cta-link {
-            background-color: #f66;
-            border: none;
-
-            &:hover {
-                background-color: #fff;
-                color: #000;
-            }
-        }
-    }
-}
-
-section#now-playing, 
-section#live-stream {
-    background-color: #000;
-    height: 85vh;
-    position: relative;
-    padding: 0;
-
-    h1 {
-        font-size: 30px;
-        line-height: 35px;
-
-        &.live-title {
-            max-width: 40%;
-        }
-    }
-
-    .carousel-now-playing {
-
-        .swiper {
-            width: 100%;
-            height: 100%;
-        }
-    
-        .swiper-slide {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #000;
-            background: #fff;
-
-            &.swiper-slide-active {
-                .page-title-box {
-                    .descriptor, .event-logo {
-                        animation: from-right 1s 1;
-                    }
-                    h1, p {
-                        animation: from-bottom 1s 1;
-                    }
-                }
-            }
-        }
-    
-        .swiper-button-prev,
-        .swiper-button-next {
-            color: #fff;
-            padding: 10px;
-        }
-    }
-
-    .back-screen {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: #000;
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: 50% 50%;
-        z-index: 0;
-        opacity: 1;
-    }
-
-    .back-screen .filter {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-image: url('../assets/twitch/slideshow-filter.png');
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: 50% 50%;
-        z-index: 1;
-    }
-
-
-    .content-container {
-        position: relative;
-        z-index: 1;
-        height: 100%;
-        justify-content: end;
-    }
-
-    .page-title-box {
-        display: flex;
-        flex-direction: column;
-
-        .descriptor {
-            margin-bottom: 40px;
-        }
-    
-        .event-logo {
-            max-width: 350px;
-            margin-bottom: 30px;
-        }
-
-        p {
-            max-width: 40%;
-
-            &.schedule {
-                font-weight: 500;
-                font-size: 14px;
-                color: #ccc;
-                margin-bottom: 20px;
-            }
-
-            &:last-of-type {
-                margin-bottom: 0;
-            }
-        }
-
-        &.dark {
-            color: #fff;
-        }
-
-        &.lite {
-            color: #000;
-        }
-
-
-    }
-
-    .call-to-action {
-        margin-bottom: 80px;
-
-        a:hover {
-            background-color: #fff;
-        }
-
-    }
-
-    
-}
-
 section#rotation {
-    background-color: #232323;
-    color: #fff;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    color: #333;
+    gap: 50px;
+
+    .row {
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+
+        .col-info {
+            padding-left: 80px;
+            width: 30%;
+        }
+
+        .col-clips {
+            position: relative;
+            width: 70%;
+
+            .shader {
+                position: absolute;
+                bottom: 0;
+                background-color: lighten(#6441a5, 40%);
+                width: 100%;
+                height: 60%;
+                z-index: 1;
+                border-top-left-radius: 30px;
+                border-bottom-left-radius: 30px;
+            }
+        }
+    }
 
     .navigator {
         display: flex;
@@ -220,16 +76,21 @@ section#rotation {
         gap: 15px;
 
         .lb-prev, .lb-next, .pc-prev, .pc-next {
-            color: #000;
-            background-color: $swatch-2;
-            padding: 5px 30px;
-            border-radius: 13px;
+            color: #fff;
+            background-color: #6441a5;
+            padding: 22px 30px;
+            border-radius: 50%;
             font-size: 20px;
             cursor: pointer;
+            transition: all 0.3s;
+
+            &:hover {
+                background-color: lighten(#6441a5,13%);
+            }
 
             &.swiper-button-disabled {
-                background-color: #333;
-                color: #222;
+                background-color: #ccc;
+                color: #999;
                 cursor: default;
             }
         }
@@ -237,21 +98,48 @@ section#rotation {
 
     .clips-area {
         margin: 0 0 10px;
-        display: flex;
-        flex-direction: row;        
+        width: 100%;
+        position: relative;
+        z-index: 2;
+        margin-left: 30px;
+        
+        .swiper-slide {
+            width: 300px;
+        }
+
+        .tag span {
+            display: inline-block;
+            font-weight: 600;
+            color: #fff;
+            font-size: 12px;
+            line-height: 10px;
+            padding: 6px 8px;
+            border-radius: 3px;
+            background-color: #232323;
+            text-transform: uppercase;
+
+            &.live {
+                background-color: #c00;
+            }
+            &.vod {
+                background-color: #6441a5;
+            }
+            &.clip {
+                background-color: #060;
+            }
+        }
 
         .clip-item {
-            border-bottom: #666 1px dotted;
             display: flex;
             flex-direction: column;
             text-decoration: none;
+            padding: 10px 15px;
+            transition: all 0.3s;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
 
             &:hover {
-                .preview {
-                    img {
-                        opacity: 0.6;
-                    }
-                }
+                background-color: rgba(255,255,255,0.9);
             }
 
             & > :last-child {
@@ -280,7 +168,7 @@ section#rotation {
                     position: absolute;
                     top: 4px;
                     left: 15px;
-                    background-color: $swatch-2;
+                    background-color: #ff0;
                     color: #000;
                     text-transform: uppercase;
                     padding: 5px 10px;
@@ -292,17 +180,17 @@ section#rotation {
 
                 .clipper {
                     position: absolute;
-                    bottom: 0;
+                    bottom: 4px;
                     left: 0;
                     font-size: 12px;
-                    background-color: #232323;
+                    background-color: #6441a5;
                     color: #fff;
                     padding: 8px 15px 8px 10px;
                     z-index: 2;
                     border-top-right-radius: 15px;
 
                     b {
-                        color: #e00;
+                        color: #ff0;
                     }
                 }
             }
@@ -313,15 +201,18 @@ section#rotation {
                 border-bottom-right-radius: 30px;
                 z-index: 1;
                 transition: all 0.3s;
+                box-shadow: 8px 5px 0 #6441a5;
             }
 
             h4 {
                 font-size: 18px;
-                color: $swatch-2;
+                color: #000;
+                margin-bottom: 3px;
             }
 
             p {
-                color: #eee;
+                color: #333;
+                margin-bottom: 5px;
               
                 &.schedule {
                     font-size: 14px;
@@ -343,7 +234,7 @@ section#rotation {
                     i {
                         display: flex;
                         justify-content: end;
-                        color: $swatch-2;
+                        color: #6441a5;
                     }
                 }
             }
@@ -352,7 +243,7 @@ section#rotation {
 
     .carousel-latest-broadcasts,
     .carousel-popular-clips {
-        margin: 20px 0 30px;
+        margin: 0;
 
         .swiper {
             width: 100%;
@@ -374,8 +265,8 @@ section#twitch-history {
     justify-content: space-between;
     gap: 0;
     padding: 0;
-    background-color: #fff;
-    color: #000;
+    background-color: #6441a5;
+    color: #fff;
 
     .col-1 {
         flex: 1;
@@ -506,21 +397,6 @@ section#community {
 
 @media (max-width: $screen-lg) {
 
-    section#now-playing,
-    section#live-stream {
-
-        .back-screen {
-            background-size: cover;
-
-            .filter {
-                background-size: cover;
-                background-position: 0% 100%;
-            }
-        }
-        
-
-    }
-
     section#community {
         .information {
             flex: 1;
@@ -534,33 +410,37 @@ section#community {
 
 @media (max-width: $screen-md) {
 
-    section#now-playing,
-    section#live-stream {
-        height: 65vh;
+    section#rotation {
+        h2 {
+            font-size: 40px;
+        }
 
-        h1 {
-            &.live-title {
-                font-size: 30px;
-                max-width: 60%;
+        .row {
+            display: flex;
+            flex-direction: row;
+            gap: 30px;
+    
+            .col-info {
+                padding-left: 60px;
+                width: 40%;
+            }
+    
+            .col-clips {
+                position: relative;
+                width: 60%;
+    
+                .shader {
+                    background-color: lighten(#6441a5, 40%);
+                    height: 60%;
+                }
             }
         }
 
-        .page-title-box {
-            margin-left: 30px;
-
-            p {
-                font-size: 14px;
-                line-height: 22px;
+        .clips-area {
+            .swiper-slide {
+                width: 220px;
             }
-            .event-logo {
-                max-width: 250px;
-            }
-        }
-        .call-to-action {
-            margin-left: 30px;
-            margin-bottom: 50px;
-        }
-
+        }  
     }
 
     section#twitch-history {
@@ -594,47 +474,31 @@ section#community {
 
 @media (max-width: $screen-sm) {
 
-    section#live-stream {
-        .live-indicator span {
-            font-size: 20px;
-        }
-    }
-
-    section#now-playing,
-    section#live-stream {
-        height: 55vh;
-
-        h1 {
-            font-size: 25px;
-            line-height: 32px;
-            &.live-title {
-                max-width: 80%;
-            }
+    section#rotation {
+        h2 {
+            font-size: 30px;
         }
 
-        .page-title-box {
-            margin-left: 60px;
+        .row {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
     
-            p {
-                font-size: 14px;
-                line-height: 22px;
-
-                &.caption {
-                    display: none;
-                }
-                &.schedule {
-                    margin-bottom: 0;
-                }
-
+            .col-info {
+                padding-left: 20px;
+                width: 100%;
             }
-            .event-logo {
-                max-width: 150px;
+    
+            .col-clips {
+                width: 100%;
             }
         }
-        .call-to-action {
-            margin-left: 60px;
-            margin-bottom: 50px;
-        }
+
+        .clips-area {
+            .swiper-slide {
+                width: 175px;
+            }
+        }  
     }
 
     section#twitch-history {
