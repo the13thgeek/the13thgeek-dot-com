@@ -36,10 +36,13 @@ section#now-playing {
     display: flex;
     flex-direction: column;
     align-items: center;
-    //background-color: #161616;
     background-color: #6441a5;
     position: relative;
-    //padding: 50px 0 20px;
+    padding-bottom: 30px;
+
+    .title-bar {
+        align-items: center;
+    }
 
     h1 {
         margin-bottom: 40px;
@@ -55,8 +58,8 @@ section#now-playing {
         }
 
         .slide-item {
-            width: 90vw;
-            max-width: 1440px;
+            width: 55vw;
+            max-width: 960px;
             border-top-left-radius: 40px;
             border-bottom-right-radius: 40px;
             overflow: hidden;
@@ -82,6 +85,9 @@ section#now-playing {
                     h3, p {
                         animation: game-text 1s 1;
                     }
+                    p.caption {
+                        margin-bottom: 0;
+                    }
                 }
             }
         }
@@ -91,7 +97,7 @@ section#now-playing {
             background-color: #000;
             width: 100%;
             height: 100%;
-            aspect-ratio: 3 / 1;
+            aspect-ratio: 2 / 1;
             display: flex;
             align-items: center;
         }
@@ -108,7 +114,7 @@ section#now-playing {
         }
 
         img.game-logo {
-            width: 300px;
+            width: 200px;
             margin-bottom: 20px;
         }
 
@@ -136,12 +142,14 @@ section#now-playing {
 
     .np-pagination {
         text-align: center;
-        margin: 10px auto;
+        margin: 20px auto 0;
 
         .swiper-pagination-bullet {
             background-color: #999;
+            width: 10px;
+            height: 10px;
         }
-        .swiper-pagination-bullet {
+        .swiper-pagination-bullet-active {
             background-color: #fff;
         }
     }
@@ -153,6 +161,12 @@ section#now-playing {
     section#now-playing {
 
         .carousel-now-playing {
+
+            .contents {
+                margin-left: 40px;
+                width: 50%;
+            }
+
             .swiper-slide {
                 // max-width: 960px;
                 max-width: 90vw;
@@ -173,6 +187,11 @@ section#now-playing {
     section#now-playing {
 
         .carousel-now-playing {
+
+            .slide-item {
+                width: 75vw;
+            }
+
             .swiper-slide {
                 // max-width: 90%;
                 max-width: 90vw;
@@ -196,6 +215,10 @@ section#now-playing {
     section#now-playing {
 
         .carousel-now-playing {
+
+            .slide-item {
+                width: 85vw;
+            }
 
             .slide-wrapper {
                 align-items: center;

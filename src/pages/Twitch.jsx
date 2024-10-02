@@ -95,75 +95,107 @@ return (
       ) }
         
         <section id="rotation" className="rotation">
-            <div className="content-container">
-                <div className="descriptor twitch-2-rotation">
-                    <span className="title">Rotation</span>
+            <div className="row">
+                <div className="col-info">
+                    <div className="descriptor twitch-2-rotation">
+                        <span className="title">Rotation</span>
+                    </div>
+                    <h2>Latest Broadcasts</h2>
+                    <div className="navigator">
+                        <div className="lb-prev"><i className="fa-solid fa-chevron-left"></i></div>
+                        <div className="lb-next"><i className="fa-solid fa-chevron-right"></i></div>
+                    </div>    
                 </div>
-                <h2>Latest Broadcasts</h2>
-                <div className="navigator">
-                  <div className="lb-prev"><i className="fa-solid fa-chevron-left"></i></div>
-                  <div className="lb-next"><i className="fa-solid fa-chevron-right"></i></div>
-                </div>
-                { loading ? (<p>Loading...</p>) : (
-                <div className="clips-area">
-                    <Swiper slidesPerView={2} spaceBetween={10} navigation={{ prevEl: '.lb-prev', nextEl: '.lb-next' }} modules={[Navigation]} breakpoints={{ 768: { slidesPerView: 2, spaceBetween: 10 }, 992: { slidesPerView: 3, spaceBetween: 20 }, 1200: { slidesPerView: 4, spaceBetween: 30 }}} className="carousel-latest-broadcasts">
-                      {lastStreams.map((stream, index) => 
-                      <SwiperSlide key={index}>
-                        <Link to={ (liveData && index === 0) ? `https://twitch.tv/the13thgeek` : stream.url} target='_blank' key={index} className={`clip-item slide-`+index}>
-                          <div className="preview">
-                            { (liveData && index === 0) ? (
-                              <>
-                                <div className="live">Live!</div>
-                                <img src={thumbnailResize(liveData.thumbnail_url, 640, 360)} alt="Stream Preview" />
-                              </>
-                            ) : (
-                              <>
-                                {isItemNew(stream.created_at, 4) ? (<div className="new">New!</div>) : ('')}
-                                <img src={thumbnailResize(stream.thumbnail_url,640,360)} alt="Stream Preview" />
-                              </>
-                            )}
-                          </div>
-                          <h4>{stream.title.substring(0, stream.title.indexOf('|')).trim()}</h4>
-                          <p className="schedule">
-                            {dateFormatter('simple-date',stream.created_at)}<br />
-                            {dateFormatter('simple-time',stream.created_at)}
-                          </p>
-                          <p className="view-count"><span>{stream.view_count} views</span> <i className="fa-solid fa-tv"></i></p>
-                        </Link>
-                      </SwiperSlide>
-                      )}
-                    </Swiper>
-                </div>
-                ) }
-                <h2>Popular Clips</h2>
-                <div className="navigator">
-                    <div className="pc-prev"><i className="fa-solid fa-chevron-left"></i></div>
-                    <div className="pc-next"><i className="fa-solid fa-chevron-right"></i></div>
-                </div>
-                { loading ? (<p>Loading...</p>) : (
-                <div className="clips-area">
-                    <Swiper slidesPerView={2} spaceBetween={10} navigation={{ prevEl: '.pc-prev', nextEl: '.pc-next' }} modules={[Navigation]} breakpoints={{ 768: { slidesPerView: 2, spaceBetween: 10 }, 992: { slidesPerView: 3, spaceBetween: 20 }, 1200: { slidesPerView: 4, spaceBetween: 30 }}} className="carousel-popular-clips">
-                      {lastClips.slice(0,10).map((clip, index) => 
-                      <SwiperSlide key={index}>
-                          <Link to={clip.url} target='_blank' className='clip-item'>
-                            <div className="preview">
-                              <div className="clipper">
-                                <i className="fa-solid fa-user"></i> Clipped by <b>{clip.creator_name}</b>
+                <div className="col-clips">
+                    { loading ? (<p>Loading...</p>) : (
+                    <div className="clips-area">
+                        {/* <Swiper slidesPerView={2} spaceBetween={10} navigation={{ prevEl: '.lb-prev', nextEl: '.lb-next' }} modules={[Navigation]} breakpoints={{ 768: { slidesPerView: 2, spaceBetween: 10 }, 992: { slidesPerView: 3, spaceBetween: 20 }, 1200: { slidesPerView: 4, spaceBetween: 30 }}} className="carousel-latest-broadcasts"> */}
+                        <Swiper 
+                          slidesPerView={'auto'}
+                          spaceBetween={10}
+                          navigation={{ prevEl: '.lb-prev', nextEl: '.lb-next' }}
+                          modules={[Navigation]}
+                          className="carousel-latest-broadcasts"
+                        >
+                          {lastStreams.map((stream, index) => 
+                          <SwiperSlide key={index}>
+                            <Link to={ (liveData && index === 0) ? `https://twitch.tv/the13thgeek` : stream.url} target='_blank' key={index} className={`clip-item slide-`+index}>
+                              <div className="preview">
+                                { (liveData && index === 0) ? (
+                                  <>
+                                    <div className="live">Live!</div>
+                                    <img src={thumbnailResize(liveData.thumbnail_url, 640, 360)} alt="Stream Preview" />
+                                  </>
+                                ) : (
+                                  <>
+                                    {isItemNew(stream.created_at, 4) ? (<div className="new">New!</div>) : ('')}
+                                    <img src={thumbnailResize(stream.thumbnail_url,640,360)} alt="Stream Preview" />
+                                  </>
+                                )}
                               </div>
-                              <img src={clip.thumbnail_url} alt="Clip Preview" />
-                            </div>
-                            <h4>{clip.title}</h4>
-                            <p className="schedule">
-                              {dateFormatter('simple-date',clip.created_at)}<br />
-                              {dateFormatter('simple-time',clip.created_at)}
-                            </p>
-                            <p className="view-count"><span>{clip.view_count} views</span> <i className="fa-solid fa-tv"></i></p>
-                          </Link>
-                      </SwiperSlide>
-                      )}
-                    </Swiper>
-                </div> 
-                )}               
+                              <h4>{stream.title.substring(0, stream.title.indexOf('|')).trim()}</h4>
+                              { (liveData && index === 0) ? (
+                              <p className='tag'><span className='live'>On Air</span></p>
+                              ) : (
+                              <p className='tag'><span className='vod'>VOD Replay</span></p>
+                              ) }
+                              
+                              
+                              <p className="schedule">
+                                {dateFormatter('simple-date',stream.created_at)} / {dateFormatter('simple-time',stream.created_at)}
+                              </p>
+                              <p className="view-count"><span>{stream.view_count} views</span> <i className="fa-solid fa-tv"></i></p>
+                            </Link>
+                          </SwiperSlide>
+                          )}
+                        </Swiper>
+                      </div>
+                      ) }
+                    <div className="shader"></div>
+                </div>
+            </div>
+            <div className="row">
+              <div className="col-info">
+                    <h2>Popular Clips</h2>
+                    <div className="navigator">
+                        <div className="pc-prev"><i className="fa-solid fa-chevron-left"></i></div>
+                        <div className="pc-next"><i className="fa-solid fa-chevron-right"></i></div>
+                    </div>
+                </div>
+                <div className="col-clips">
+                  { loading ? (<p>Loading...</p>) : (
+                  <div className="clips-area">
+                      <Swiper 
+                        slidesPerView={'auto'}
+                        spaceBetween={10}
+                        navigation={{ prevEl: '.pc-prev', nextEl: '.pc-next' }}
+                        modules={[Navigation]}
+                        className="carousel-popular-clips
+                      ">
+                        {lastClips.slice(0,10).map((clip, index) => 
+                        <SwiperSlide key={index}>
+                            <Link to={clip.url} target='_blank' className='clip-item'>
+                              <div className="preview">
+                                <div className="clipper">
+                                  <i className="fa-solid fa-user"></i> Clipped by <b>{clip.creator_name}</b>
+                                </div>
+                                <img src={clip.thumbnail_url} alt="Clip Preview" />
+                              </div>
+                              <h4>{clip.title}</h4>
+                              <p className='tag'><span className='clip'>Clip</span></p>
+                              <p className="schedule">
+                                {dateFormatter('simple-date',clip.created_at)}<br />
+                                {dateFormatter('simple-time',clip.created_at)}
+                              </p>
+                              <p className="view-count"><span>{clip.view_count} views</span> <i className="fa-solid fa-tv"></i></p>
+                            </Link>
+                        </SwiperSlide>
+                        )}
+                      </Swiper>
+                  </div> 
+                  )} 
+                  <div className="shader"></div>
+                </div>
             </div>
         </section>
         <section id='twitch-history' className="twitch-history">
@@ -202,7 +234,7 @@ return (
                 <p>If you'd like to be part of the action, you can join in the fun on @the13thgeek's Discord channel! It's the perfect place to hang out, chat, meet fellow geeks and stay updated with the latest news, stream schedules and other shenanigans.</p>
                 <p>You can follow on Twitch as well so you never miss out!</p>
                 <div className="call-to-action">
-                  <Link className="cta-link" target="_blank" rel='nofollow noopener' to="//discord.gg/GdsHhkJD9v"><i className="fa-brands fa-discord"></i> Join the Channel <i className="fa-solid fa-chevron-right"></i></Link>
+                  <Link className="cta-link" target="_blank" rel='nofollow noopener' to="//discord.gg/GdsHhkJD9v"><i className="fa-brands fa-discord"></i> Join the Server <i className="fa-solid fa-chevron-right"></i></Link>
                   <Link className="cta-link" target="_blank" to="https://twitter.com/the13thgeek"><i className="fa-brands fa-x-twitter"></i> @the13thgeek <i className="fa-solid fa-chevron-right"></i></Link>
                 </div>              
             </div>          
