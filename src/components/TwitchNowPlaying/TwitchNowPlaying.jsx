@@ -41,7 +41,7 @@ const pageFeatures = [
         'gametitle': 'Cult of the Lamb',
         'title': 'Hail the Thirteenth Enclave',
         'schedule': 'Tuesdays @7pm EST',
-        'description': 'Join the Cult and follow through the crusade against heretics, non-believers and spread the Word about the One True Cult.',
+        'description': '@the13thgeek leads an adorable yet creepy cult where followers are recruited, sacrifices happen, and the chipmunk voice filter comes out in full force!',
         'scheme': 'dark'
     },
     {
@@ -50,7 +50,7 @@ const pageFeatures = [
         'gametitle': null,
         'title': 'House Haunters',
         'schedule': 'throughout October',
-        'description': '@the13thgeek collaborates with friends as they try to investigate paranormal activities, figure out what entity is haunting and make it back out alive!',
+        'description': '@the13thgeek teams up with terrified friends to face the mumu. Expect screams, questionable teamwork, and someone (probably him) hiding in a closet.',
         'scheme': 'dark'
     },
     {
@@ -59,7 +59,7 @@ const pageFeatures = [
         'gametitle': null,
         'title': 'Found Footage 2.0',
         'schedule': 'throughout October',
-        'description': '@the13thgeek is lost in the middle of nowhere and is only equipped with an analogue video camera. Will he last 18 minutes without screaming?',
+        'description': 'A horror game that tells @the13thgeek not to scream? Challenge accepted! From jump scares to creepy environments, prepare to watch as he constantly hovers on the verge of a full-on freakout. Will he last for 18 minutes?',
         'scheme': 'dark'
     },
     // {
@@ -77,7 +77,7 @@ const pageFeatures = [
         'gametitle': 'The Evil Within',
         'title': "Terrors of the Unknown",
         'schedule': 'Thursdays @ 7pm EST',
-        'description': 'On this stream, expect a lot of nervous laughter and jump scares as @the13thgeek navigates through Sebastian Castellano\'s nightmares.',
+        'description': 'Dive into psychological horror as @the13thgeek faces Sebastian Castellano\'s nightmares and tries to stay calm. Prepare for plenty of screams!',
         'scheme': 'dark'
     },
     {
@@ -86,7 +86,7 @@ const pageFeatures = [
         'gametitle': 'Helldivers II',
         'title': "Say Hello to Democracy!",
         'schedule': null,
-        'description': 'Watch as @the13thgeek and his friends explore new locations in the galaxy and fight for some (Managed) Democracy!',
+        'description': '@the13thgeek teams up with streamers to take on alien hordes in space, causing chaos and accidental explosions. Friendly fire? Definitely.',
         'scheme': 'dark'
     },
     {
@@ -95,7 +95,7 @@ const pageFeatures = [
         'gametitle': 'Parkitect',
         'title': "Let's Build a Theme Park!",
         'schedule': 'Mondays @ 3pm EST',
-        'description': 'Come chill and help @the13thgeek build a virtual theme park and try to keep it functional in this charming simulation game.',
+        'description': 'Watch @the13thgeek build the ultimate theme park --- whether it\'s the happiest place or a total disaster depends on the day. Lost guests guaranteed.',
         'scheme': 'dark'
     }
 ]
