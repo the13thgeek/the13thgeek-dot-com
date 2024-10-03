@@ -6,6 +6,8 @@ import 'swiper/scss';
 import 'swiper/scss/pagination';
 
 import imgFeatureFilter from '../../assets/twitch/slideshow-filter.png';
+import imgFeatureCultOfTheLamb from '../../assets/twitch/feature/slide-cult.jpg';
+import imgFeatureCultOfTheLambLogo from '../../assets/twitch/feature/logo-cult.png';
 import imgFeatureMidnight from '../../assets/twitch/feature/slide-midnight.jpg';
 import imgFeatureMidnightLogo from '../../assets/twitch/feature/logo-midnight.png';
 import imgFeaturePhasmophobia from '../../assets/twitch/feature/slide-phasmophobia.jpg';
@@ -28,17 +30,26 @@ const pageFeatures = [
         'background': imgFeatureMidnight,
         'logo': imgFeatureMidnightLogo,
         'gametitle': null,
-        'title': 'The Midnight Express',
+        'title': 'Midnight Express',
         'schedule': 'all of October',
         'description': 'We have a fun lineup of both spoopy and spooky games prepared for the entire Halloween season! Costumes are (semi) mandatory.',
+        'scheme': 'dark'
+    },
+    {
+        'background': imgFeatureCultOfTheLamb,
+        'logo': imgFeatureCultOfTheLambLogo,
+        'gametitle': 'Cult of the Lamb',
+        'title': 'Hail The 13th Enclave',
+        'schedule': 'Tuesdays @7pm EST',
+        'description': 'Join the Cult and follow through the crusade against heretics, non-believers and spread the Word about the One True Cult.',
         'scheme': 'dark'
     },
     {
         'background': imgFeaturePhasmophobia,
         'logo': imgFeaturePhasmophobiaLogo,
         'gametitle': null,
-        'title': 'House Hunters',
-        'schedule': 'all of October',
+        'title': 'House Haunters',
+        'schedule': 'throughout October',
         'description': '@the13thgeek collaborates with friends as they try to investigate paranormal activities, figure out what entity is haunting and make it back out alive!',
         'scheme': 'dark'
     },
@@ -47,7 +58,7 @@ const pageFeatures = [
         'logo': imgFeatureDontScreamLogo,
         'gametitle': null,
         'title': 'Found Footage 2.0',
-        'schedule': 'all of October',
+        'schedule': 'throughout October',
         'description': '@the13thgeek is lost in the middle of nowhere and is only equipped with an analogue video camera. Will he last 18 minutes without screaming?',
         'scheme': 'dark'
     },
@@ -83,7 +94,7 @@ const pageFeatures = [
         'logo': imgFeatureParkitectLogo,
         'gametitle': 'Parkitect',
         'title': "Let's Build a Theme Park!",
-        'schedule': 'Tuesdays @ 7pm EST',
+        'schedule': 'Mondays @ 3pm EST',
         'description': 'Come chill and help @the13thgeek build a virtual theme park and try to keep it functional in this charming simulation game.',
         'scheme': 'dark'
     }
