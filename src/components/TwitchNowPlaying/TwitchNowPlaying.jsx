@@ -39,7 +39,7 @@ const pageFeatures = [
         'background': imgFeatureCultOfTheLamb,
         'logo': imgFeatureCultOfTheLambLogo,
         'gametitle': 'Cult of the Lamb',
-        'title': 'Hail The 13th Enclave',
+        'title': 'Hail the Thirteenth Enclave',
         'schedule': 'Tuesdays @7pm EST',
         'description': 'Join the Cult and follow through the crusade against heretics, non-believers and spread the Word about the One True Cult.',
         'scheme': 'dark'
