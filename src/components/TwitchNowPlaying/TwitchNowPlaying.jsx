@@ -59,7 +59,7 @@ const pageFeatures = [
         'gametitle': null,
         'title': 'Found Footage 2.0',
         'schedule': 'throughout October',
-        'description': 'A horror game that tells @the13thgeek not to scream? Challenge accepted! From jump scares to creepy environments, prepare to watch as he constantly hovers on the verge of a full-on freakout. Will he last for 18 minutes?',
+        'description': 'A horror game that tells @the13thgeek not to scream? Challenge accepted! Will he last for 18 minutes?',
         'scheme': 'dark'
     },
     // {
