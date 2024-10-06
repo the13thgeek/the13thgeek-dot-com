@@ -10,10 +10,16 @@ import imgFeatureCultOfTheLamb from '../../assets/twitch/feature/slide-cult.jpg'
 import imgFeatureCultOfTheLambLogo from '../../assets/twitch/feature/logo-cult.png';
 import imgFeatureMidnight from '../../assets/twitch/feature/slide-midnight.jpg';
 import imgFeatureMidnightLogo from '../../assets/twitch/feature/logo-midnight.png';
-import imgFeaturePhasmophobia from '../../assets/twitch/feature/slide-phasmophobia.jpg';
-import imgFeaturePhasmophobiaLogo from '../../assets/twitch/feature/logo-phasmophobia.png';
-import imgFeatureDontScream from '../../assets/twitch/feature/slide-dontscream.jpg';
-import imgFeatureDontScreamLogo from '../../assets/twitch/feature/logo-dontscream.png';
+// import imgFeaturePhasmophobia from '../../assets/twitch/feature/slide-phasmophobia.jpg';
+// import imgFeaturePhasmophobiaLogo from '../../assets/twitch/feature/logo-phasmophobia.png';
+// import imgFeatureDontScream from '../../assets/twitch/feature/slide-dontscream.jpg';
+// import imgFeatureDontScreamLogo from '../../assets/twitch/feature/logo-dontscream.png';
+import imgFeatureRE5 from '../../assets/twitch/feature/slide-re5.jpg';
+import imgFeatureRE5Logo from '../../assets/twitch/feature/logo-re5.png';
+import imgFeatureNSMBU from '../../assets/twitch/feature/slide-nsmbu.jpg';
+import imgFeatureNSMBULogo from '../../assets/twitch/feature/logo-nsmbu.png';
+import imgFeatureTSW4 from '../../assets/twitch/feature/slide-tsw4.jpg';
+import imgFeatureTSW4Logo from '../../assets/twitch/feature/logo-tsw4.png';
 import imgFeatureEvilWithin from '../../assets/twitch/feature/slide-evil-within.jpg';
 import imgFeatureEvilWithinLogo from '../../assets/twitch/feature/logo-evil-within.png';
 import imgFeatureHelldivers2 from '../../assets/twitch/feature/slide-helldivers2.jpg';
@@ -45,23 +51,40 @@ const pageFeatures = [
         'scheme': 'dark'
     },
     {
-        'background': imgFeaturePhasmophobia,
-        'logo': imgFeaturePhasmophobiaLogo,
-        'gametitle': null,
-        'title': 'House Haunters',
-        'schedule': 'throughout October',
-        'description': '@the13thgeek teams up with terrified friends to face the mumu. Expect screams, questionable teamwork, and someone (probably him) hiding in a closet.',
+        'background': imgFeatureRE5,
+        'logo': imgFeatureRE5Logo,
+        'gametitle': 'Resident Evil 5',
+        'title': 'Kijuju Carnage',
+        'schedule': 'Fridays @7pm EST',
+        'description': '@the13thgeek and friends face zombies, explosions, and co-op madness. Will they survive? Probably not, but it\'ll be epic!',
         'scheme': 'dark'
     },
     {
-        'background': imgFeatureDontScream,
-        'logo': imgFeatureDontScreamLogo,
-        'gametitle': null,
-        'title': 'Found Footage 2.0',
-        'schedule': 'throughout October',
-        'description': 'A horror game that tells @the13thgeek not to scream? Challenge accepted! Will he last for 18 minutes?',
-        'scheme': 'dark'
+        'background': imgFeatureTSW4,
+        'logo': imgFeatureTSW4Logo,
+        'gametitle': 'Train Sim World 4',
+        'title': 'Back on the Rails',
+        'schedule': null,
+        'description': '@the13thgeek takes the conductor\'s seat and going on scenic routes! Will the trains stay on track or derail into chaos?'
     },
+    // {
+    //     'background': imgFeaturePhasmophobia,
+    //     'logo': imgFeaturePhasmophobiaLogo,
+    //     'gametitle': null,
+    //     'title': 'House Haunters',
+    //     'schedule': 'throughout October',
+    //     'description': '@the13thgeek teams up with terrified friends to face the mumu. Expect screams, questionable teamwork, and someone (probably him) hiding in a closet.',
+    //     'scheme': 'dark'
+    // },
+    // {
+    //     'background': imgFeatureDontScream,
+    //     'logo': imgFeatureDontScreamLogo,
+    //     'gametitle': null,
+    //     'title': 'Found Footage 2.0',
+    //     'schedule': 'throughout October',
+    //     'description': 'A horror game that tells @the13thgeek not to scream? Challenge accepted! Will he last for 18 minutes?',
+    //     'scheme': 'dark'
+    // },
     // {
     //     'background': imgFeatureDKC,
     //     'logo': imgFeatureDKCLogo,
@@ -79,6 +102,13 @@ const pageFeatures = [
         'schedule': 'Thursdays @ 7pm EST',
         'description': 'Dive into psychological horror as @the13thgeek faces Sebastian Castellano\'s nightmares and tries to stay calm. Prepare for plenty of screams!',
         'scheme': 'dark'
+    },
+    {
+        'background': imgFeatureNSMBU,
+        'logo': imgFeatureNSMBULogo,
+        'gametitle': 'New Super Mario Bros U Deluxe',
+        'schedule': null,
+        'description':  'Classic platforming fun! Watch @the13thgeek stomp Goombas and save the day... or miss a jump. Either way, it\'s a blast!'
     },
     {
         'background': imgFeatureHelldivers2,
