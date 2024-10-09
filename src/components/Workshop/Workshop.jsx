@@ -50,6 +50,7 @@ const Workshop = () => {
                         </div>
                         <div className="links-list">
                             <Link to="https://github.com/the13thgeek/the13thgeek-dot-com" target='_blank' className="ll-link"><i className="fa-brands fa-github"></i> Repository <i className="fa-solid fa-chevron-right"></i></Link>
+                            <Link to="https://github.com/the13thgeek/the13thgeek-dot-com-nextjs" target='_blank' className="ll-link"><i className="fa-brands fa-github"></i> Repository (NextJS port) <i className="fa-solid fa-chevron-right"></i></Link>
                         </div>
                     </div>
                 </div>
