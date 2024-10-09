@@ -25,7 +25,7 @@ const Workshop = () => {
                         <img src={prjThe13thgeek} className='preview' alt="the13thgeek.com" />
                         <div className="wrapper">
                             <h3>the13thgeek™</h3>
-                            <p>A constantly evolving personal site I started in university, from basic PHP to React. I have recently implemented a backend integration to Sanity and I've got the blog up and running!</p>
+                            <p>A constantly evolving personal site I started in university, from basic PHP to React. I have recently implemented a backend/blog integration to Sanity. Currently porting the site to NextJS for better SEO and learning something new!</p>
                         </div>
                         <h4>Tech Stack</h4>
                         <div className="tech-stack">
