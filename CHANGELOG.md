@@ -9,6 +9,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - [Placeholder for ongoing development]
 
 ---
+## [1.2.3a] - 2024-10-08
+### Fixed 
+- [Global] Fixed code styling
+
 ## [1.2.3] - 2024-10-02
 ### Changed
 - [Twitch] Layout revamp
