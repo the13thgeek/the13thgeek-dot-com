@@ -210,24 +210,24 @@ const About = () => {
             <div className="col-a">
               { (lang === "EN") ? (
                 <>
-                  <p>When I'm not busy crafting digital experiences, you'll often find me enjoying movies and video games on Twitch with friends, doing casual cosplays at comic conventions, or just walking around exploring Toronto while listening to J-Pop and EDM. I also make time for running, (casual) photography, and exploring new places! My travels have taken me to the United States, Japan, Hong Kong, and Macau so far&mdash; and I'd love to visit more places!</p>
-                  <p>I'm currently learning Japanese, so you might spot the occasional Japanese post (with translations, of course!).</p>
-                  <p>While I'm not exactly a bookworm, I enjoy a good read! Some of my favourite authors include Kyle Higgins, Dan Brown and Suzanne Collins. I recently finished reading <i>Mary and the Secret Garden</i> and I'm currently hooked on Boom! series' <i>Power Rangers Comics</i> universe.</p>
+                  <p>When Aldreich is not busy crafting digital experiences, you'll often find him enjoying movies and video games on Twitch with his friends, doing casual cosplays at comic conventions, or just walking around exploring Toronto while listening to J-Pop and EDM. He makes time as well for running, (casual) photography, and exploring new places! His travels have taken him to the United States, Japan, Hong Kong, and Macau so far&mdash; and would love to visit more places!</p>
+                  <p>He is currently learning Japanese, so you might spot the occasional Japanese post (with translations, of course!).</p>
+                  <p>While not exactly a bookworm, he enjoys a good read! Some of his favourite authors include Kyle Higgins, Dan Brown and Suzanne Collins. He had just recently finished reading <i>Mary and the Secret Garden</i> and he's currently hooked on Boom! series' <i>Power Rangers Comics</i> universe.</p>
                 </>
               ) : (<></>) }
               { (lang === "JP") ? (
                 <>
                   <small className="generic jp"><b>警告:</b> 文法が間違っている可能性があります。</small>
-                  <p className="generic jp">パソコンの前に忙しくないときは、友達と一緒に映画を見たり、Twitchでビデオゲームを楽しんだり、コミコンでコスプレをしたり、J-POPやEDMなどを聞きながらトロントを散歩してる事が多いです。また、時々ランニングや写真撮影、いろいろな新しい所を観光にも時間を割いています。今までアメリカ、日本、香港、マカオにいたことがあるんだけど、これはまだ冒険の始まりに過ぎません!</p>
+                  <p className="generic jp">アルドリーッチはパソコンの前に忙しくないときは、友達と一緒に映画を見たり、Twitchでビデオゲームを楽しんだり、コミコンでコスプレをしたり、J-POPやEDMなどを聞きながらトロントを散歩してる事が多いです。また、時々ランニングや写真撮影、いろいろな新しい所を観光にも時間を割いています。今までアメリカ、日本、香港、マカオにいたことがあるんだけど、これはまだ冒険の始まりに過ぎません!</p>
                   <p className="generic jp">現在日本語を勉強しているので、このサイトで時々日本語で練習すると日本語の投稿が見られるかもしれません（訳するつもり、大丈夫なんです!）。</p>
                   <p className="generic jp">まだ本の虫にならないんですが、いい本を読むのが好きです。お気に入りの作家にはカイル・ヒギンズ、ダン・ブラウン、スザンヌ・コリンズなどがいます。最近「秘密の花園」を読み終え、現在はブーンシリーズの「パワーレンジャー」の漫画を読み込んでいます。</p>
                 </>
               ) : (<></>) }
               { (lang === "PH") ? (
                 <>
-                  <p>Kapag wala ako sa harap ng computer, madalas akong lumalabas at nanood ng pelikula o naglalaro ng video games sa Twitch kasama ang mga kaibigan, nagko-cosplay sa mga conventions or kaya naglalakad lang sa Toronto habang nakikinig ng J-Pop at EDM. Minsan tumatakbo din ako, kumukuha ng litrato at namamasyal sa iba't-ibang lugar. Nakapasyal na ako sa Amerika, bansang Hapon, Hong Kong at Macau&mdash; at madami pa akong gustong mapasyalan!</p>
-                  <p>Kasalukuyan akong nag-aaral ng wikang Hapon, kaya minsan ay mapapansin ninyong nagpa-practice ako dito (may translation naman, okey lang yan!)</p>
-                  <p>Hindi pa naman ako masyadong nahuhumaling sa pagbabasa, pero may mga nagugustuhan naman ako. Paborito kong basahin yung mga gawa nila Kyle Higgins, Dan Brown at Suzanne Collins. Kakatapos ko lang basahin yung <i>Mary and the Secret Garden</i> at ngayon binabasa ko yung komics ng <i>Power Rangers</i> na gawa ng Boom! Studios.</p>
+                  <p>Kapag wala si Aldreich sa harap ng computer, madalas siyang lumalabas at nanood ng pelikula o naglalaro ng video games sa Twitch kasama ang mga kaibigan, nagko-cosplay sa mga conventions or kaya naglalakad lang sa Toronto habang nakikinig ng J-Pop at EDM. Minsan tumatakbo din siya, kumukuha ng litrato at namamasyal sa iba't-ibang lugar. Nakapasyal na siya sa Amerika, bansang Hapon, Hong Kong at Macau&mdash; at madami pasyang lugar na gustong mapasyalan!</p>
+                  <p>Kasalukuyan siyang nag-aaral ng wikang Hapon, kaya minsan ay mapapansin ninyong nagpa-practice ako dito (may translation naman, okey lang yan!)</p>
+                  <p>Hindi pa naman siya masyadong nahuhumaling sa pagbabasa, pero may mga nagugustuhan naman siyang mga babasahin. Paborito niya ang mga gawa nila Kyle Higgins, Dan Brown at Suzanne Collins. Kakatapos niya lang basahin yung <i>Mary and the Secret Garden</i> at kasalukuyan niya ngayong binabasa yung komics ng <i>Power Rangers</i> na inilathala ng Boom! Studios.</p>
                 </>
               ) : (<></>) }
             </div>

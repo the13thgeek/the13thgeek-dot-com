@@ -1,7 +1,7 @@
 {
   "name": "the13thgeek-dot-com",
   "private": true,
-  "version": "1.2.3a",
+  "version": "1.2.4",
   "homepage": "https://the13thgeek.com/",
   "type": "module",
   "scripts": {
