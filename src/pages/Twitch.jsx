@@ -100,7 +100,7 @@ return (
                     <div className="descriptor twitch-2-rotation">
                         <span className="title">Rotation</span>
                     </div>
-                    <h2>Latest Broadcasts</h2>
+                    <h2>Latest Streams</h2>
                     <div className="navigator">
                         <div className="lb-prev"><i className="fa-solid fa-chevron-left"></i></div>
                         <div className="lb-next"><i className="fa-solid fa-chevron-right"></i></div>
