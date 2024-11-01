@@ -8,8 +8,8 @@ import 'swiper/scss/pagination';
 import imgFeatureFilter from '../../assets/twitch/slideshow-filter.png';
 import imgFeatureCultOfTheLamb from '../../assets/twitch/feature/slide-cult.jpg';
 import imgFeatureCultOfTheLambLogo from '../../assets/twitch/feature/logo-cult.png';
-import imgFeatureMidnight from '../../assets/twitch/feature/slide-midnight.jpg';
-import imgFeatureMidnightLogo from '../../assets/twitch/feature/logo-midnight.png';
+// import imgFeatureMidnight from '../../assets/twitch/feature/slide-midnight.jpg';
+// import imgFeatureMidnightLogo from '../../assets/twitch/feature/logo-midnight.png';
 import imgFeaturePhasmophobia from '../../assets/twitch/feature/slide-phasmophobia.jpg';
 import imgFeaturePhasmophobiaLogo from '../../assets/twitch/feature/logo-phasmophobia.png';
 // import imgFeatureDontScream from '../../assets/twitch/feature/slide-dontscream.jpg';
@@ -24,8 +24,8 @@ import imgFeatureLm1Logo from '../../assets/twitch/feature/logo-lm1.png';
 // import imgFeatureTSW4Logo from '../../assets/twitch/feature/logo-tsw4.png';
 // import imgFeatureEvilWithin from '../../assets/twitch/feature/slide-evil-within.jpg';
 // import imgFeatureEvilWithinLogo from '../../assets/twitch/feature/logo-evil-within.png';
-// import imgFeatureHelldivers2 from '../../assets/twitch/feature/slide-helldivers2.jpg';
-// import imgFeatureHelldivers2Logo from '../../assets/twitch/feature/logo-helldivers2.png';
+import imgFeatureHelldivers2 from '../../assets/twitch/feature/slide-helldivers2.jpg';
+import imgFeatureHelldivers2Logo from '../../assets/twitch/feature/logo-helldivers2.png';
 // import imgFeatureParkitect from '../../assets/twitch/feature/slide-parkitect.jpg';
 // import imgFeatureParkitectLogo from '../../assets/twitch/feature/logo-parkitect.png';
 // import imgFeatureDKC from '../../assets/twitch/feature/slide-dkctf.jpg';
@@ -34,15 +34,15 @@ import imgFeatureLm1Logo from '../../assets/twitch/feature/logo-lm1.png';
 const TwitchNowPlaying = () => {    
 
 const pageFeatures = [
-    {
-        'background': imgFeatureMidnight,
-        'logo': imgFeatureMidnightLogo,
-        'gametitle': null,
-        'title': 'Midnight Express',
-        'schedule': 'all of October',
-        'description': 'We have a fun lineup of both spoopy and spooky games prepared for the entire Halloween season! Costumes are (semi) mandatory.',
-        'scheme': 'dark'
-    },
+    // {
+    //     'background': imgFeatureMidnight,
+    //     'logo': imgFeatureMidnightLogo,
+    //     'gametitle': null,
+    //     'title': 'Midnight Express',
+    //     'schedule': 'all of October',
+    //     'description': 'We have a fun lineup of both spoopy and spooky games prepared for the entire Halloween season! Costumes are (semi) mandatory.',
+    //     'scheme': 'dark'
+    // },
     {
         'background': imgFeatureLm1,
         'logo': imgFeatureLm1Logo,
@@ -56,7 +56,7 @@ const pageFeatures = [
         'logo': imgFeatureCultOfTheLambLogo,
         'gametitle': 'Cult of the Lamb',
         'title': 'Hail the Thirteenth Enclave',
-        'schedule': 'Thursdays @7pm EST',
+        'schedule': null,
         'description': '@the13thgeek leads an adorable yet creepy cult where followers are recruited, sacrifices happen, and the chipmunk voice filter comes out in full force!',
         'scheme': 'dark'
     },
@@ -82,10 +82,10 @@ const pageFeatures = [
         'logo': imgFeaturePhasmophobiaLogo,
         'gametitle': null,
         'title': 'House Haunters',
-        'schedule': 'throughout October',
+        'schedule': null,
         'description': '@the13thgeek teams up with terrified friends to face the mumu. Expect screams, questionable teamwork, and someone (probably him) hiding in a closet.',
         'scheme': 'dark'
-    }
+    },
     // {
     //     'background': imgFeatureDontScream,
     //     'logo': imgFeatureDontScreamLogo,
@@ -120,15 +120,15 @@ const pageFeatures = [
     //     'schedule': null,
     //     'description':  'Classic platforming fun! Watch @the13thgeek stomp Goombas and save the day... or miss a jump. Either way, it\'s a blast!'
     // },
-    // {
-    //     'background': imgFeatureHelldivers2,
-    //     'logo': imgFeatureHelldivers2Logo,
-    //     'gametitle': 'Helldivers II',
-    //     'title': "Say Hello to Democracy!",
-    //     'schedule': null,
-    //     'description': '@the13thgeek teams up with streamers to take on alien hordes in space, causing chaos and accidental explosions. Friendly fire? Definitely.',
-    //     'scheme': 'dark'
-    // },
+    {
+        'background': imgFeatureHelldivers2,
+        'logo': imgFeatureHelldivers2Logo,
+        'gametitle': 'Helldivers II',
+        'title': "Say Hello to Democracy!",
+        'schedule': null,
+        'description': '@the13thgeek teams up with streamers to take on alien hordes in space, causing chaos and accidental explosions. Friendly fire? Definitely.',
+        'scheme': 'dark'
+    }
     // {
     //     'background': imgFeatureParkitect,
     //     'logo': imgFeatureParkitectLogo,
