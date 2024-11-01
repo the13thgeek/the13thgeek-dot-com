@@ -30,6 +30,8 @@ import imgFeatureHelldivers2Logo from '../../assets/twitch/feature/logo-helldive
 // import imgFeatureParkitectLogo from '../../assets/twitch/feature/logo-parkitect.png';
 // import imgFeatureDKC from '../../assets/twitch/feature/slide-dkctf.jpg';
 // import imgFeatureDKCLogo from '../../assets/twitch/feature/logo-dkctf.png';
+import imgFeaturePC2 from '../../assets/twitch/feature/slide-pc2.jpg';
+import imgFeaturePC2Logo from '../../assets/twitch/feature/logo-pc2.png';
 
 const TwitchNowPlaying = () => {    
 
@@ -50,6 +52,14 @@ const pageFeatures = [
         'title': 'King Boo\'s Fright Night',
         'schedule': 'Tuesdays @ 7pm EST',
         'description': 'Join @the13thgeek as he explores a seemingly uninhabited old mansion that holds spooky secrets!'
+    },
+    {
+        'background': imgFeaturePC2,
+        'logo': imgFeaturePC2Logo,
+        'gametitle': 'Planet Coaster 2',
+        'title': "Splash'n'Fun!",
+        'schedule': null,
+        'description': "Let's check out the new Planet Coaster sequel - now with water parks! Don\'t forget to bring sunblock."
     },
     {
         'background': imgFeatureCultOfTheLamb,
