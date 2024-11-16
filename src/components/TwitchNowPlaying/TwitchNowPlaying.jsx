@@ -6,18 +6,18 @@ import 'swiper/scss';
 import 'swiper/scss/pagination';
 
 import imgFeatureFilter from '../../assets/twitch/slideshow-filter.png';
-import imgFeatureCultOfTheLamb from '../../assets/twitch/feature/slide-cult.jpg';
-import imgFeatureCultOfTheLambLogo from '../../assets/twitch/feature/logo-cult.png';
+// import imgFeatureCultOfTheLamb from '../../assets/twitch/feature/slide-cult.jpg';
+// import imgFeatureCultOfTheLambLogo from '../../assets/twitch/feature/logo-cult.png';
+import imgFeatureBearBreakfast from '../../assets/twitch/feature/slide-b&b.jpg';
+import imgFeatureBearBreakfastLogo from '../../assets/twitch/feature/logo-b&b.png';
 // import imgFeatureMidnight from '../../assets/twitch/feature/slide-midnight.jpg';
 // import imgFeatureMidnightLogo from '../../assets/twitch/feature/logo-midnight.png';
-import imgFeaturePhasmophobia from '../../assets/twitch/feature/slide-phasmophobia.jpg';
-import imgFeaturePhasmophobiaLogo from '../../assets/twitch/feature/logo-phasmophobia.png';
+// import imgFeaturePhasmophobia from '../../assets/twitch/feature/slide-phasmophobia.jpg';
+// import imgFeaturePhasmophobiaLogo from '../../assets/twitch/feature/logo-phasmophobia.png';
 // import imgFeatureDontScream from '../../assets/twitch/feature/slide-dontscream.jpg';
 // import imgFeatureDontScreamLogo from '../../assets/twitch/feature/logo-dontscream.png';
 import imgFeatureRE5 from '../../assets/twitch/feature/slide-re5.jpg';
 import imgFeatureRE5Logo from '../../assets/twitch/feature/logo-re5.png';
-import imgFeatureLm1 from '../../assets/twitch/feature/slide-lm1.jpg'
-import imgFeatureLm1Logo from '../../assets/twitch/feature/logo-lm1.png';
 // import imgFeatureNSMBU from '../../assets/twitch/feature/slide-nsmbu.jpg';
 // import imgFeatureNSMBULogo from '../../assets/twitch/feature/logo-nsmbu.png';
 // import imgFeatureTSW4 from '../../assets/twitch/feature/slide-tsw4.jpg';
@@ -46,12 +46,12 @@ const pageFeatures = [
     //     'scheme': 'dark'
     // },
     {
-        'background': imgFeatureLm1,
-        'logo': imgFeatureLm1Logo,
-        'gametitle': 'Luigi\'s Mansion',
-        'title': 'King Boo\'s Fright Night',
-        'schedule': 'Tuesdays @ 7pm EST',
-        'description': 'Join @the13thgeek as he explores a seemingly uninhabited old mansion that holds spooky secrets!'
+        'background': imgFeatureBearBreakfast,
+        'logo': imgFeatureBearBreakfastLogo,
+        'gametitle': 'Bear & Breakfast',
+        'title': 'AirGeek B&B',
+        'schedule': null,
+        'description': '@the13thgeek\'s running a cozy inn... as a teddy bear! Watch as he balances hospitality, chaos and fur-covered pancakes!'
     },
     {
         'background': imgFeaturePC2,
@@ -61,15 +61,15 @@ const pageFeatures = [
         'schedule': null,
         'description': "Let's check out the new Planet Coaster sequel - now with water parks! Don\'t forget to bring sunblock."
     },
-    {
-        'background': imgFeatureCultOfTheLamb,
-        'logo': imgFeatureCultOfTheLambLogo,
-        'gametitle': 'Cult of the Lamb',
-        'title': 'Hail the Thirteenth Enclave',
-        'schedule': null,
-        'description': '@the13thgeek leads an adorable yet creepy cult where followers are recruited, sacrifices happen, and the chipmunk voice filter comes out in full force!',
-        'scheme': 'dark'
-    },
+    // {
+    //     'background': imgFeatureCultOfTheLamb,
+    //     'logo': imgFeatureCultOfTheLambLogo,
+    //     'gametitle': 'Cult of the Lamb',
+    //     'title': 'Hail the Thirteenth Enclave',
+    //     'schedule': null,
+    //     'description': '@the13thgeek leads an adorable yet creepy cult where followers are recruited, sacrifices happen, and the chipmunk voice filter comes out in full force!',
+    //     'scheme': 'dark'
+    // },
     {
         'background': imgFeatureRE5,
         'logo': imgFeatureRE5Logo,
@@ -87,15 +87,15 @@ const pageFeatures = [
     //     'schedule': null,
     //     'description': '@the13thgeek takes the conductor\'s seat and going on scenic routes! Will the trains stay on track or derail into chaos?'
     // },
-    {
-        'background': imgFeaturePhasmophobia,
-        'logo': imgFeaturePhasmophobiaLogo,
-        'gametitle': null,
-        'title': 'House Haunters',
-        'schedule': null,
-        'description': '@the13thgeek teams up with terrified friends to face the mumu. Expect screams, questionable teamwork, and someone (probably him) hiding in a closet.',
-        'scheme': 'dark'
-    },
+    // {
+    //     'background': imgFeaturePhasmophobia,
+    //     'logo': imgFeaturePhasmophobiaLogo,
+    //     'gametitle': null,
+    //     'title': 'House Haunters',
+    //     'schedule': null,
+    //     'description': '@the13thgeek teams up with terrified friends to face the mumu. Expect screams, questionable teamwork, and someone (probably him) hiding in a closet.',
+    //     'scheme': 'dark'
+    // },
     // {
     //     'background': imgFeatureDontScream,
     //     'logo': imgFeatureDontScreamLogo,
