@@ -484,6 +484,10 @@ section#branding {
 
             .body-content {
                 margin-left: 0;
+
+                .background-data {
+                    grid-template-columns: 1fr;
+                }
             }
 
         }
