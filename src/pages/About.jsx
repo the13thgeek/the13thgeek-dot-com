@@ -88,68 +88,108 @@ const About = () => {
                               <span className="title">Projects</span>
                           </div>
                           <div className="background-data">
-                          <div className="item">
-                                  <h3>skills.tech<span>()</span></h3>
-                                  <hr className="sub-divider" />
-                                  <p>
-                                      HTML5 + CSS<br />
-                                      JavaScript<br />
-                                      jQuery<br />
-                                      React<br />
-                                      PHP<br />
-                                      SQL/mySQL<br />
-                                      WordPress<br />
-                                      Git<br />
-                                      Figma<br />
-                                      Photoshop<br />
-                                      After Effects<br />
-                                      Microsoft Office
-                                  </p>
-                                  <h3>skills.people<span>()</span></h3>
-                                  <hr className="sub-divider" />
-                                  <p>
-                                      Attention to Detail<br />
-                                      Empathy<br />
-                                      Collaboration<br />
-                                      Communication<br />
-                                      Customer Service<br />
-                                      Problem-Solving
-                                  </p>
-                              </div>
-                              <div className="item">
-                                  <h3>work.history<span>()</span></h3>
-                                  <hr className="sub-divider" />
-                                  <p>
-                                      <b>Online Business Systems</b><br />
-                                      Jr Software Engineer,<br />Digital Transformation<br />
-                                      <em>2021 - 2024</em>
-                                  </p>
-                                  <p>
-                                      <b>Artis REIT</b><br />
-                                      Full-Stack Web Developer,<br />Marketing & Creative<br />
-                                      <em>2014 - 2021</em>
-                                  </p>
-                                  <p>
-                                      <b>Web Wizards, Inc</b><br />
-                                      Web Developer<br />
-                                      <em>2011 - 2013</em>
-                                  </p>
-                                  <p>
-                                      <b>Tsukiden Global Solutions, Inc</b><br />
-                                      Design Engineer II,<br />2nd Business Unit<br />
-                                      <em>2008 - 2011</em>
-                                  </p>
-                              </div>
-                              <div className="item">
-                                  <h3>education<span>()</span></h3>
-                                  <hr className="sub-divider" />
-                                  <p>
-                                      <b>Polytechnic University of the Philippines</b><br />
-                                      Bachelor of Science, Information Technology<br />
-                                      <em>March 2008</em>
-                                  </p>
-                              </div>
-                          </div>
+                            <div className="item">
+                                <h3>work.history<span>(tech)</span></h3>
+                                <hr className="sub-divider" />
+                                <p>
+                                    <b>Online Business Systems</b><br />
+                                    <span className="job-type f">F</span> Jr Software Engineer,<br />Digital Transformation<br />
+                                    <em>2021 - 2024</em>
+                                </p>
+                                <p>
+                                    <b>Artis REIT</b><br />
+                                    <span className="job-type f">F</span> Full-Stack Web Developer,<br />Marketing & Creative<br />
+                                    <em>2014 - 2021</em>
+                                </p>
+                                <p>
+                                    <b>Web Wizards, Inc</b><br />
+                                    <span className="job-type f">F</span> Web Developer<br />
+                                    <em>2011 - 2013</em>
+                                </p>
+                                <p>
+                                    <b>Tsukiden Global Solutions, Inc</b><br />
+                                    <span className="job-type f">F</span> Design Engineer II,<br />2nd Business Unit<br />
+                                    <em>2008 - 2011</em>
+                                </p>
+                                <h3>work.history<span>(non-tech)</span></h3>
+                                <hr className="sub-divider" />
+                                <p>
+                                    <b>Downtown Community Safety Partnership</b><br />
+                                    <span className="job-type p">P</span> CONNECT Team Member<br />
+                                    <em>2020 - 2022</em>
+                                </p>
+                                <p>
+                                    <b>Downtown Winnipeg BIZ</b><br />
+                                    <span className="job-type p">P</span> Downtown Watch Ambassador<br />
+                                    <em>2017 - 2020</em>
+                                </p>
+                                <p>
+                                  <small>
+                                    <span className="job-type f">F</span> Full-time<br />
+                                    <span className="job-type p">P</span> Part-time
+                                  </small>
+                                </p>
+                            </div>
+                            <div className="item">
+                                <h3>skills.tech<span>()</span></h3>
+                                <hr className="sub-divider" />
+                                <p>
+                                    HTML5<br />
+                                    CSS/SASS<br />
+                                    JavaScript<br />
+                                    jQuery<br />
+                                    React<br />
+                                    PHP<br />
+                                    NodeJS<br />
+                                    Express<br />
+                                    SQL/mySQL<br />
+                                    WordPress<br />
+                                    Git<br />
+                                    Figma<br />
+                                    Photoshop<br />
+                                    After Effects<br />
+                                    Microsoft Office
+                                </p>
+                                <h3>skills.people<span>()</span></h3>
+                                <hr className="sub-divider" />
+                                <p>
+                                    Attention to Detail<br />
+                                    Empathy<br />
+                                    Collaboration<br />
+                                    Communication<br />
+                                    Customer Service<br />
+                                    Problem-Solving
+                                </p>
+                            </div>
+                            <div className="item">
+                                <h3>volunteer<span>()</span></h3>
+                                <hr className="sub-divider" />
+                                <p>
+                                    <b>The Momentum Centre</b><br />
+                                    Board Member<br />
+                                    <em>2018 - 2022</em>
+                                </p>
+                                <p>
+                                    <b>Downtown Winnipeg BIZ</b><br />
+                                    Downtown Watch Volunteer/Customer Service Team<br />
+                                    <em>2014 - 2017</em>
+                                </p>
+                                <p>
+                                    <b>Bike Week Winnipeg</b><br />
+                                    Pit Stop Personnel<br />
+                                    <em>2014 - 2017</em>
+                                </p>
+                            </div>
+                            <div className="item">
+                                <h3>education<span>()</span></h3>
+                                <hr className="sub-divider" />
+                                <p>
+                                    <b>Polytechnic University of the Philippines</b><br />
+                                    Bachelor of Science, Information Technology<br />
+                                    <em>March 2008</em>
+                                </p>
+                            </div>
+                        </div>
 
                       </div>
                   </div>

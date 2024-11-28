@@ -9,6 +9,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - [Placeholder for ongoing development]
 
 ---
+## [1.2.6] - 2024-11-28
+### Changed 
+- [About] Added non-tech work, volunteer experience and FT/PT job indicators
+
+## [1.2.5] - 2024-11-21
+### Changed 
+- [About] Updated headshot
+
 ## [1.2.4] - 2024-10-20
 ### Changed 
 - [About] Reworded About page's Off The Grid section.

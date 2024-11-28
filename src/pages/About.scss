@@ -179,6 +179,24 @@ section#about-profile  {
                     margin-bottom: 25px;
                 }
 
+                span.job-type {
+                    display: inline-block;
+                    border-radius: 2px;
+                    transform: translateY(-2px);
+                    color: #000;
+                    font-size: 12px;
+                    line-height: 12px;
+                    font-weight: bold;
+                    padding: 3px 5px;
+
+                    &.f {
+                        background-color: $swatch-2;
+                    }
+                    &.p {
+                        background-color: $swatch-3;
+                    }
+                }
+
             }
         }
 
