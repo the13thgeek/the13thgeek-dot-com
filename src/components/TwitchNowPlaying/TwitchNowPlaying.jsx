@@ -8,6 +8,8 @@ import 'swiper/scss/pagination';
 import imgFeatureFilter from '../../assets/twitch/slideshow-filter.png';
 // import imgFeatureCultOfTheLamb from '../../assets/twitch/feature/slide-cult.jpg';
 // import imgFeatureCultOfTheLambLogo from '../../assets/twitch/feature/logo-cult.png';
+import imgFeatureSmpJamboree from '../../assets/twitch/feature/slide-smpjamboree.jpg';
+import imgFeatureSmpJamboreeLogo from '../../assets/twitch/feature/logo-smpjamboree.png';
 import imgFeatureBearBreakfast from '../../assets/twitch/feature/slide-b&b.jpg';
 import imgFeatureBearBreakfastLogo from '../../assets/twitch/feature/logo-b&b.png';
 // import imgFeatureMidnight from '../../assets/twitch/feature/slide-midnight.jpg';
@@ -45,6 +47,14 @@ const pageFeatures = [
     //     'description': 'We have a fun lineup of both spoopy and spooky games prepared for the entire Halloween season! Costumes are (semi) mandatory.',
     //     'scheme': 'dark'
     // },
+    {
+        'background': imgFeatureSmpJamboree,
+        'logo': imgFeatureSmpJamboreeLogo,
+        'gametitle': 'Super Mario Party Jamboree',
+        'title': 'The Party Is Back!',
+        'schedule': null,
+        'description': 'Come for the stars, stay for the mayhem. Friendships will be put to the ultimate test... again.'
+    },
     {
         'background': imgFeatureBearBreakfast,
         'logo': imgFeatureBearBreakfastLogo,
