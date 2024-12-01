@@ -9,6 +9,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - [Placeholder for ongoing development]
 
 ---
+## [1.3.0] - 2024-12-01
+### Changed 
+- [Global] Security update: API keys are no longer exposed.
+
 ## [1.2.6] - 2024-11-28
 ### Changed 
 - [About] Added non-tech work, volunteer experience and FT/PT job indicators
