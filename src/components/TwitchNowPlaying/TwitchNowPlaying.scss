@@ -87,8 +87,13 @@ section#now-playing {
                     h3, p {
                         animation: game-text 1s 1;
                     }
+                    p.schedule {
+                        margin-bottom: 15px;
+                    }
                     p.caption {
                         margin-bottom: 0;
+                        font-size: 14px;
+                        line-height: 20px;
                     }
                 }
             }

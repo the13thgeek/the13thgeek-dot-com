@@ -8,6 +8,8 @@ import 'swiper/scss/pagination';
 import imgFeatureFilter from '../../assets/twitch/slideshow-filter.png';
 // import imgFeatureCultOfTheLamb from '../../assets/twitch/feature/slide-cult.jpg';
 // import imgFeatureCultOfTheLambLogo from '../../assets/twitch/feature/logo-cult.png';
+import imgFeatureRitaRewind from '../../assets/twitch/feature/slide-ritarewind.jpg';
+import imgFeatureRitaRewindLogo from '../../assets/twitch/feature/logo-ritarewind.png';
 import imgFeatureSmpJamboree from '../../assets/twitch/feature/slide-smpjamboree.jpg';
 import imgFeatureSmpJamboreeLogo from '../../assets/twitch/feature/logo-smpjamboree.png';
 import imgFeatureBearBreakfast from '../../assets/twitch/feature/slide-b&b.jpg';
@@ -47,6 +49,14 @@ const pageFeatures = [
     //     'description': 'We have a fun lineup of both spoopy and spooky games prepared for the entire Halloween season! Costumes are (semi) mandatory.',
     //     'scheme': 'dark'
     // },
+    {
+        'background': imgFeatureRitaRewind,
+        'logo': imgFeatureRitaRewindLogo,
+        'gametitle': 'Mighty Morphin Power Rangers: Rita\'s Rewind',
+        'title': 'It\'s Morphin\' Time!',
+        'schedule': null,
+        'description': 'Bring out your Morphers and join @the13thgeek and friends as they morph into action and retake Angel Grove!'
+    },
     {
         'background': imgFeatureSmpJamboree,
         'logo': imgFeatureSmpJamboreeLogo,
