@@ -7,7 +7,9 @@ Based on React & Vite.
 The changelog has been moved.
 For more details on changes and updates, please see the [CHANGELOG](./CHANGELOG.md).
 
+
 ### React + Vite
+
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
