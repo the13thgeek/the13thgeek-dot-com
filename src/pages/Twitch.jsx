@@ -221,13 +221,16 @@ return (
               </div>
             </div>
         </section>
+        {/* <section id="mainframe">
+          MAINFRAME
+        </section> */}
         <section id="community" className="community">
           <div className="content-container">
             <div className="information">
                 <div className="descriptor twitch-4-community">
                     <span className="title">Community</span>
                 </div>
-                <h2>#TheMainframe</h2>
+                <h2>Join us on Discord!</h2>
                 <p>Like what you see so far?<br />
                 Do you play the same games and would be down to collab?<br />
                 Got another game or activity to recommend?</p>

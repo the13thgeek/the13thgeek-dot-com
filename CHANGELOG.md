@@ -9,6 +9,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - [Placeholder for ongoing development]
 
 ---
+## [1.4.0] - 2025-03-24
+### Changed 
+- [Twitch] Rewritten Now Playing int oa separate component. Featured games are now in a JSON file and no longer hard-coded into the page.
+- [Profile] Removed "Open to Work" tag (YAY!)
+- [Twitch] Renamed Discord section to remove Mainframe reference as it will be added as a separate section.
+
 ## [1.3.0] - 2024-12-01
 ### Changed 
 - [Global] Security update: API keys are no longer exposed.

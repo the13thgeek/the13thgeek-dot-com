@@ -66,7 +66,7 @@ const About = () => {
                   <div className="profile-main">
                       <div className="heading">
                           <h3 className="name-dictionary">Aldreich <small>/ˈɔːldrɪtʃ/</small></h3>
-                          <h3 className="popup"><i className="fa-solid fa-thumbs-up"></i> Open to work!</h3>
+                          {/* <h3 className="popup"><i className="fa-solid fa-thumbs-up"></i> Open to work!</h3> */}
                           <h3 className="highlighter">
                           <div>Aldreich is a Toronto-based developer who codes with creativity, and surprisingly not always glued to his screen.<sup>1</sup> He likes poutine, binging NBC comedies and staring up at the CN Tower.</div>
                           </h3>
