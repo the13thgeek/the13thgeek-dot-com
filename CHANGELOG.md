@@ -9,6 +9,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - [Placeholder for ongoing development]
 
 ---
+## [1.4.1] - 2025-03-24
+### Changed 
+- [Twitch] Cleaned up old code left over from 1.4.0
+- [Projects] Converted Projects layout from flex to grid
+### Added
+- [Projects] Added information for theMainframe
+
 ## [1.4.0] - 2025-03-24
 ### Changed 
 - [Twitch] Rewritten Now Playing int oa separate component. Featured games are now in a JSON file and no longer hard-coded into the page.

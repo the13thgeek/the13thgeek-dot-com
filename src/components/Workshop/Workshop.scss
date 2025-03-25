@@ -38,11 +38,16 @@ section#workshop {
             background-position: -20px 0;
             height: 235px;
         }
+
+        &.wip-3c {
+            background-position: -40px 0;
+            height: 235px;
+        }
     }
 
     .wip-list {
-        display: flex;
-        flex-direction: row;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
         gap: 30px;
 
         .item {
@@ -51,7 +56,7 @@ section#workshop {
             position: relative;
             bottom: -25px;
             flex: 1;
-            max-width: 50%;
+            width: 100%;
             //padding-bottom: 30px;
             background-color: #fff;
             clip-path: polygon(0 45px, 45px 0, 100% 0, 100% 100%, 0 100%);
@@ -141,6 +146,7 @@ section#workshop {
                         font-size: 12px;
                         gap: 10px;
                         border-radius: 5px;
+                        text-align: center;
 
                         i {
                             font-size: 25px;
@@ -190,6 +196,16 @@ section#workshop {
 }
 
 @media (max-width: $screen-lg) {
+
+    section#workshop {
+
+        .wip-list {
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+    }
+
 }
 
 @media (max-width: $screen-md) {
@@ -197,6 +213,8 @@ section#workshop {
     section#workshop {
 
         .wip-list {
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
 
             .item {
                 clip-path: polygon(0 35px, 35px 0, 100% 0, 100% 100%, 0 100%);
@@ -265,7 +283,7 @@ section#workshop {
         }
 
         .wip-list {
-            flex-direction: column;
+            grid-template-columns: 1fr;
             gap: 15px;
 
             .item {
