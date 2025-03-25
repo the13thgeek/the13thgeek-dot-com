@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import './Workshop.scss';
+import prjTheMainframe from '../../assets/home/project-item-themainframe.jpg';
 import prjThe13thgeek from '../../assets/home/project-item-the13thgeek.jpg';
 import prjPmcPlanner from '../../assets/home/project-item-pmcplanner.jpg';
 
@@ -15,10 +16,53 @@ const Workshop = () => {
                 <h2>Works in Progress</h2>
             </div>
             <div className="wip-list">
-                <div className="item">
+            <div className="item">
                     <div className="wip-label">
                         <div className="wip-descriptor wip-3a">
                             <span className="title">WIP #1</span>
+                        </div>
+                    </div>
+                    <div className="wip-detail">
+                        <img src={prjTheMainframe} className='preview' alt="theMainframe" />
+                        <div className="wrapper">
+                            <h3>theMainframe™</h3>
+                            <p>The Mainframe is a Twitch-integrated website where viewers can log in with their Twitch accounts to track their stats, levels (EXP), and leaderboards while engaging in interactive features. The platform enhances Twitch interactivity by rewarding participation and fostering a fun, gamified community experience.</p>
+                        </div>
+                        <h4>Tech Stack</h4>
+                        <div className="tech-stack">
+                            <ul>
+                                <li>
+                                    <i className="fa-brands fa-node-js"></i>
+                                    <span>NodeJS</span>
+                                </li>
+                                <li>
+                                    <i className="fa-solid fa-database"></i>
+                                    <span>MySQL</span>
+                                </li>
+                                <li>
+                                    <i className="fa-brands fa-html5"></i>
+                                    <span>HTML</span>
+                                </li>
+                                <li>
+                                    <i className="fa-brands fa-twitch"></i>
+                                    <span>Twitch API</span>
+                                </li>
+                                <li>
+                                    <i className="fa-brands fa-react"></i>
+                                    <span>React</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div className="links-list">
+                            <Link to="https://github.com/the13thgeek/the-mainframe" target='_blank' className="ll-link"><i className="fa-brands fa-github"></i> Repository <i className="fa-solid fa-chevron-right"></i></Link>
+                            <Link to="https://mainframe.the13thgeek.com/" target='_blank' className="ll-link"><i className="fa-solid fa-up-right-from-square"></i> theMainframe Page <i className="fa-solid fa-chevron-right"></i></Link>
+                        </div>
+                    </div>
+                </div>
+                <div className="item">
+                    <div className="wip-label">
+                        <div className="wip-descriptor wip-3b">
+                            <span className="title">WIP #2</span>
                         </div>
                     </div>
                     <div className="wip-detail">
@@ -56,8 +100,8 @@ const Workshop = () => {
                 </div>
                 <div className="item">
                     <div className="wip-label">
-                        <div className="wip-descriptor wip-3b">
-                            <span className="title">WIP #2</span>
+                        <div className="wip-descriptor wip-3c">
+                            <span className="title">WIP #3</span>
                         </div>
                     </div>
                     <div className="wip-detail">
