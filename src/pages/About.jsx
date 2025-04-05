@@ -92,13 +92,18 @@ const About = () => {
                                 <h3>work.history<span>(tech)</span></h3>
                                 <hr className="sub-divider" />
                                 <p>
+                                    <b>YuJa Canada</b><br />
+                                    <span className="job-type f">F</span> Web Designer &amp; Developer<br />Marketing<br />
+                                    <em>2025 (present)</em>
+                                </p>
+                                <p>
                                     <b>Online Business Systems</b><br />
-                                    <span className="job-type f">F</span> Jr Software Engineer,<br />Digital Transformation<br />
+                                    <span className="job-type f">F</span> Software Engineer<br />Digital Transformation<br />
                                     <em>2021 - 2024</em>
                                 </p>
                                 <p>
                                     <b>Artis REIT</b><br />
-                                    <span className="job-type f">F</span> Full-Stack Web Developer,<br />Marketing & Creative<br />
+                                    <span className="job-type f">F</span> Full-Stack Web Developer<br />Marketing & Creative<br />
                                     <em>2014 - 2021</em>
                                 </p>
                                 <p>
