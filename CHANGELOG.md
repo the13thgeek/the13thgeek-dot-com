@@ -9,6 +9,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - [Placeholder for ongoing development]
 
 ---
+## [1.5] - 2025-04-27
+### Changed 
+- [Twitch] Changed NowLive to show 3 stream snapshots
+- [Twitch] Changed NowLive component layout
+
 ## [1.4.1] - 2025-03-24
 ### Changed 
 - [Twitch] Cleaned up old code left over from 1.4.0
