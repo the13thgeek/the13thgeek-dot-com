@@ -1,18 +1,34 @@
 export const NowPlaying_Data = [
   {
+    "game_id": "dreamdaddy",
+    "game_title": "Dream Daddy: A Dad Dating Simulator",
+    "stream_title": "Puns, Pride and Pixelated Love",
+    "schedule": "Fridays @ 8pm EST",
+    "description": "For Pride Month, @the13thgeek’s on the ultimate quest: dad jokes, dating, and digital romance. Will he find love... or just more awkward puns?",
+    "show_game": true
+  },
+  {
     "game_id": "rivals",
     "game_title": "Marvel Rivals",
-    "stream_title": "Pure Chaos!!",
+    "stream_title": "Age of Ultron",
     "schedule": null,
     "description": "Superheroes, supervillains, and super chaos! Watch as @the13thgeek assembles the ultimate team... or gets yeeted across the battlefield.",
     "show_game": true
   },
   {
-    "game_id": "haloce",
-    "game_title": "Halo: Combat Evolved",
-    "stream_title": "Silent Cartographer",
-    "schedule": "Tuesdays @ 7pm EST",
-    "description": "The Master Chief's first mission begins! @the13thgeek takes on the Covenent, but will he save the galaxy or get lost in space?",
+    "game_id": "halo2",
+    "game_title": "Halo 2",
+    "stream_title": "The Arbiter Rises",
+    "schedule": "Tuesdays @ 8pm EST",
+    "description": "The fight continues! @the13thgeek jumps back into the war with dual wielding, betrayals and more epic one-liners than he can handle.",
+    "show_game": true
+  },
+  {
+    "game_id": "botw",
+    "game_title": "The Legend of Zelda: Breath of the Wild (NS2)",
+    "stream_title": "Saving Hyrule After Dinner",
+    "schedule": "Saturdays @ 7pm EST",
+    "description": "Link wakes up after 108 years, and @the13thgeek immediately gets distracted by cooking, climbing and setting things on fire... this time on Full HD!",
     "show_game": true
   },
   {
@@ -21,7 +37,7 @@ export const NowPlaying_Data = [
     "stream_title": "Honey, Where's My Donation Box?",
     "schedule": "Thursdays @ 7pm EST",
     "description": "Building a world-class museum sounds easy... until @the13thgeek gets involved. Expect exhibits, chaos, and questionable curation!",
-    "show_game": true
+    "show_game": false
   },
   {
     "game_id": "ritarewind",
@@ -66,8 +82,8 @@ export const NowPlaying_Data = [
   {
     "game_id": "helldivers2",
     "game_title": "Helldivers II",
-    "stream_title": "Say Hello to Democracy!",
-    "schedule": null,
+    "stream_title": "Operation Whiskey Tango Foxtrot",
+    "schedule": "Thursdays @ 8pm EST",
     "description": "@the13thgeek teams up with streamers to take on alien hordes in space, causing chaos and accidental explosions. Friendly fire? Definitely.",
     "show_game": true
   } 
