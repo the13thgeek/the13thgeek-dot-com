@@ -22,6 +22,7 @@ export const fetchLiveData = async () => {
 
 }
 
+
 // Loads latest VODs from Twitch
 export const fetchVODs = async () => {
     let requestUrl = `${import.meta.env.VITE_CLOUD_URL}/twitch/live-vods`;
