@@ -31,6 +31,7 @@ jobs:
           VITE_ANALYTICS_ID: ${{ secrets.VITE_ANALYTICS_ID }}
           VITE_SITE_VERSION: ${{ secrets.VITE_SITE_VERSION }}
           VITE_SRS_API_KEY: ${{ secrets.VITE_SRS_API_KEY }}
+          VITE_CLOUD_URL: ${{ secrets.VITE_CLOUD_URL }}
 
         run: |
           echo "VITE_GLOBAL_SITE_TITLE=${{ secrets.VITE_GLOBAL_SITE_TITLE }}" >> .env.production
@@ -41,6 +42,7 @@ jobs:
           echo "VITE_ANALYTICS_ID=${{ secrets.VITE_ANALYTICS_ID }}" >> .env.production
           echo "VITE_SITE_VERSION=${{ secrets.VITE_SITE_VERSION }}" >> .env.production
           echo "VITE_SRS_API_KEY=${{ secrets.VITE_SRS_API_KEY }}" >> .env.production
+          echo "VITE_CLOUD_URL=${{ secrets.VITE_CLOUD_URL }}" >> .env.production
 
       - name: Build the project
         run: npm run build

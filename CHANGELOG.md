@@ -10,6 +10,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 
 ---
+## [1.6] - 2025-10-18
+- [Twitch] Updated live data endpoint
+
 ## [1.5] - 2025-04-27
 ### Changed 
 - [Twitch] Changed NowLive to show 3 stream snapshots

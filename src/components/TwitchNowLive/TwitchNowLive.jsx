@@ -20,19 +20,19 @@ const TwitchNowLive = ({ liveData }) => {
                         <span><i className="fa-solid fa-video"></i>&nbsp;&nbsp;Now On Air</span>
                     </div>
                     <div className="stream-shot">
-                        <img src='https://the13thgeek-nodejs.fly.dev/twitch-live/0min.jpg' alt="Streaming now"></img>
+                        <img src={`${import.meta.env.VITE_CLOUD_URL}/twitch-live/0min.jpg`} alt="Streaming now"></img>
                     </div>
                     <div className="timeframe"><p>&gt; Now</p></div>
                 </div>
                 <div className="item thumbnail">
                     <div className="stream-shot">
-                        <img src='https://the13thgeek-nodejs.fly.dev/twitch-live/5min.jpg' alt="5 mins ago"></img>
+                        <img src={`${import.meta.env.VITE_CLOUD_URL}/twitch-live/5min.jpg`} alt="5 mins ago"></img>
                     </div>
                     <div className="timeframe"><p>&gt;&gt; 5 mins ago</p></div>
                 </div>
                 <div className="item thumbnail">
                     <div className="stream-shot">
-                        <img src='https://the13thgeek-nodejs.fly.dev/twitch-live/10min.jpg' alt="10 mins ago"></img>
+                        <img src={`${import.meta.env.VITE_CLOUD_URL}/twitch-live/10min.jpg`} alt="10 mins ago"></img>
                     </div>
                     <div className="timeframe"><p>&gt;&gt;&gt; 10 mins ago</p></div>
                 </div>
